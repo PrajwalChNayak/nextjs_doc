@@ -1,0 +1,108 @@
+<section id="image-optimization" class="mb-12">
+    <h1>Image Optimization</h1>
+    <p>The Next.js Image component extends the HTML <code>&lt;img&gt;</code> element with automatic image optimization features.</p>
+    
+    <h3>Basic Usage</h3>
+    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="import Image from 'next/image'\nimport profilePic from '../public/me.png'\n\nexport default function Home() {\n  return (\n    <div>\n      <h1>My Homepage</h1>\n      <Image\n        src={profilePic}\n        alt=\"Picture of the author\"\n        width={500}\n        height={500}\n      />\n      <p>Welcome to my homepage!</p>\n    </div>\n  )\n}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+        </button>
+        <pre><code class="language-javascript">import Image from 'next/image'
+import profilePic from '../public/me.png'
+
+export default function Home() {
+  return (
+    <div>
+      <h1>My Homepage</h1>
+      <Image
+        src={profilePic}
+        alt="Picture of the author"
+        width={500}
+        height={500}
+      />
+      <p>Welcome to my homepage!</p>
+    </div>
+  )
+}</code></pre>
+    </div>
+    
+    <h3>Remote Images</h3>
+    <p>For remote images, you need to provide the <code>width</code> and <code>height</code> props:</p>
+    
+    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="import Image from 'next/image'\n\nexport default function Home() {\n  return (\n    <div>\n      <Image\n        src=\"https://example.com/image.jpg\"\n        alt=\"Description\"\n        width={500}\n        height={300}\n      />\n    </div>\n  )\n}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+        </button>
+        <pre><code class="language-javascript">import Image from 'next/image'
+
+export default function Home() {
+  return (
+    <div>
+      <Image
+        src="https://example.com/image.jpg"
+        alt="Description"
+        width={500}
+        height={300}
+      />
+    </div>
+  )
+}</code></pre>
+    </div>
+    
+    <h3>Fill Container</h3>
+    <p>Use the <code>fill</code> prop to make the image fill its parent container:</p>
+    
+    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="import Image from 'next/image'\n\nexport default function Home() {\n  return (\n    <div style={{ position: 'relative', width: '100%', height: '400px' }}>\n      <Image\n        src=\"/hero-image.jpg\"\n        alt=\"Hero image\"\n        fill\n        style={{ objectFit: 'cover' }}\n      />\n    </div>\n  )\n}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+        </button>
+        <pre><code class="language-javascript">import Image from 'next/image'
+
+export default function Home() {
+  return (
+    <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+      <Image
+        src="/hero-image.jpg"
+        alt="Hero image"
+        fill
+        style={{ objectFit: 'cover' }}
+      />
+    </div>
+  )
+}</code></pre>
+    </div>
+    
+    <h3>Key Features</h3>
+    <ul>
+        <li><strong>Automatic Format Optimization:</strong> Serves modern formats like WebP and AVIF</li>
+        <li><strong>Responsive Images:</strong> Automatically generates multiple sizes</li>
+        <li><strong>Lazy Loading:</strong> Images load only when they enter the viewport</li>
+        <li><strong>Placeholder Support:</strong> Built-in blur placeholders</li>
+        <li><strong>Priority Loading:</strong> Disable lazy loading for above-the-fold images</li>
+    </ul>
+    
+    <h3>Configuration</h3>
+    <p>Configure image domains in <code>next.config.js</code> for remote images:</p>
+    
+    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  images: {\n    domains: ['example.com', 'another-domain.com'],\n  },\n}\n\nmodule.exports = nextConfig">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+        </button>
+        <pre><code class="language-javascript">/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: ['example.com', 'another-domain.com'],
+  },
+}
+
+module.exports = nextConfig</code></pre>
+    </div>
+</section>

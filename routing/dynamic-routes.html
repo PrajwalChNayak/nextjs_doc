@@ -1,0 +1,73 @@
+<section id="dynamic-routes" class="mb-12">
+  <h1>Dynamic Routes</h1>
+  <p>
+    Next.js supports pages with dynamic routes. For example, if you create a
+    file called <code>pages/posts/[id].js</code>, then it will be accessible at
+    <code>posts/1</code>, <code>posts/2</code>, etc.
+  </p>
+
+  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+    <button
+      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+      data-copy="// pages/posts/[id].js\nimport { useRouter } from 'next/router'\n\nconst Post = () => {\n  const router = useRouter()\n  const { id } = router.query\n\n  return <p>Post: {id}</p>\n}\n\nexport default Post"
+    >
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+        ></path>
+      </svg>
+    </button>
+    <pre><code class="language-javascript">// pages/posts/[id].js
+import { useRouter } from 'next/router'
+
+const Post = () => {
+  const router = useRouter()
+  const { id } = router.query
+
+  return <p>Post: {id}</p>
+}
+
+export default Post</code></pre>
+  </div>
+
+  <h3>Multiple Dynamic Segments</h3>
+  <p>You can create routes with multiple dynamic segments:</p>
+
+  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+    <button
+      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+      data-copy="// pages/shop/[...slug].js\nimport { useRouter } from 'next/router'\n\nexport default function Shop() {\n  const router = useRouter()\n  const { slug } = router.query\n\n  return <p>Shop: {slug?.join('/')}</p>\n}"
+    >
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+        ></path>
+      </svg>
+    </button>
+    <pre><code class="language-javascript">// pages/shop/[...slug].js
+import { useRouter } from 'next/router'
+
+export default function Shop() {
+  const router = useRouter()
+  const { slug } = router.query
+
+  return <p>Shop: {slug?.join('/')}</p>
+}</code></pre>
+  </div>
+</section>

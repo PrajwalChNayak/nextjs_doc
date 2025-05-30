@@ -1,0 +1,65 @@
+<section id="api-routes" class="mb-12">
+  <h1>API Routes</h1>
+  <p>
+    API routes provide a solution to build your API with Next.js. Any file
+    inside the folder <code>pages/api</code> is mapped to
+    <code>/api/*</code> and will be treated as an API endpoint instead of a
+    page.
+  </p>
+
+  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+    <button
+      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+      data-copy="// pages/api/hello.js\nexport default function handler(req, res) {\n  res.status(200).json({ name: 'John Doe' })\n}"
+    >
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+        ></path>
+      </svg>
+    </button>
+    <pre><code class="language-javascript">// pages/api/hello.js
+export default function handler(req, res) {
+  res.status(200).json({ name: 'John Doe' })
+}</code></pre>
+  </div>
+
+  <h3>HTTP Methods</h3>
+  <p>You can handle different HTTP methods in your API routes:</p>
+
+  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+    <button
+      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+      data-copy="export default function handler(req, res) {\n  if (req.method === 'POST') {\n    // Process a POST request\n  } else {\n    // Handle any other HTTP method\n  }\n}"
+    >
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+        ></path>
+      </svg>
+    </button>
+    <pre><code class="language-javascript">export default function handler(req, res) {
+  if (req.method === 'POST') {
+    // Process a POST request
+  } else {
+    // Handle any other HTTP method
+  }
+}</code></pre>
+  </div>
+</section>

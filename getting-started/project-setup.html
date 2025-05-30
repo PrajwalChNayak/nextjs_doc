@@ -1,0 +1,143 @@
+<!-- Project Setup Section -->
+<section id="setup" class="mb-12">
+  <h2>Project Setup</h2>
+  <p>
+    After creating your project, navigate to the directory and start the
+    development server:
+  </p>
+
+  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+    <button
+      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+      data-copy="cd my-app\nnpm run dev"
+    >
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+        ></path>
+      </svg>
+    </button>
+    <pre><code class="language-bash">cd my-app
+npm run dev</code></pre>
+  </div>
+
+  <p>
+    Open <code>http://localhost:3000</code> with your browser to see the result.
+  </p>
+
+  <h3>Project Structure</h3>
+  <p>Here's what your Next.js project structure looks like:</p>
+
+  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+    <button
+      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+      data-copy="my-app/\n├── pages/\n│   ├── api/\n│   ├── _app.js\n│   └── index.js\n├── public/\n├── styles/\n├── next.config.js\n├── package.json\n└── README.md"
+    >
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+        ></path>
+      </svg>
+    </button>
+    <pre><code class="language-bash">my-app/
+├── pages/
+│   ├── api/
+│   ├── _app.js
+│   └── index.js
+├── public/
+├── styles/
+├── next.config.js
+├── package.json
+└── README.md</code></pre>
+  </div>
+
+  <h3>Key Directories</h3>
+  <ul>
+    <li>
+      <strong>pages/</strong> - File-system based router. Each file becomes a
+      route
+    </li>
+    <li><strong>public/</strong> - Static assets like images, fonts, etc.</li>
+    <li><strong>styles/</strong> - CSS files for styling your application</li>
+    <li><strong>pages/api/</strong> - API routes for backend functionality</li>
+  </ul>
+
+  <div
+    class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6 mb-6"
+  >
+    <div class="flex">
+      <svg
+        class="w-6 h-6 text-yellow-500 mr-3 mt-0.5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.664-.833-2.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"
+        ></path>
+      </svg>
+      <div>
+        <h3
+          class="text-lg font-semibold text-yellow-900 dark:text-yellow-100 mb-2"
+        >
+          Hot Reloading
+        </h3>
+        <p class="text-yellow-800 dark:text-yellow-200">
+          You can edit pages/index.js and see the changes update in real-time
+          thanks to Fast Refresh.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Development Commands</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+      <h4 class="font-medium mb-2">Development</h4>
+      <code class="text-sm">npm run dev</code>
+      <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">
+        Start development server
+      </p>
+    </div>
+    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+      <h4 class="font-medium mb-2">Production Build</h4>
+      <code class="text-sm">npm run build</code>
+      <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">
+        Create optimized build
+      </p>
+    </div>
+    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+      <h4 class="font-medium mb-2">Start Production</h4>
+      <code class="text-sm">npm run start</code>
+      <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">
+        Start production server
+      </p>
+    </div>
+    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+      <h4 class="font-medium mb-2">Linting</h4>
+      <code class="text-sm">npm run lint</code>
+      <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">
+        Run ESLint checks
+      </p>
+    </div>
+  </div>
+</section>

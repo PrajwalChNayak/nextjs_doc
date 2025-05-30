@@ -1,0 +1,104 @@
+<section id="getserversideprops" class="mb-12">
+  <h1>getServerSideProps</h1>
+  <p>
+    getServerSideProps runs on every request and allows you to fetch data that
+    changes frequently or is user-specific.
+  </p>
+
+  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+    <button
+      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+      data-copy="// pages/dashboard.js\nexport default function Dashboard({ user, data }) {\n  return (\n    <div>\n      <h1>Welcome {user.name}</h1>\n      <div>{data.message}</div>\n    </div>\n  )\n}\n\nexport async function getServerSideProps(context) {\n  const { req, res, query } = context\n  \n  // You can use the request object to access cookies, headers, etc.\n  const userRes = await fetch('https://api.example.com/user', {\n    headers: {\n      Cookie: req.headers.cookie,\n    },\n  })\n  const user = await userRes.json()\n  \n  const dataRes = await fetch(`https://api.example.com/data?id=${query.id}`)\n  const data = await dataRes.json()\n\n  return {\n    props: {\n      user,\n      data,\n    },\n  }\n}"
+    >
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+        ></path>
+      </svg>
+    </button>
+    <pre><code class="language-javascript">// pages/dashboard.js
+export default function Dashboard({ user, data }) {
+  return (
+    <div>
+      <h1>Welcome {user.name}</h1>
+      <div>{data.message}</div>
+    </div>
+  )
+}
+
+export async function getServerSideProps(context) {
+  const { req, res, query } = context
+  
+  // You can use the request object to access cookies, headers, etc.
+  const userRes = await fetch('https://api.example.com/user', {
+    headers: {
+      Cookie: req.headers.cookie,
+    },
+  })
+  const user = await userRes.json()
+  
+  const dataRes = await fetch(`https://api.example.com/data?id=${query.id}`)
+  const data = await dataRes.json()
+
+  return {
+    props: {
+      user,
+      data,
+    },
+  }
+}</code></pre>
+  </div>
+
+  <h3>Context Object Properties</h3>
+  <ul>
+    <li><code>req</code> - HTTP IncomingMessage object</li>
+    <li><code>res</code> - HTTP ServerResponse object</li>
+    <li><code>params</code> - Route parameters for dynamic routes</li>
+    <li><code>query</code> - Query string object</li>
+    <li><code>preview</code> - Preview mode information</li>
+    <li><code>previewData</code> - Preview data</li>
+    <li><code>resolvedUrl</code> - Normalized request URL</li>
+    <li><code>locale</code> - Active locale (if enabled)</li>
+    <li><code>locales</code> - All supported locales</li>
+  </ul>
+
+  <div
+    class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6 mb-6"
+  >
+    <div class="flex">
+      <svg
+        class="w-6 h-6 text-yellow-500 mr-3 mt-0.5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.664-.833-2.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"
+        ></path>
+      </svg>
+      <div>
+        <h3
+          class="text-lg font-semibold text-yellow-900 dark:text-yellow-100 mb-2"
+        >
+          Performance Note
+        </h3>
+        <p class="text-yellow-800 dark:text-yellow-200">
+          Use getServerSideProps only when you need to pre-render a page whose
+          data must be fetched at request time. Consider client-side fetching if
+          the data doesn't need to be pre-rendered.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

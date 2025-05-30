@@ -1,0 +1,82 @@
+<section id="swr" class="mb-12">
+    <h1>SWR - Data Fetching Library</h1>
+    <p>SWR is a React hook library for data fetching. The name "SWR" is derived from stale-while-revalidate, a HTTP cache invalidation strategy.</p>
+    
+    <h3>Installation</h3>
+    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="npm install swr">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+        </button>
+        <pre><code class="language-bash">npm install swr</code></pre>
+    </div>
+    
+    <h3>Basic Usage</h3>
+    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="import useSWR from 'swr'\n\nconst fetcher = (url) => fetch(url).then((res) => res.json())\n\nexport default function Profile() {\n  const { data, error, isLoading } = useSWR('/api/user', fetcher)\n\n  if (error) return <div>Failed to load</div>\n  if (isLoading) return <div>Loading...</div>\n  \n  return <div>Hello {data.name}!</div>\n}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+        </button>
+        <pre><code class="language-javascript">import useSWR from 'swr'
+
+const fetcher = (url) => fetch(url).then((res) => res.json())
+
+export default function Profile() {
+  const { data, error, isLoading } = useSWR('/api/user', fetcher)
+
+  if (error) return <div>Failed to load</div>
+  if (isLoading) return <div>Loading...</div>
+  
+  return <div>Hello {data.name}!</div>
+}</code></pre>
+    </div>
+    
+    <h3>Key Features</h3>
+    <ul>
+        <li><strong>Fast, lightweight and reusable</strong> data fetching</li>
+        <li><strong>Built-in cache</strong> and request deduplication</li>
+        <li><strong>Real-time experience</strong> with automatic revalidation</li>
+        <li><strong>Transport and protocol agnostic</strong></li>
+        <li><strong>TypeScript support</strong></li>
+        <li><strong>React Suspense support</strong></li>
+    </ul>
+    
+    <h3>Advanced Usage with Mutations</h3>
+    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="import useSWR, { mutate } from 'swr'\n\nexport default function Profile() {\n  const { data, error } = useSWR('/api/user', fetcher)\n\n  const updateUser = async (userData) => {\n    // Optimistically update the data\n    mutate('/api/user', { ...data, ...userData }, false)\n    \n    // Send request to update\n    await fetch('/api/user', {\n      method: 'POST',\n      body: JSON.stringify(userData)\n    })\n    \n    // Revalidate to ensure data is fresh\n    mutate('/api/user')\n  }\n\n  return (\n    <div>\n      <h1>{data?.name}</h1>\n      <button onClick={() => updateUser({ name: 'New Name' })}>\n        Update Name\n      </button>\n    </div>\n  )\n}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+        </button>
+        <pre><code class="language-javascript">import useSWR, { mutate } from 'swr'
+
+export default function Profile() {
+  const { data, error } = useSWR('/api/user', fetcher)
+
+  const updateUser = async (userData) => {
+    // Optimistically update the data
+    mutate('/api/user', { ...data, ...userData }, false)
+    
+    // Send request to update
+    await fetch('/api/user', {
+      method: 'POST',
+      body: JSON.stringify(userData)
+    })
+    
+    // Revalidate to ensure data is fresh
+    mutate('/api/user')
+  }
+
+  return (
+    <div>
+      <h1>{data?.name}</h1>
+      <button onClick={() => updateUser({ name: 'New Name' })}>
+        Update Name
+      </button>
+    </div>
+  )
+}</code></pre>
+    </div>
+</section>

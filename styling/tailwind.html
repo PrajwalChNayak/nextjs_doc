@@ -1,0 +1,108 @@
+<section id="tailwind" class="mb-12">
+    <h1>Tailwind CSS</h1>
+    <p>Tailwind CSS is a utility-first CSS framework that provides low-level utility classes to build custom designs.</p>
+    
+    <h3>Installation</h3>
+    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="npm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init -p">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+        </button>
+        <pre><code class="language-bash">npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p</code></pre>
+    </div>
+    
+    <h3>Configuration</h3>
+    <p>Update your <code>tailwind.config.js</code> file:</p>
+    
+    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  content: [\n    './pages/**/*.{js,ts,jsx,tsx}',\n    './components/**/*.{js,ts,jsx,tsx}',\n  ],\n  theme: {\n    extend: {\n      colors: {\n        primary: {\n          50: '#eff6ff',\n          500: '#3b82f6',\n          900: '#1e3a8a',\n        }\n      }\n    },\n  },\n  plugins: [],\n}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+        </button>
+        <pre><code class="language-javascript">/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#eff6ff',
+          500: '#3b82f6',
+          900: '#1e3a8a',
+        }
+      }
+    },
+  },
+  plugins: [],
+}</code></pre>
+    </div>
+    
+    <h3>Add Tailwind Directives</h3>
+    <p>Add the Tailwind directives to your CSS file (e.g., <code>styles/globals.css</code>):</p>
+    
+    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="@tailwind base;\n@tailwind components;\n@tailwind utilities;">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+        </button>
+        <pre><code class="language-css">@tailwind base;
+@tailwind components;
+@tailwind utilities;</code></pre>
+    </div>
+    
+    <h3>Using Tailwind Classes</h3>
+    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="export default function Home() {\n  return (\n    <div className=\"max-w-4xl mx-auto px-4 py-8\">\n      <h1 className=\"text-4xl font-bold text-gray-900 mb-6\">\n        Welcome to Next.js!\n      </h1>\n      \n      <div className=\"grid grid-cols-1 md:grid-cols-2 gap-6\">\n        <div className=\"bg-white shadow-lg rounded-lg p-6\">\n          <h2 className=\"text-xl font-semibold mb-4\">Documentation</h2>\n          <p className=\"text-gray-600 mb-4\">\n            Find in-depth information about Next.js features and API.\n          </p>\n          <button className=\"bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded\">\n            Learn More\n          </button>\n        </div>\n        \n        <div className=\"bg-white shadow-lg rounded-lg p-6\">\n          <h2 className=\"text-xl font-semibold mb-4\">Learn</h2>\n          <p className=\"text-gray-600 mb-4\">\n            Learn about Next.js in an interactive course with quizzes!\n          </p>\n          <button className=\"bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded\">\n            Start Learning\n          </button>\n        </div>\n      </div>\n    </div>\n  )\n}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+        </button>
+        <pre><code class="language-javascript">export default function Home() {
+  return (
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold text-gray-900 mb-6">
+        Welcome to Next.js!
+      </h1>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white shadow-lg rounded-lg p-6">
+          <h2 className="text-xl font-semibold mb-4">Documentation</h2>
+          <p className="text-gray-600 mb-4">
+            Find in-depth information about Next.js features and API.
+          </p>
+          <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+            Learn More
+          </button>
+        </div>
+        
+        <div className="bg-white shadow-lg rounded-lg p-6">
+          <h2 className="text-xl font-semibold mb-4">Learn</h2>
+          <p className="text-gray-600 mb-4">
+            Learn about Next.js in an interactive course with quizzes!
+          </p>
+          <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
+            Start Learning
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}</code></pre>
+    </div>
+    
+    <h3>Benefits of Tailwind CSS</h3>
+    <ul>
+        <li><strong>Utility-first:</strong> Build complex components from simple utility classes</li>
+        <li><strong>Responsive design:</strong> Built-in responsive modifiers</li>
+        <li><strong>Dark mode support:</strong> Easy dark mode implementation</li>
+        <li><strong>Customizable:</strong> Extend the framework with your own utilities</li>
+        <li><strong>Small bundle size:</strong> Only includes the CSS you actually use</li>
+    </ul>
+</section>

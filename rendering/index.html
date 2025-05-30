@@ -1,0 +1,45 @@
+<section id="rendering-overview" class="mb-12">
+  <h1>Rendering in Next.js</h1>
+  <p>
+    Next.js provides different rendering methods to optimize your application's
+    performance and user experience.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4">
+      <h3 class="font-semibold text-blue-900 dark:text-blue-100 mb-2">
+        Server-Side Rendering
+      </h3>
+      <p class="text-blue-800 dark:text-blue-200 text-sm">
+        Pages are generated on each request
+      </p>
+    </div>
+
+    <div
+      class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-4"
+    >
+      <h3 class="font-semibold text-green-900 dark:text-green-100 mb-2">
+        Static Generation
+      </h3>
+      <p class="text-green-800 dark:text-green-200 text-sm">
+        Pages are generated at build time
+      </p>
+    </div>
+  </div>
+
+  <h3>When to Use Each Method</h3>
+  <ul>
+    <li>
+      <strong>Static Generation:</strong> Recommended for marketing pages, blog
+      posts, documentation
+    </li>
+    <li>
+      <strong>Server-Side Rendering:</strong> Use when data changes frequently
+      or for personalized content
+    </li>
+    <li>
+      <strong>Client-Side Rendering:</strong> For highly interactive
+      applications
+    </li>
+  </ul>
+</section>

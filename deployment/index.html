@@ -1,0 +1,279 @@
+<section id="deployment" class="documentation-section">
+  <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">
+    Deployment
+  </h2>
+
+  <div class="prose dark:prose-invert max-w-none">
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+      Deploy your Next.js application to various platforms with ease. Next.js
+      apps can be deployed to any Node.js hosting provider or static hosting
+      service.
+    </p>
+
+    <h3 class="text-2xl font-semibold mb-4">Deployment Options</h3>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700"
+      >
+        <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">
+          Static Export
+        </h4>
+        <p class="text-gray-600 dark:text-gray-300">
+          Export your Next.js app as static HTML files for deployment to any
+          static hosting service.
+        </p>
+      </div>
+
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700"
+      >
+        <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">
+          Server Deployment
+        </h4>
+        <p class="text-gray-600 dark:text-gray-300">
+          Deploy to Node.js hosting platforms for full SSR and API route
+          functionality.
+        </p>
+      </div>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4">Build Process</h3>
+    <p class="mb-4">
+      Before deploying, you need to build your application for production.
+    </p>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">Terminal</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-bash">npm run build</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">Environment Variables</h3>
+    <p class="mb-4">
+      Configure environment variables for different deployment environments.
+    </p>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">.env.local</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-bash">DATABASE_URL=your_database_url
+API_KEY=your_api_key
+NEXTAUTH_SECRET=your_secret</code></pre>
+    </div>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">.env.production</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-bash">DATABASE_URL=production_database_url
+API_KEY=production_api_key
+NEXTAUTH_URL=https://yourapp.com</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">Static Export</h3>
+    <p class="mb-4">
+      Configure your app for static export to deploy to static hosting services.
+    </p>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">next.config.js</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-javascript">/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  }
+}
+
+module.exports = nextConfig</code></pre>
+    </div>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">package.json</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-json">{
+  "scripts": {
+    "build": "next build",
+    "export": "next build && next export"
+  }
+}</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">
+      Popular Deployment Platforms
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700"
+      >
+        <h4 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">
+          Vercel
+        </h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          The creators of Next.js. Zero-config deployment with automatic
+          optimizations.
+        </p>
+      </div>
+
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700"
+      >
+        <h4 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">
+          Netlify
+        </h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          JAMstack platform with excellent static site hosting and edge
+          functions.
+        </p>
+      </div>
+
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700"
+      >
+        <h4 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">
+          AWS
+        </h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Deploy to AWS using Amplify, Lambda, or traditional EC2 instances.
+        </p>
+      </div>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4">Deployment Checklist</h3>
+
+    <div
+      class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-4 mb-6"
+    >
+      <div class="flex">
+        <div class="ml-3">
+          <p class="text-sm text-yellow-700 dark:text-yellow-300">
+            <strong>Important:</strong> Always test your production build
+            locally before deploying.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-3">
+      <div class="flex items-center">
+        <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600" />
+        <span class="text-gray-700 dark:text-gray-300"
+          >Configure environment variables</span
+        >
+      </div>
+      <div class="flex items-center">
+        <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600" />
+        <span class="text-gray-700 dark:text-gray-300"
+          >Test production build locally</span
+        >
+      </div>
+      <div class="flex items-center">
+        <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600" />
+        <span class="text-gray-700 dark:text-gray-300"
+          >Set up domain and SSL certificate</span
+        >
+      </div>
+      <div class="flex items-center">
+        <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600" />
+        <span class="text-gray-700 dark:text-gray-300"
+          >Configure redirects and rewrites</span
+        >
+      </div>
+      <div class="flex items-center">
+        <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600" />
+        <span class="text-gray-700 dark:text-gray-300"
+          >Set up monitoring and analytics</span
+        >
+      </div>
+      <div class="flex items-center">
+        <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600" />
+        <span class="text-gray-700 dark:text-gray-300"
+          >Configure error reporting</span
+        >
+      </div>
+    </div>
+  </div>
+</section>

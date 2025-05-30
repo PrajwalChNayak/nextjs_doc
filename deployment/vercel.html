@@ -1,0 +1,251 @@
+<section id="vercel" class="documentation-section">
+    <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Deploying to Vercel</h2>
+    
+    <div class="prose dark:prose-invert max-w-none">
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+            Vercel is the platform created by the makers of Next.js. It provides zero-configuration deployments with automatic optimizations, perfect for Next.js applications.
+        </p>
+
+        <h3 class="text-2xl font-semibold mb-4">Getting Started with Vercel</h3>
+        
+        <h4 class="text-xl font-semibold mb-3">Method 1: Vercel CLI</h4>
+        <p class="mb-4">Install and use the Vercel CLI for deployment.</p>
+
+        <div class="code-block-container">
+            <div class="code-block-header">
+                <span class="code-block-title">Installation</span>
+                <button class="copy-button" onclick="copyToClipboard(this)">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+            </div>
+            <pre><code class="language-bash">npm install -g vercel</code></pre>
+        </div>
+
+        <div class="code-block-container">
+            <div class="code-block-header">
+                <span class="code-block-title">Login and Deploy</span>
+                <button class="copy-button" onclick="copyToClipboard(this)">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+            </div>
+            <pre><code class="language-bash">vercel login
+vercel --prod</code></pre>
+        </div>
+
+        <h4 class="text-xl font-semibold mb-3 mt-6">Method 2: Git Integration</h4>
+        <p class="mb-4">Connect your GitHub, GitLab, or Bitbucket repository for automatic deployments.</p>
+
+        <ol class="list-decimal list-inside space-y-2 mb-6">
+            <li>Push your code to a Git repository</li>
+            <li>Go to <a href="https://vercel.com" class="text-blue-600 dark:text-blue-400 hover:underline">vercel.com</a></li>
+            <li>Click "Import Project"</li>
+            <li>Select your repository</li>
+            <li>Configure deployment settings</li>
+            <li>Deploy!</li>
+        </ol>
+
+        <h3 class="text-2xl font-semibold mb-4">Configuration</h3>
+        
+        <h4 class="text-xl font-semibold mb-3">vercel.json</h4>
+        <p class="mb-4">Configure deployment settings with a vercel.json file.</p>
+
+        <div class="code-block-container">
+            <div class="code-block-header">
+                <span class="code-block-title">vercel.json</span>
+                <button class="copy-button" onclick="copyToClipboard(this)">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+            </div>
+            <pre><code class="language-json">{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }
+}</code></pre>
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-4 mt-8">Environment Variables</h3>
+        <p class="mb-4">Configure environment variables in the Vercel dashboard or CLI.</p>
+
+        <h4 class="text-xl font-semibold mb-3">Via Dashboard</h4>
+        <ol class="list-decimal list-inside space-y-2 mb-6">
+            <li>Go to your project dashboard</li>
+            <li>Navigate to Settings → Environment Variables</li>
+            <li>Add your variables for different environments</li>
+        </ol>
+
+        <h4 class="text-xl font-semibold mb-3">Via CLI</h4>
+        <div class="code-block-container">
+            <div class="code-block-header">
+                <span class="code-block-title">Terminal</span>
+                <button class="copy-button" onclick="copyToClipboard(this)">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+            </div>
+            <pre><code class="language-bash">vercel env add API_KEY production
+vercel env add DATABASE_URL preview development</code></pre>
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-4 mt-8">Custom Domains</h3>
+        <p class="mb-4">Add custom domains to your Vercel deployments.</p>
+
+        <h4 class="text-xl font-semibold mb-3">Via Dashboard</h4>
+        <ol class="list-decimal list-inside space-y-2 mb-6">
+            <li>Go to Settings → Domains</li>
+            <li>Enter your domain name</li>
+            <li>Configure DNS settings with your domain provider</li>
+        </ol>
+
+        <h4 class="text-xl font-semibold mb-3">Via CLI</h4>
+        <div class="code-block-container">
+            <div class="code-block-header">
+                <span class="code-block-title">Terminal</span>
+                <button class="copy-button" onclick="copyToClipboard(this)">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+            </div>
+            <pre><code class="language-bash">vercel domains add yourdomain.com
+vercel domains add www.yourdomain.com</code></pre>
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-4 mt-8">Preview Deployments</h3>
+        <p class="mb-4">Every push to a non-production branch creates a preview deployment.</p>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-400 p-4 mb-6">
+            <div class="flex">
+                <div class="ml-3">
+                    <p class="text-sm text-blue-700 dark:text-blue-300">
+                        <strong>Preview URLs:</strong> Each preview deployment gets a unique URL for testing before merging to production.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-4">Functions & API Routes</h3>
+        <p class="mb-4">Vercel automatically handles Next.js API routes as serverless functions.</p>
+
+        <div class="code-block-container">
+            <div class="code-block-header">
+                <span class="code-block-title">pages/api/hello.js</span>
+                <button class="copy-button" onclick="copyToClipboard(this)">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+            </div>
+            <pre><code class="language-javascript">export default function handler(req, res) {
+  res.status(200).json({ 
+    message: 'Hello from Vercel Functions!',
+    timestamp: new Date().toISOString()
+  })
+}</code></pre>
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-4 mt-8">Analytics & Monitoring</h3>
+        <p class="mb-4">Enable Vercel Analytics for real-time performance insights.</p>
+
+        <div class="code-block-container">
+            <div class="code-block-header">
+                <span class="code-block-title">Installation</span>
+                <button class="copy-button" onclick="copyToClipboard(this)">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+            </div>
+            <pre><code class="language-bash">npm install @vercel/analytics</code></pre>
+        </div>
+
+        <div class="code-block-container">
+            <div class="code-block-header">
+                <span class="code-block-title">pages/_app.js</span>
+                <button class="copy-button" onclick="copyToClipboard(this)">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+            </div>
+            <pre><code class="language-javascript">import { Analytics } from '@vercel/analytics/react'
+
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  )
+}</code></pre>
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-4 mt-8">Vercel Features</h3>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                <h4 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Edge Network</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                    Global CDN with automatic caching and compression for optimal performance.
+                </p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                <h4 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Zero Config</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                    No configuration needed. Just connect your repo and deploy.
+                </p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                <h4 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Instant Rollbacks</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                    Quickly rollback to any previous deployment with one click.
+                </p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                <h4 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Real-time Collaboration</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                    Comments and collaboration tools for team workflows.
+                </p>
+            </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-4">Best Practices</h3>
+        
+        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            <li>Use environment variables for sensitive data</li>
+            <li>Test preview deployments before merging to main</li>
+            <li>Configure custom domains for production</li>
+            <li>Enable analytics for performance monitoring</li>
+            <li>Use Vercel's built-in image optimization</li>
+            <li>Set up proper redirects in vercel.json</li>
+            <li>Monitor function execution times and costs</li>
+        </ul>
+    </div>
+</section>

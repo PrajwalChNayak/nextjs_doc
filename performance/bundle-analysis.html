@@ -1,0 +1,353 @@
+<section id="bundle-analysis" class="documentation-section">
+  <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">
+    Bundle Analysis
+  </h2>
+
+  <div class="prose dark:prose-invert max-w-none">
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+      Analyzing your Next.js bundle helps identify optimization opportunities
+      and understand what's contributing to your application's size.
+    </p>
+
+    <h3 class="text-2xl font-semibold mb-4">Bundle Analyzer</h3>
+    <p class="mb-4">
+      Next.js provides a built-in bundle analyzer to visualize the size of
+      webpack output files.
+    </p>
+
+    <h4 class="text-xl font-semibold mb-3">Installation</h4>
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">Terminal</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-bash">npm install --save-dev @next/bundle-analyzer</code></pre>
+    </div>
+
+    <h4 class="text-xl font-semibold mb-3 mt-6">Configuration</h4>
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">next.config.js</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-javascript">const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+
+module.exports = withBundleAnalyzer({
+  // Your Next.js config
+})</code></pre>
+    </div>
+
+    <h4 class="text-xl font-semibold mb-3 mt-6">Running Analysis</h4>
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">package.json</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-json">{
+  "scripts": {
+    "analyze": "ANALYZE=true npm run build",
+    "analyze:server": "BUNDLE_ANALYZE=server npm run build",
+    "analyze:browser": "BUNDLE_ANALYZE=browser npm run build"
+  }
+}</code></pre>
+    </div>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">Terminal</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-bash">npm run analyze</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">
+      Bundle Optimization Strategies
+    </h3>
+
+    <h4 class="text-xl font-semibold mb-3">Tree Shaking</h4>
+    <p class="mb-4">Import only what you need to reduce bundle size.</p>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">Good Practice</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-javascript">// Import specific functions
+import { debounce } from 'lodash'
+
+// Instead of importing entire library
+import _ from 'lodash'</code></pre>
+    </div>
+
+    <h4 class="text-xl font-semibold mb-3 mt-6">Dynamic Imports</h4>
+    <p class="mb-4">Load components and libraries only when needed.</p>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">Component Dynamic Import</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-javascript">import dynamic from 'next/dynamic'
+
+const DynamicComponent = dynamic(() => import('../components/Chart'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false
+})
+
+export default function Dashboard() {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <DynamicComponent />
+    </div>
+  )
+}</code></pre>
+    </div>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">Library Dynamic Import</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-javascript">const MyComponent = () => {
+  const handleClick = async () => {
+    const { default: moment } = await import('moment')
+    const formatted = moment().format('YYYY-MM-DD')
+    console.log(formatted)
+  }
+
+  return <button onClick={handleClick}>Format Date</button>
+}</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">Bundle Size Monitoring</h3>
+
+    <h4 class="text-xl font-semibold mb-3">Size Limit</h4>
+    <p class="mb-4">
+      Use size-limit to monitor and control your bundle size in CI/CD.
+    </p>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">Installation</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-bash">npm install --save-dev size-limit @size-limit/preset-next</code></pre>
+    </div>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">package.json</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-json">{
+  "scripts": {
+    "size": "size-limit"
+  },
+  "size-limit": [
+    {
+      "name": "First Load JS",
+      "path": ".next/static/chunks/*.js",
+      "limit": "128 KB"
+    }
+  ]
+}</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">Webpack Configuration</h3>
+
+    <h4 class="text-xl font-semibold mb-3">Custom Webpack Config</h4>
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">next.config.js</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-javascript">module.exports = {
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    // Ignore certain modules from bundling
+    config.externals = config.externals || {}
+    config.externals['canvas'] = 'canvas'
+
+    // Add polyfills for Node.js modules
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      net: false,
+      tls: false,
+    }
+
+    return config
+  },
+}</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">Best Practices</h3>
+
+    <div
+      class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-400 p-4 mb-6"
+    >
+      <div class="flex">
+        <div class="ml-3">
+          <p class="text-sm text-blue-700 dark:text-blue-300">
+            <strong>Tip:</strong> Regular bundle analysis helps catch bundle
+            bloat early and maintain optimal performance.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <ul
+      class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300"
+    >
+      <li>Use <code>npm run analyze</code> regularly during development</li>
+      <li>Set up bundle size monitoring in your CI/CD pipeline</li>
+      <li>Prefer dynamic imports for large libraries</li>
+      <li>Use Next.js built-in optimizations (automatic code splitting)</li>
+      <li>Consider using lighter alternatives to heavy libraries</li>
+      <li>Monitor Core Web Vitals in production</li>
+      <li>Use compression and CDN for static assets</li>
+    </ul>
+  </div>
+</section>

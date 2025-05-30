@@ -1,0 +1,47 @@
+<section id="routing-overview" class="mb-12">
+  <h1>Routing in Next.js</h1>
+  <p>
+    Next.js has a file-system based router built on the concept of pages. When a
+    file is added to the pages directory, it's automatically available as a
+    route.
+  </p>
+
+  <div
+    class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mb-6"
+  >
+    <div class="flex">
+      <svg
+        class="w-6 h-6 text-blue-500 mr-3 mt-0.5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        ></path>
+      </svg>
+      <div>
+        <h3 class="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-2">
+          File-System Routing
+        </h3>
+        <p class="text-blue-800 dark:text-blue-200">
+          Next.js automatically creates routes based on your file structure. No
+          need for complex configuration!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Basic Routing Examples</h3>
+  <ul>
+    <li><code>pages/index.js</code> → <code>/</code></li>
+    <li><code>pages/about.js</code> → <code>/about</code></li>
+    <li><code>pages/blog/index.js</code> → <code>/blog</code></li>
+    <li>
+      <code>pages/blog/first-post.js</code> → <code>/blog/first-post</code>
+    </li>
+  </ul>
+</section>

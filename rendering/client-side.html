@@ -1,0 +1,90 @@
+<section id="client-side" class="mb-12">
+  <h1>Client-Side Rendering</h1>
+  <p>
+    Client-side rendering allows you to render pages in the browser using
+    JavaScript. This is useful for highly interactive applications.
+  </p>
+
+  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+    <button
+      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+      data-copy="import { useState, useEffect } from 'react'\n\nexport default function Profile() {\n  const [user, setUser] = useState(null)\n\n  useEffect(() => {\n    fetch('/api/user')\n      .then((res) => res.json())\n      .then((data) => setUser(data))\n  }, [])\n\n  if (!user) return <div>Loading...</div>\n\n  return <div>Hello {user.name}!</div>\n}"
+    >
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+        ></path>
+      </svg>
+    </button>
+    <pre><code class="language-javascript">import { useState, useEffect } from 'react'
+
+export default function Profile() {
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    fetch('/api/user')
+      .then((res) => res.json())
+      .then((data) => setUser(data))
+  }, [])
+
+  if (!user) return <div>Loading...</div>
+
+  return <div>Hello {user.name}!</div>
+}</code></pre>
+  </div>
+
+  <h3>When to Use Client-Side Rendering</h3>
+  <ul>
+    <li>User-specific data that changes frequently</li>
+    <li>Highly interactive dashboards</li>
+    <li>Real-time applications</li>
+    <li>Private, user-authenticated pages</li>
+  </ul>
+
+  <h3>Using SWR for Data Fetching</h3>
+  <p>
+    SWR is a React hook library for data fetching that works great with
+    client-side rendering:
+  </p>
+
+  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+    <button
+      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+      data-copy="import useSWR from 'swr'\n\nconst fetcher = (url) => fetch(url).then((res) => res.json())\n\nexport default function Profile() {\n  const { data, error } = useSWR('/api/user', fetcher)\n\n  if (error) return <div>Failed to load</div>\n  if (!data) return <div>Loading...</div>\n\n  return <div>Hello {data.name}!</div>\n}"
+    >
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+        ></path>
+      </svg>
+    </button>
+    <pre><code class="language-javascript">import useSWR from 'swr'
+
+const fetcher = (url) => fetch(url).then((res) => res.json())
+
+export default function Profile() {
+  const { data, error } = useSWR('/api/user', fetcher)
+
+  if (error) return <div>Failed to load</div>
+  if (!data) return <div>Loading...</div>
+
+  return <div>Hello {data.name}!</div>
+}</code></pre>
+  </div>
+</section>

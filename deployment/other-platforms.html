@@ -1,0 +1,567 @@
+<section id="other-platforms" class="documentation-section">
+  <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">
+    Other Deployment Platforms
+  </h2>
+
+  <div class="prose dark:prose-invert max-w-none">
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+      While Vercel is optimized for Next.js, you can deploy your Next.js
+      applications to various other platforms based on your requirements.
+    </p>
+
+    <h3 class="text-2xl font-semibold mb-4">Netlify</h3>
+    <p class="mb-4">
+      Popular JAMstack platform with excellent static site hosting and edge
+      functions.
+    </p>
+
+    <h4 class="text-xl font-semibold mb-3">Deployment Steps</h4>
+    <ol class="list-decimal list-inside space-y-2 mb-6">
+      <li>Configure static export in next.config.js</li>
+      <li>Build and export your application</li>
+      <li>Deploy the out/ folder to Netlify</li>
+    </ol>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">next.config.js</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-javascript">/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  }
+}
+
+module.exports = nextConfig</code></pre>
+    </div>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">netlify.toml</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-toml">[build]
+  command = "npm run build && npm run export"
+  publish = "out"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">AWS Amplify</h3>
+    <p class="mb-4">
+      AWS's full-stack platform for building and deploying web applications.
+    </p>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">Installation</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-bash">npm install -g @aws-amplify/cli
+amplify configure</code></pre>
+    </div>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">amplify.yml</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-yaml">version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">Heroku</h3>
+    <p class="mb-4">
+      Platform-as-a-Service for deploying Node.js applications with full SSR
+      support.
+    </p>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">package.json</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-json">{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "npm run build"
+  }
+}</code></pre>
+    </div>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">Terminal</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-bash">heroku create your-app-name
+git push heroku main</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">GitHub Pages</h3>
+    <p class="mb-4">
+      Free static hosting for public repositories with GitHub Actions for CI/CD.
+    </p>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">.github/workflows/deploy.yml</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-yaml">name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Build
+      run: npm run build && npm run export
+      
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">DigitalOcean App Platform</h3>
+    <p class="mb-4">
+      Simple cloud platform with automatic scaling and built-in CI/CD.
+    </p>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">.do/app.yaml</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-yaml">name: nextjs-app
+services:
+- name: web
+  source_dir: /
+  github:
+    repo: your-username/your-repo
+    branch: main
+  run_command: npm start
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  routes:
+  - path: /
+  health_check:
+    http_path: /</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">Docker Deployment</h3>
+    <p class="mb-4">
+      Containerize your Next.js app for deployment to any platform that supports
+      Docker.
+    </p>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">Dockerfile</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-dockerfile">FROM node:16-alpine AS deps
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --only=production
+
+FROM node:16-alpine AS builder
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+FROM node:16-alpine AS runner
+WORKDIR /app
+ENV NODE_ENV production
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+EXPOSE 3000
+ENV PORT 3000
+
+CMD ["node", "server.js"]</code></pre>
+    </div>
+
+    <div class="code-block-container">
+      <div class="code-block-header">
+        <span class="code-block-title">Build and Run</span>
+        <button class="copy-button" onclick="copyToClipboard(this)">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <pre><code class="language-bash">docker build -t nextjs-app .
+docker run -p 3000:3000 nextjs-app</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">Platform Comparison</h3>
+
+    <div class="overflow-x-auto">
+      <table
+        class="min-w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+      >
+        <thead class="bg-gray-50 dark:bg-gray-700">
+          <tr>
+            <th
+              class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+            >
+              Platform
+            </th>
+            <th
+              class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+            >
+              Type
+            </th>
+            <th
+              class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+            >
+              SSR Support
+            </th>
+            <th
+              class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+            >
+              Free Tier
+            </th>
+            <th
+              class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+            >
+              Best For
+            </th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Vercel
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              Serverless
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              Yes
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              Yes
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              Next.js apps
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Netlify
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              JAMstack
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              Limited
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              Yes
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              Static sites
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+            >
+              AWS Amplify
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              Full-stack
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              Yes
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              Yes
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              AWS ecosystem
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Heroku
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              PaaS
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              Yes
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              Limited
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+            >
+              Prototyping
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-8">
+      Choosing the Right Platform
+    </h3>
+
+    <div
+      class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-400 p-4 mb-6"
+    >
+      <div class="flex">
+        <div class="ml-3">
+          <p class="text-sm text-green-700 dark:text-green-300">
+            <strong>Recommendation:</strong> Consider your app's requirements,
+            budget, and existing infrastructure when choosing a deployment
+            platform.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <ul
+      class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300"
+    >
+      <li>
+        <strong>Static sites:</strong> Netlify, GitHub Pages, or Vercel with
+        static export
+      </li>
+      <li><strong>Full SSR:</strong> Vercel, AWS Amplify, or Heroku</li>
+      <li><strong>Enterprise:</strong> AWS, Azure, or Google Cloud Platform</li>
+      <li>
+        <strong>Cost-effective:</strong> DigitalOcean App Platform or
+        self-hosted Docker
+      </li>
+      <li>
+        <strong>Existing AWS infrastructure:</strong> AWS Amplify or Lambda
+      </li>
+    </ul>
+  </div>
+</section>
