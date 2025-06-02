@@ -1,65 +1,222 @@
 <!-- Installation Section -->
 <section id="installation" class="mb-12">
-    <h2>Installation</h2>
-    <p>To create a new Next.js application, you can use create-next-app which sets up everything automatically for you.</p>
-    
-    <h3>System Requirements</h3>
-    <ul>
-        <li>Node.js 16.8 or later</li>
-        <li>macOS, Windows (including WSL), and Linux are supported</li>
-    </ul>
-    
-    <h3>Automatic Installation</h3>
-    <p>We recommend creating a new Next.js app using create-next-app, which sets up everything automatically for you.</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="npx create-next-app@latest my-app">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-        </button>
-        <pre><code class="language-bash">npx create-next-app@latest my-app</code></pre>
+    <div class="text-center mb-8">
+        <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            🚀 Getting Started with Next.js
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Ready to build amazing web applications? Next.js makes it incredibly easy! 
+            Let's get you up and running in just a few simple steps.
+        </p>
     </div>
     
-    <h3>TypeScript Projects</h3>
-    <p>To create a TypeScript project, use the --typescript flag:</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="npx create-next-app@latest my-app --typescript">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+    <!-- System Requirements Card -->
+    <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6 mb-8">
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-100 mb-4 flex items-center">
+            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-        </button>
-        <pre><code class="language-bash">npx create-next-app@latest my-app --typescript</code></pre>
+            System Requirements
+        </h3>
+        <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-blue-100 dark:border-blue-700">
+                <div class="flex items-center mb-2">
+                    <span class="text-2xl mr-2">⚙️</span>
+                    <span class="font-medium text-gray-900 dark:text-white">Node.js Version</span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300">Node.js 16.8 or later required</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Don't have Node.js? Download it from <a href="https://nodejs.org" class="text-blue-600 dark:text-blue-400 hover:underline">nodejs.org</a></p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-blue-100 dark:border-blue-700">
+                <div class="flex items-center mb-2">
+                    <span class="text-2xl mr-2">💻</span>
+                    <span class="font-medium text-gray-900 dark:text-white">Operating System</span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300">macOS, Windows (including WSL), and Linux</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Works on all major operating systems</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Method 1: Automatic Installation (Recommended) -->
+    <div class="mb-10">
+        <div class="flex items-center mb-6">
+            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">1</div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                🎯 Quick Start (Recommended for Beginners)
+            </h3>
+        </div>
+        
+        <div class="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-xl p-6 mb-6">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                <strong>The easiest way!</strong> This single command creates a complete Next.js project with everything you need. 
+                Perfect for beginners - no configuration required! 🎉
+            </p>
+            
+            <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+                <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="npx create-next-app@latest my-awesome-app">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+                <pre><code class="language-bash">npx create-next-app@latest my-awesome-app</code></pre>
+            </div>
+            
+            <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-4 rounded">
+                <div class="flex items-start">
+                    <span class="text-2xl mr-2">💡</span>
+                    <div>
+                        <p class="font-medium text-yellow-800 dark:text-yellow-200">Pro Tip:</p>
+                        <p class="text-yellow-700 dark:text-yellow-300">Replace "my-awesome-app" with your project name. Use lowercase letters and hyphens only!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Method 2: TypeScript Projects -->
+    <div class="mb-10">
+        <div class="flex items-center mb-6">
+            <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">2</div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                📘 TypeScript Project (For Type Safety)
+            </h3>
+        </div>
+        
+        <div class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-6 mb-6">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                Want to use <strong>TypeScript</strong>? It helps catch errors before they happen and makes your code more reliable. 
+                Just add the <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">--typescript</code> flag:
+            </p>
+            
+            <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+                <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="npx create-next-app@latest my-awesome-app --typescript">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+                <pre><code class="language-bash">npx create-next-app@latest my-awesome-app --typescript</code></pre>
+            </div>
+            
+            <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-400 p-4 rounded">
+                <div class="flex items-start">
+                    <span class="text-2xl mr-2">🤔</span>
+                    <div>
+                        <p class="font-medium text-blue-800 dark:text-blue-200">New to TypeScript?</p>
+                        <p class="text-blue-700 dark:text-blue-300">Don't worry! Start with regular JavaScript first. You can always add TypeScript later.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h3>Manual Installation</h3>
-    <p>Install next, react and react-dom in your project:</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="npm install next react react-dom">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-        </button>
-        <pre><code class="language-bash">npm install next react react-dom</code></pre>
-    </div>
+    <!-- Method 3: Manual Installation (Advanced) -->
+    <div class="mb-10">
+        <div class="flex items-center mb-6">
+            <div class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">3</div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                🔧 Manual Setup (For Advanced Users)
+            </h3>
+        </div>
+        
+        <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6 mb-6">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                Want more control? Set up Next.js manually! This is perfect if you're adding Next.js to an existing project 
+                or want to understand how everything works under the hood.
+            </p>
+            
+            <!-- Step 1: Install packages -->
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 flex items-center">
+                    <span class="bg-purple-100 dark:bg-purple-800 text-purple-800 dark:text-purple-200 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">1</span>
+                    Install the required packages
+                </h4>
+                <p class="text-gray-600 dark:text-gray-400 mb-3">Install Next.js, React, and React DOM in your project:</p>
+                
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="npm install next react react-dom">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-bash">npm install next react react-dom</code></pre>
+                </div>
+            </div>
 
-    <p>Add the following scripts to your package.json:</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="{\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\"\n  }\n}">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-        </button>
-        <pre><code class="language-json">{
+            <!-- Step 2: Add scripts -->
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 flex items-center">
+                    <span class="bg-purple-100 dark:bg-purple-800 text-purple-800 dark:text-purple-200 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">2</span>
+                    Add scripts to your package.json
+                </h4>
+                <p class="text-gray-600 dark:text-gray-400 mb-3">These scripts let you run your app in development, build it for production, and more:</p>
+                
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="{\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\"\n  }\n}">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-json">{
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build", 
     "start": "next start",
     "lint": "next lint"
   }
 }</code></pre>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-purple-200 dark:border-purple-700">
+                        <div class="flex items-center mb-2">
+                            <span class="text-lg mr-2">🚀</span>
+                            <code class="font-mono text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">npm run dev</code>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Start development server</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-purple-200 dark:border-purple-700">
+                        <div class="flex items-center mb-2">
+                            <span class="text-lg mr-2">📦</span>
+                            <code class="font-mono text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">npm run build</code>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Build for production</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- What happens next -->
+    <div class="bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900/30 dark:to-blue-900/30 rounded-xl p-8 text-center">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            🎉 What Happens Next?
+        </h3>
+        <div class="grid md:grid-cols-3 gap-6 mt-6">
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                <div class="text-3xl mb-3">📁</div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Project Created</h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">A new folder with all the files you need</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                <div class="text-3xl mb-3">📦</div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Dependencies Installed</h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">All required packages downloaded automatically</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                <div class="text-3xl mb-3">🚀</div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Ready to Code</h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">Navigate to your project and start developing!</p>
+            </div>
+        </div>
+        
+        <div class="mt-8 p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+            <p class="text-lg font-medium text-gray-900 dark:text-white mb-2">🏃‍♂️ Ready to start coding?</p>
+            <div class="space-y-2 text-left">
+                <p class="text-gray-700 dark:text-gray-300"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">cd my-awesome-app</code> - Enter your project folder</p>
+                <p class="text-gray-700 dark:text-gray-300"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">npm run dev</code> - Start the development server</p>
+                <p class="text-gray-700 dark:text-gray-300">🌐 Open <code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">http://localhost:3000</code> in your browser</p>
+            </div>
+        </div>
     </div>
 </section>

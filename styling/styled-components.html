@@ -1,100 +1,257 @@
 <section id="styled-components" class="mb-12">
-    <h1>Styled Components</h1>
-    <p>Styled Components is a CSS-in-JS library that allows you to write CSS directly in your JavaScript components.</p>
-    
-    <h3>Installation</h3>
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="npm install styled-components\nnpm install --save-dev babel-plugin-styled-components">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-        </button>
-        <pre><code class="language-bash">npm install styled-components
-npm install --save-dev babel-plugin-styled-components</code></pre>
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 text-white rounded-2xl p-8 mb-8 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">💅 Styled Components</h1>
+            <p class="text-xl md:text-2xl opacity-90 mb-6">Write CSS in JavaScript with confidence! Create beautiful, dynamic components with the power of CSS-in-JS.</p>
+            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-30">
+                <p class="text-lg font-medium">✨ CSS-in-JS magic that makes styling a joy!</p>
+            </div>
+        </div>
     </div>
-    
-    <h3>Configuration</h3>
-    <p>Add the styled-components plugin to your <code>.babelrc</code> file:</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="{\n  \"presets\": [\"next/babel\"],\n  \"plugins\": [[\"styled-components\", { \"ssr\": true }]]\n}">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-        </button>
-        <pre><code class="language-json">{
+
+    <!-- Why Styled Components -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">🚀 Why Styled Components?</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-purple-50 dark:bg-gray-800 p-6 rounded-xl border border-purple-200 dark:border-gray-700">
+                <div class="text-3xl mb-3">🎨</div>
+                <h3 class="text-xl font-semibold mb-3 text-purple-700 dark:text-purple-300">Dynamic Styling</h3>
+                <p class="text-gray-600 dark:text-gray-300">Use JavaScript logic in your styles. Change colors, sizes, and layouts based on props and state.</p>
+            </div>
+            <div class="bg-pink-50 dark:bg-gray-800 p-6 rounded-xl border border-pink-200 dark:border-gray-700">
+                <div class="text-3xl mb-3">🔒</div>
+                <h3 class="text-xl font-semibold mb-3 text-pink-700 dark:text-pink-300">Scoped Styles</h3>
+                <p class="text-gray-600 dark:text-gray-300">No more CSS conflicts! Each styled component has its own unique class name automatically generated.</p>
+            </div>
+            <div class="bg-red-50 dark:bg-gray-800 p-6 rounded-xl border border-red-200 dark:border-gray-700">
+                <div class="text-3xl mb-3">⚡</div>
+                <h3 class="text-xl font-semibold mb-3 text-red-700 dark:text-red-300">Better Performance</h3>
+                <p class="text-gray-600 dark:text-gray-300">Only the styles you use get bundled. Dead code elimination keeps your CSS lean and fast.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Getting Started -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">🛠️ Quick Setup (3 Easy Steps!)</h2>
+        
+        <!-- Step 1: Installation -->
+        <div class="mb-8">
+            <div class="flex items-center mb-4">
+                <div class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">1</div>
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">Install the Package</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Add styled-components to your Next.js project:</p>
+            <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+                <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="npm install styled-components">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+                <pre><code class="language-bash">npm install styled-components</code></pre>
+            </div>
+            <div class="bg-blue-50 dark:bg-blue-900 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                <p class="text-blue-700 dark:text-blue-300"><strong>💡 Pro Tip:</strong> For better development experience, also install the Babel plugin for server-side rendering optimization.</p>
+            </div>
+        </div>
+
+        <!-- Step 2: Configuration -->
+        <div class="mb-8">
+            <div class="flex items-center mb-4">
+                <div class="bg-pink-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">2</div>
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">Configure Babel (Optional but Recommended)</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Create or update your <code>.babelrc</code> file for optimal SSR support:</p>
+            <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+                <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="{\n  \"presets\": [\"next/babel\"],\n  \"plugins\": [[\"styled-components\", { \"ssr\": true }]]\n}">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+                <pre><code class="language-json">{
   "presets": ["next/babel"],
   "plugins": [["styled-components", { "ssr": true }]]
 }</code></pre>
-    </div>
-    
-    <h3>Basic Usage</h3>
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="import styled from 'styled-components'\n\nconst Container = styled.div`\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 2rem;\n`\n\nconst Title = styled.h1`\n  font-size: 2.5rem;\n  color: ${props => props.primary ? '#007bff' : '#333'};\n  margin-bottom: 1rem;\n`\n\nconst Button = styled.button`\n  background: ${props => props.primary ? '#007bff' : 'transparent'};\n  color: ${props => props.primary ? 'white' : '#007bff'};\n  border: 2px solid #007bff;\n  padding: 0.5rem 1rem;\n  border-radius: 4px;\n  cursor: pointer;\n  \n  &:hover {\n    background: #0056b3;\n    color: white;\n  }\n`\n\nexport default function Home() {\n  return (\n    <Container>\n      <Title primary>Welcome to Next.js!</Title>\n      <Button primary>Get Started</Button>\n      <Button>Learn More</Button>\n    </Container>\n  )\n}">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-        </button>
-        <pre><code class="language-javascript">import styled from 'styled-components'
+            </div>
+            <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+                <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="npm install --save-dev babel-plugin-styled-components">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+                <pre><code class="language-bash"># Don't forget to install the Babel plugin
+npm install --save-dev babel-plugin-styled-components</code></pre>
+            </div>
+        </div>
 
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-`
+        <!-- Step 3: First Component -->
+        <div class="mb-8">
+            <div class="flex items-center mb-4">
+                <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">3</div>
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">Create Your First Styled Component</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Let's create a beautiful button component with hover effects:</p>
+            <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+                <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="import styled from 'styled-components'\n\n// Create a styled button component\nconst StyledButton = styled.button`\n  background: linear-gradient(45deg, #FF6B6B, #4ECDC4);\n  color: white;\n  border: none;\n  padding: 12px 24px;\n  border-radius: 25px;\n  font-size: 16px;\n  font-weight: bold;\n  cursor: pointer;\n  transition: all 0.3s ease;\n  \n  &:hover {\n    transform: translateY(-2px);\n    box-shadow: 0 10px 20px rgba(0,0,0,0.2);\n  }\n  \n  &:active {\n    transform: translateY(0);\n  }\n`\n\nexport default function HomePage() {\n  return (\n    <div>\n      <h1>Welcome to Styled Components!</h1>\n      <StyledButton>Click me! 🚀</StyledButton>\n    </div>\n  )\n}">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+                <pre><code class="language-javascript">import styled from 'styled-components'
 
-const Title = styled.h1`
-  font-size: 2.5rem;
-  color: ${props => props.primary ? '#007bff' : '#333'};
-  margin-bottom: 1rem;
-`
-
-const Button = styled.button`
-  background: ${props => props.primary ? '#007bff' : 'transparent'};
-  color: ${props => props.primary ? 'white' : '#007bff'};
-  border: 2px solid #007bff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+// Create a styled button component
+const StyledButton = styled.button`
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
   
   &:hover {
-    background: #0056b3;
-    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  
+  &:active {
+    transform: translateY(0);
   }
 `
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <Container>
-      <Title primary>Welcome to Next.js!</Title>
-      <Button primary>Get Started</Button>
-      <Button>Learn More</Button>
-    </Container>
+    <div>
+      <h1>Welcome to Styled Components!</h1>
+      <StyledButton>Click me! 🚀</StyledButton>
+    </div>
   )
 }</code></pre>
+            </div>
+        </div>
     </div>
-    
-    <h3>Theming</h3>
-    <p>Use ThemeProvider to share theme values across your application:</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="import { ThemeProvider } from 'styled-components'\n\nconst theme = {\n  colors: {\n    primary: '#007bff',\n    secondary: '#6c757d',\n    success: '#28a745',\n    danger: '#dc3545',\n  },\n  breakpoints: {\n    mobile: '768px',\n    tablet: '1024px',\n  }\n}\n\nexport default function MyApp({ Component, pageProps }) {\n  return (\n    <ThemeProvider theme={theme}>\n      <Component {...pageProps} />\n    </ThemeProvider>\n  )\n}">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-        </button>
-        <pre><code class="language-javascript">import { ThemeProvider } from 'styled-components'
+
+    <!-- Real World Example -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">🏗️ Real-World Example: Dynamic Product Card</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">See how styled-components shine with props and conditional styling:</p>
+        
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+            <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="import styled from 'styled-components'\n\nconst Card = styled.div`\n  background: white;\n  border-radius: 12px;\n  padding: 20px;\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  transition: all 0.3s ease;\n  border: 2px solid ${props => props.featured ? '#FF6B6B' : 'transparent'};\n  \n  &:hover {\n    transform: translateY(-5px);\n    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);\n  }\n`\n\nconst ProductTitle = styled.h3`\n  color: ${props => props.featured ? '#FF6B6B' : '#333'};\n  font-size: ${props => props.featured ? '1.5rem' : '1.25rem'};\n  margin-bottom: 10px;\n  font-weight: bold;\n`\n\nconst Price = styled.span`\n  color: #4ECDC4;\n  font-size: 1.5rem;\n  font-weight: bold;\n  display: ${props => props.hidden ? 'none' : 'block'};\n`\n\nconst Badge = styled.div`\n  background: linear-gradient(45deg, #FF6B6B, #FFE66D);\n  color: white;\n  padding: 4px 12px;\n  border-radius: 20px;\n  font-size: 0.8rem;\n  font-weight: bold;\n  display: ${props => props.show ? 'inline-block' : 'none'};\n  margin-bottom: 10px;\n`\n\nfunction ProductCard({ title, price, featured, onSale }) {\n  return (\n    <Card featured={featured}>\n      <Badge show={onSale}>🔥 ON SALE!</Badge>\n      <ProductTitle featured={featured}>{title}</ProductTitle>\n      <Price>${price}</Price>\n    </Card>\n  )\n}\n\n// Usage\nexport default function Shop() {\n  return (\n    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>\n      <ProductCard title=\"Cool T-Shirt\" price=\"29.99\" featured onSale />\n      <ProductCard title=\"Nice Jeans\" price=\"79.99\" />\n      <ProductCard title=\"Awesome Sneakers\" price=\"129.99\" featured />\n    </div>\n  )\n}">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+            </button>
+            <pre><code class="language-javascript">import styled from 'styled-components'
+
+const Card = styled.div`
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid ${props => props.featured ? '#FF6B6B' : 'transparent'};
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+  }
+`
+
+const ProductTitle = styled.h3`
+  color: ${props => props.featured ? '#FF6B6B' : '#333'};
+  font-size: ${props => props.featured ? '1.5rem' : '1.25rem'};
+  margin-bottom: 10px;
+  font-weight: bold;
+`
+
+const Price = styled.span`
+  color: #4ECDC4;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: ${props => props.hidden ? 'none' : 'block'};
+`
+
+const Badge = styled.div`
+  background: linear-gradient(45deg, #FF6B6B, #FFE66D);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: ${props => props.show ? 'inline-block' : 'none'};
+  margin-bottom: 10px;
+`
+
+function ProductCard({ title, price, featured, onSale }) {
+  return (
+    <Card featured={featured}>
+      <Badge show={onSale}>🔥 ON SALE!</Badge>
+      <ProductTitle featured={featured}>{title}</ProductTitle>
+      <Price>${price}</Price>
+    </Card>
+  )
+}
+
+// Usage
+export default function Shop() {
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+      <ProductCard title="Cool T-Shirt" price="29.99" featured onSale />
+      <ProductCard title="Nice Jeans" price="79.99" />
+      <ProductCard title="Awesome Sneakers" price="129.99" featured />
+    </div>
+  )
+}</code></pre>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900 border-l-4 border-green-400 p-4 rounded-r-lg">
+            <p class="text-green-700 dark:text-green-300"><strong>✨ See the Magic:</strong> Notice how props control colors, sizes, and visibility. This is the power of CSS-in-JS!</p>
+        </div>
+    </div>
+
+    <!-- Theming -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">🎨 Global Theming Made Easy</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">Share colors, fonts, and breakpoints across your entire app with ThemeProvider:</p>
+        
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+            <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="// pages/_app.js\nimport { ThemeProvider } from 'styled-components'\n\nconst theme = {\n  colors: {\n    primary: '#FF6B6B',\n    secondary: '#4ECDC4',\n    success: '#95E1D3',\n    warning: '#FFE66D',\n    danger: '#FF8B94',\n    text: '#2C3E50',\n    background: '#FFFFFF'\n  },\n  fonts: {\n    main: 'Inter, sans-serif',\n    code: 'Fira Code, monospace'\n  },\n  breakpoints: {\n    mobile: '768px',\n    tablet: '1024px',\n    desktop: '1200px'\n  },\n  spacing: {\n    small: '8px',\n    medium: '16px',\n    large: '24px',\n    xlarge: '32px'\n  }\n}\n\nexport default function MyApp({ Component, pageProps }) {\n  return (\n    <ThemeProvider theme={theme}>\n      <Component {...pageProps} />\n    </ThemeProvider>\n  )\n}">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+            </button>
+            <pre><code class="language-javascript">// pages/_app.js
+import { ThemeProvider } from 'styled-components'
 
 const theme = {
   colors: {
-    primary: '#007bff',
-    secondary: '#6c757d',
-    success: '#28a745',
-    danger: '#dc3545',
+    primary: '#FF6B6B',
+    secondary: '#4ECDC4',
+    success: '#95E1D3',
+    warning: '#FFE66D',
+    danger: '#FF8B94',
+    text: '#2C3E50',
+    background: '#FFFFFF'
+  },
+  fonts: {
+    main: 'Inter, sans-serif',
+    code: 'Fira Code, monospace'
   },
   breakpoints: {
     mobile: '768px',
     tablet: '1024px',
+    desktop: '1200px'
+  },
+  spacing: {
+    small: '8px',
+    medium: '16px',
+    large: '24px',
+    xlarge: '32px'
   }
 }
 
@@ -105,5 +262,81 @@ export default function MyApp({ Component, pageProps }) {
     </ThemeProvider>
   )
 }</code></pre>
+        </div>
+
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Now use your theme in any component:</p>
+        
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+            <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="import styled from 'styled-components'\n\nconst ThemedButton = styled.button`\n  background: ${props => props.theme.colors.primary};\n  color: white;\n  font-family: ${props => props.theme.fonts.main};\n  padding: ${props => props.theme.spacing.medium};\n  border: none;\n  border-radius: 8px;\n  cursor: pointer;\n  \n  &:hover {\n    background: ${props => props.theme.colors.secondary};\n  }\n  \n  @media (max-width: ${props => props.theme.breakpoints.mobile}) {\n    padding: ${props => props.theme.spacing.small};\n    font-size: 14px;\n  }\n`\n\nconst Container = styled.div`\n  max-width: ${props => props.theme.breakpoints.desktop};\n  margin: 0 auto;\n  padding: ${props => props.theme.spacing.large};\n  background: ${props => props.theme.colors.background};\n  color: ${props => props.theme.colors.text};\n`">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+            </button>
+            <pre><code class="language-javascript">import styled from 'styled-components'
+
+const ThemedButton = styled.button`
+  background: ${props => props.theme.colors.primary};
+  color: white;
+  font-family: ${props => props.theme.fonts.main};
+  padding: ${props => props.theme.spacing.medium};
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  
+  &:hover {
+    background: ${props => props.theme.colors.secondary};
+  }
+  
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: ${props => props.theme.spacing.small};
+    font-size: 14px;
+  }
+`
+
+const Container = styled.div`
+  max-width: ${props => props.theme.breakpoints.desktop};
+  margin: 0 auto;
+  padding: ${props => props.theme.spacing.large};
+  background: ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.text};
+`</code></pre>
+        </div>
+    </div>
+
+    <!-- Quick Reference -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">📚 Quick Reference Cheat Sheet</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-purple-50 dark:bg-gray-800 p-6 rounded-xl border border-purple-200 dark:border-gray-700">
+                <h3 class="text-xl font-semibold mb-4 text-purple-700 dark:text-purple-300">Essential Patterns</h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                    <li>• <code>styled.div`styles`</code> - Basic component</li>
+                    <li>• <code>${props => props.primary}</code> - Props usage</li>
+                    <li>• <code>&:hover</code> - Pseudo-selectors</li>
+                    <li>• <code>@media (max-width: 768px)</code> - Media queries</li>
+                    <li>• <code>${props => props.theme.colors.primary}</code> - Theme access</li>
+                </ul>
+            </div>
+            
+            <div class="bg-pink-50 dark:bg-gray-800 p-6 rounded-xl border border-pink-200 dark:border-gray-700">
+                <h3 class="text-xl font-semibold mb-4 text-pink-700 dark:text-pink-300">Pro Tips</h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                    <li>• Use descriptive component names</li>
+                    <li>• Keep styles close to components</li>
+                    <li>• Leverage the theme for consistency</li>
+                    <li>• Use props for dynamic behavior</li>
+                    <li>• Test responsive designs carefully</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-xl">
+            <h3 class="text-xl font-bold mb-2">🎉 Ready to Style Like a Pro?</h3>
+            <p class="mb-4">You now have the power to create beautiful, dynamic components with styled-components!</p>
+            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                <p class="font-medium">Next up: Try building a complete component library with your new skills! 🚀</p>
+            </div>
+        </div>
     </div>
 </section>

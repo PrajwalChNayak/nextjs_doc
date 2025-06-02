@@ -1,143 +1,541 @@
 <!-- Project Setup Section -->
 <section id="setup" class="mb-12">
-  <h2>Project Setup</h2>
-  <p>
-    After creating your project, navigate to the directory and start the
-    development server:
-  </p>
-
-  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-    <button
-      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
-      data-copy="cd my-app\nnpm run dev"
-    >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-        ></path>
-      </svg>
-    </button>
-    <pre><code class="language-bash">cd my-app
-npm run dev</code></pre>
+  <div class="text-center mb-8">
+    <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+      🛠️ Setting Up Your Project
+    </h2>
+    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+      Great! You've created your Next.js project. Now let's get it running and
+      explore what you've got! This is where the magic begins! ✨
+    </p>
   </div>
 
-  <p>
-    Open <code>http://localhost:3000</code> with your browser to see the result.
-  </p>
-
-  <h3>Project Structure</h3>
-  <p>Here's what your Next.js project structure looks like:</p>
-
-  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-    <button
-      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
-      data-copy="my-app/\n├── pages/\n│   ├── api/\n│   ├── _app.js\n│   └── index.js\n├── public/\n├── styles/\n├── next.config.js\n├── package.json\n└── README.md"
+  <!-- Step-by-step setup process -->
+  <div class="space-y-8">
+    <!-- Step 1: Navigate to project -->
+    <div
+      class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6"
     >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-        ></path>
-      </svg>
-    </button>
-    <pre><code class="language-bash">my-app/
-├── pages/
-│   ├── api/
-│   ├── _app.js
-│   └── index.js
-├── public/
-├── styles/
-├── next.config.js
-├── package.json
-└── README.md</code></pre>
-  </div>
-
-  <h3>Key Directories</h3>
-  <ul>
-    <li>
-      <strong>pages/</strong> - File-system based router. Each file becomes a
-      route
-    </li>
-    <li><strong>public/</strong> - Static assets like images, fonts, etc.</li>
-    <li><strong>styles/</strong> - CSS files for styling your application</li>
-    <li><strong>pages/api/</strong> - API routes for backend functionality</li>
-  </ul>
-
-  <div
-    class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6 mb-6"
-  >
-    <div class="flex">
-      <svg
-        class="w-6 h-6 text-yellow-500 mr-3 mt-0.5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.664-.833-2.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"
-        ></path>
-      </svg>
-      <div>
-        <h3
-          class="text-lg font-semibold text-yellow-900 dark:text-yellow-100 mb-2"
+      <div class="flex items-center mb-4">
+        <div
+          class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-4"
         >
-          Hot Reloading
+          1
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+          📁 Navigate to Your Project
         </h3>
-        <p class="text-yellow-800 dark:text-yellow-200">
-          You can edit pages/index.js and see the changes update in real-time
-          thanks to Fast Refresh.
+      </div>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        First, let's enter your project folder. Think of this as opening the
+        door to your new app!
+      </p>
+
+      <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+        <button
+          class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+          data-copy="cd my-awesome-app"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+        <pre><code class="language-bash">cd my-awesome-app</code></pre>
+      </div>
+
+      <div
+        class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-400 p-4 rounded"
+      >
+        <div class="flex items-start">
+          <span class="text-2xl mr-2">💡</span>
+          <div>
+            <p class="font-medium text-blue-800 dark:text-blue-200">
+              Remember:
+            </p>
+            <p class="text-blue-700 dark:text-blue-300">
+              Replace "my-awesome-app" with whatever you named your project!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: Start development server -->
+    <div
+      class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-6"
+    >
+      <div class="flex items-center mb-4">
+        <div
+          class="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-4"
+        >
+          2
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+          🚀 Start Your Development Server
+        </h3>
+      </div>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        Now for the exciting part! Let's bring your app to life. This command
+        starts a local server so you can see your app in the browser.
+      </p>
+
+      <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+        <button
+          class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+          data-copy="npm run dev"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+        <pre><code class="language-bash">npm run dev</code></pre>
+      </div>
+
+      <div
+        class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-400 p-4 rounded"
+      >
+        <div class="flex items-start">
+          <span class="text-2xl mr-2">⏱️</span>
+          <div>
+            <p class="font-medium text-green-800 dark:text-green-200">
+              What's happening?
+            </p>
+            <p class="text-green-700 dark:text-green-300">
+              Next.js is starting up your development server. This might take a
+              few seconds the first time!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3: Open in browser -->
+    <div
+      class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6"
+    >
+      <div class="flex items-center mb-4">
+        <div
+          class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-4"
+        >
+          3
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+          🌐 See Your App Live!
+        </h3>
+      </div>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        The moment you've been waiting for! Open your browser and navigate to
+        your local development server.
+      </p>
+
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-purple-200 dark:border-purple-700 text-center"
+      >
+        <p class="text-lg font-medium text-gray-900 dark:text-white mb-2">
+          🎯 Open this URL in your browser:
+        </p>
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 inline-block">
+          <code class="text-xl font-mono text-purple-600 dark:text-purple-400"
+            >http://localhost:3000</code
+          >
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          You should see your Next.js welcome page! 🎉
         </p>
       </div>
     </div>
   </div>
 
-  <h3>Development Commands</h3>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
-      <h4 class="font-medium mb-2">Development</h4>
-      <code class="text-sm">npm run dev</code>
-      <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">
-        Start development server
+  <!-- Project Structure Explanation -->
+  <div class="mt-12">
+    <div class="text-center mb-8">
+      <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        📂 Understanding Your Project Structure
+      </h3>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        Let's explore what Next.js created for you! Think of this as a tour of
+        your new digital home. 🏠
       </p>
     </div>
-    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
-      <h4 class="font-medium mb-2">Production Build</h4>
-      <code class="text-sm">npm run build</code>
-      <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">
-        Create optimized build
+
+    <div
+      class="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 mb-8"
+    >
+      <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+        <button
+          class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+          data-copy="my-awesome-app/\n├── pages/\n│   ├── api/\n│   ├── _app.js\n│   └── index.js\n├── public/\n├── styles/\n├── next.config.js\n├── package.json\n└── README.md"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+        <pre><code class="language-bash">my-awesome-app/
+├── pages/           👈 Your website pages live here!
+│   ├── api/         👈 Backend API endpoints
+│   ├── _app.js      👈 App wrapper (affects all pages)
+│   └── index.js     👈 Your homepage (what you see at /)
+├── public/          👈 Images, icons, and static files
+├── styles/          👈 CSS files for styling
+├── next.config.js   👈 Next.js configuration
+├── package.json     👈 Project info and dependencies
+└── README.md        👈 Project documentation</code></pre>
+      </div>
+    </div>
+
+    <!-- Interactive folder explanations -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <!-- Pages folder -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+      >
+        <div class="flex items-center mb-4">
+          <div class="bg-blue-100 dark:bg-blue-900 rounded-lg p-3 mr-4">
+            <span class="text-2xl">📄</span>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-gray-900 dark:text-white">
+              pages/
+            </h4>
+            <p class="text-sm text-blue-600 dark:text-blue-400">
+              The Heart of Your App
+            </p>
+          </div>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400 mb-3">
+          This is where the magic happens! Each file automatically becomes a
+          page on your website.
+        </p>
+        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3">
+          <p class="text-sm text-blue-800 dark:text-blue-200">
+            <strong>Example:</strong> <code>pages/about.js</code> becomes
+            <code>yoursite.com/about</code>
+          </p>
+        </div>
+      </div>
+
+      <!-- Public folder -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+      >
+        <div class="flex items-center mb-4">
+          <div class="bg-green-100 dark:bg-green-900 rounded-lg p-3 mr-4">
+            <span class="text-2xl">🖼️</span>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-gray-900 dark:text-white">
+              public/
+            </h4>
+            <p class="text-sm text-green-600 dark:text-green-400">
+              Your Static Assets
+            </p>
+          </div>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400 mb-3">
+          Put your images, icons, and other static files here. They'll be
+          available at the root of your site.
+        </p>
+        <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-3">
+          <p class="text-sm text-green-800 dark:text-green-200">
+            <strong>Example:</strong> <code>public/logo.png</code> becomes
+            <code>/logo.png</code>
+          </p>
+        </div>
+      </div>
+
+      <!-- Styles folder -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+      >
+        <div class="flex items-center mb-4">
+          <div class="bg-purple-100 dark:bg-purple-900 rounded-lg p-3 mr-4">
+            <span class="text-2xl">🎨</span>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-gray-900 dark:text-white">
+              styles/
+            </h4>
+            <p class="text-sm text-purple-600 dark:text-purple-400">
+              Make It Beautiful
+            </p>
+          </div>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400 mb-3">
+          Your CSS files live here. This is where you'll make your app look
+          amazing!
+        </p>
+        <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-3">
+          <p class="text-sm text-purple-800 dark:text-purple-200">
+            <strong>Tip:</strong> Start with <code>globals.css</code> for
+            site-wide styles
+          </p>
+        </div>
+      </div>
+
+      <!-- API folder -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+      >
+        <div class="flex items-center mb-4">
+          <div class="bg-orange-100 dark:bg-orange-900 rounded-lg p-3 mr-4">
+            <span class="text-2xl">⚡</span>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-gray-900 dark:text-white">
+              pages/api/
+            </h4>
+            <p class="text-sm text-orange-600 dark:text-orange-400">
+              Backend Power
+            </p>
+          </div>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400 mb-3">
+          Create backend endpoints here! Perfect for handling forms, databases,
+          and more.
+        </p>
+        <div class="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-3">
+          <p class="text-sm text-orange-800 dark:text-orange-200">
+            <strong>Example:</strong> <code>api/hello.js</code> becomes
+            <code>/api/hello</code>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hot Reloading Feature -->
+  <div
+    class="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl p-6 mb-8"
+  >
+    <div class="flex items-start">
+      <div class="bg-yellow-100 dark:bg-yellow-900 rounded-lg p-3 mr-4">
+        <svg
+          class="w-8 h-8 text-yellow-600 dark:text-yellow-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.664-.833-2.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"
+          ></path>
+        </svg>
+      </div>
+      <div class="flex-1">
+        <h3
+          class="text-2xl font-bold text-yellow-900 dark:text-yellow-100 mb-3"
+        >
+          🔥 Hot Reloading Magic!
+        </h3>
+        <p class="text-lg text-yellow-800 dark:text-yellow-200 mb-3">
+          Here's the best part: when you edit your code, you'll see changes
+          instantly in your browser! No need to refresh or restart anything.
+        </p>
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-yellow-200 dark:border-yellow-700"
+        >
+          <p class="text-gray-700 dark:text-gray-300">
+            <strong>Try it now:</strong> Open
+            <code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"
+              >pages/index.js</code
+            >
+            in your code editor, make a change, and watch your browser update
+            automatically! ✨
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Development Commands -->
+  <div class="mt-10">
+    <div class="text-center mb-8">
+      <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        🛠️ Essential Commands
+      </h3>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        Here are the key commands you'll use during development. Don't worry,
+        you only need a few!
       </p>
     </div>
-    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
-      <h4 class="font-medium mb-2">Start Production</h4>
-      <code class="text-sm">npm run start</code>
-      <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">
-        Start production server
-      </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Development Command -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+      >
+        <div class="flex items-center mb-4">
+          <div class="bg-green-100 dark:bg-green-900 rounded-lg p-3 mr-4">
+            <span class="text-2xl">🚀</span>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-gray-900 dark:text-white">
+              Development Server
+            </h4>
+            <p class="text-sm text-green-600 dark:text-green-400">
+              For coding and testing
+            </p>
+          </div>
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-3 mb-3">
+          <code class="text-lg font-mono">npm run dev</code>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400">
+          Start your development server with hot reloading. Use this while
+          building your app!
+        </p>
+      </div>
+
+      <!-- Build Command -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+      >
+        <div class="flex items-center mb-4">
+          <div class="bg-blue-100 dark:bg-blue-900 rounded-lg p-3 mr-4">
+            <span class="text-2xl">📦</span>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-gray-900 dark:text-white">
+              Production Build
+            </h4>
+            <p class="text-sm text-blue-600 dark:text-blue-400">
+              Ready for deployment
+            </p>
+          </div>
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-3 mb-3">
+          <code class="text-lg font-mono">npm run build</code>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400">
+          Creates an optimized version of your app for production. Super fast
+          and efficient!
+        </p>
+      </div>
+
+      <!-- Start Production Command -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+      >
+        <div class="flex items-center mb-4">
+          <div class="bg-purple-100 dark:bg-purple-900 rounded-lg p-3 mr-4">
+            <span class="text-2xl">🌟</span>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-gray-900 dark:text-white">
+              Start Production
+            </h4>
+            <p class="text-sm text-purple-600 dark:text-purple-400">
+              Run the built app
+            </p>
+          </div>
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-3 mb-3">
+          <code class="text-lg font-mono">npm run start</code>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400">
+          Runs your production build. Use this after running
+          <code>npm run build</code>.
+        </p>
+      </div>
+
+      <!-- Lint Command -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700"
+      >
+        <div class="flex items-center mb-4">
+          <div class="bg-orange-100 dark:bg-orange-900 rounded-lg p-3 mr-4">
+            <span class="text-2xl">🔍</span>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-gray-900 dark:text-white">
+              Code Linting
+            </h4>
+            <p class="text-sm text-orange-600 dark:text-orange-400">
+              Check for issues
+            </p>
+          </div>
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-3 mb-3">
+          <code class="text-lg font-mono">npm run lint</code>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400">
+          Checks your code for potential problems and style issues. Keeps your
+          code clean!
+        </p>
+      </div>
     </div>
-    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
-      <h4 class="font-medium mb-2">Linting</h4>
-      <code class="text-sm">npm run lint</code>
-      <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">
-        Run ESLint checks
-      </p>
+  </div>
+
+  <!-- Next Steps -->
+  <div
+    class="mt-12 bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 rounded-xl p-8 text-center"
+  >
+    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+      🎉 You're All Set!
+    </h3>
+    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+      Congratulations! Your Next.js development environment is ready. Now you
+      can start building amazing web applications!
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+        <div class="text-3xl mb-3">✏️</div>
+        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
+          Start Coding
+        </h4>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">
+          Edit <code>pages/index.js</code> to see changes in real-time
+        </p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+        <div class="text-3xl mb-3">📚</div>
+        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
+          Learn More
+        </h4>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">
+          Explore the Next.js documentation and tutorials
+        </p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+        <div class="text-3xl mb-3">🚀</div>
+        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Deploy</h4>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">
+          When ready, deploy your app to the world!
+        </p>
+      </div>
     </div>
   </div>
 </section>

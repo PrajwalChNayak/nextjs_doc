@@ -1,72 +1,363 @@
 <section id="pages" class="mb-12">
-  <h1>Pages</h1>
-  <p>
-    In Next.js, a page is a React Component exported from a file in the pages
-    directory. Each page is associated with a route based on its file name.
-  </p>
-
-  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-    <button
-      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
-      data-copy="function About() {\n  return <div>About</div>\n}\n\nexport default About"
+  <!-- Hero Section -->
+  <div class="text-center mb-8">
+    <h1
+      class="text-4xl font-bold text-gray-900 dark:text-white mb-4 flex items-center justify-center"
     >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-        ></path>
-      </svg>
-    </button>
-    <pre><code class="language-javascript">function About() {
-  return <div>About</div>
-}
-
-export default About</code></pre>
+      📄 Pages in Next.js
+    </h1>
+    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+      Creating pages in Next.js is as simple as creating files! Each page is
+      just a React component that Next.js automatically turns into a route.
+      Let's see how easy it is! ✨
+    </p>
   </div>
 
-  <p>
-    Create a file <code>pages/about.js</code> and export a React component as
-    shown above.
-  </p>
-
-  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-    <button
-      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
-      data-copy="// pages/about.js\nexport default function About() {\n  return (\n    <div>\n      <h1>About Us</h1>\n      <p>This is the about page</p>\n    </div>\n  )\n}"
+  <!-- How It Works Section -->
+  <div
+    class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-6 mb-8"
+  >
+    <h2
+      class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center"
     >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
+      <span class="text-3xl mr-3">🎯</span>
+      How It Works (Super Simple!)
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="text-center">
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
+          <div class="text-4xl mb-2">📁</div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">
+            1. Create a File
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Make a
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >.js</code
+            >
+            file in the
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >pages</code
+            >
+            folder
+          </p>
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
+          <div class="text-4xl mb-2">⚛️</div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">
+            2. Export Component
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Write a simple React component and export it as default
+          </p>
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
+          <div class="text-4xl mb-2">🚀</div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">
+            3. Magic!
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Next.js automatically creates a route for you!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step-by-Step Example -->
+  <div class="mb-8">
+    <h2
+      class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+    >
+      <span class="text-3xl mr-3">👨‍💻</span>
+      Let's Build Your First Page!
+    </h2>
+
+    <!-- Step 1 -->
+    <div class="mb-6">
+      <div class="flex items-center mb-4">
+        <div
+          class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4"
+        >
+          1
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+          Create the file
+        </h3>
+      </div>
+
+      <div
+        class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-4 rounded mb-4"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-        ></path>
-      </svg>
-    </button>
-    <pre><code class="language-javascript">// pages/about.js
+        <div class="flex items-start">
+          <span class="text-2xl mr-2">💡</span>
+          <div>
+            <p class="font-medium text-yellow-800 dark:text-yellow-200">
+              File Location Tip:
+            </p>
+            <p class="text-yellow-700 dark:text-yellow-300">
+              Create a file called
+              <code class="bg-yellow-200 dark:bg-yellow-800 px-2 py-1 rounded"
+                >about.js</code
+              >
+              inside your
+              <code class="bg-yellow-200 dark:bg-yellow-800 px-2 py-1 rounded"
+                >pages</code
+              >
+              folder
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="mb-6">
+      <div class="flex items-center mb-4">
+        <div
+          class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4"
+        >
+          2
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+          Write your component
+        </h3>
+      </div>
+
+      <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+        <button
+          class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+          data-copy="// pages/about.js\nexport default function About() {\n  return (\n    <div>\n      <h1>About Us</h1>\n      <p>Welcome to our amazing website!</p>\n      <p>We love building awesome things with Next.js! 🚀</p>\n    </div>\n  )\n}"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+        <pre><code class="language-javascript">// pages/about.js
 export default function About() {
   return (
     <div>
       <h1>About Us</h1>
-      <p>This is the about page</p>
+      <p>Welcome to our amazing website!</p>
+      <p>We love building awesome things with Next.js! 🚀</p>
     </div>
   )
 }</code></pre>
+      </div>
+
+      <div
+        class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-400 p-4 rounded"
+      >
+        <div class="flex items-start">
+          <span class="text-2xl mr-2">✅</span>
+          <div>
+            <p class="font-medium text-green-800 dark:text-green-200">
+              That's it!
+            </p>
+            <p class="text-green-700 dark:text-green-300">
+              You've just created a page! Next.js will automatically make it
+              available at
+              <code class="bg-green-200 dark:bg-green-800 px-2 py-1 rounded"
+                >http://localhost:3000/about</code
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <p>
-    Now you can access this page at <code>http://localhost:3000/about</code>.
-  </p>
+  <!-- More Examples -->
+  <div class="mb-8">
+    <h2
+      class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+    >
+      <span class="text-3xl mr-3">🎨</span>
+      More Examples to Try
+    </h2>
+
+    <!-- Example 1: Home Page -->
+    <div
+      class="bg-white dark:bg-gray-800 rounded-lg p-6 mb-6 shadow-md border border-gray-200 dark:border-gray-700"
+    >
+      <h3
+        class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+      >
+        <span class="text-2xl mr-2">🏠</span>
+        Home Page (index.js)
+      </h3>
+      <p class="text-gray-600 dark:text-gray-300 mb-4">
+        The
+        <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+          >index.js</code
+        >
+        file becomes your home page at
+        <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">/</code>
+      </p>
+
+      <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+        <button
+          class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+          data-copy="// pages/index.js\nexport default function Home() {\n  return (\n    <div>\n      <h1>Welcome to My Website! 🎉</h1>\n      <p>This is the home page</p>\n    </div>\n  )\n}"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+        <pre><code class="language-javascript">// pages/index.js
+export default function Home() {
+  return (
+    <div>
+      <h1>Welcome to My Website! 🎉</h1>
+      <p>This is the home page</p>
+    </div>
+  )
+}</code></pre>
+      </div>
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        📍 Available at:
+        <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+          >http://localhost:3000/</code
+        >
+      </p>
+    </div>
+
+    <!-- Example 2: Contact Page -->
+    <div
+      class="bg-white dark:bg-gray-800 rounded-lg p-6 mb-6 shadow-md border border-gray-200 dark:border-gray-700"
+    >
+      <h3
+        class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+      >
+        <span class="text-2xl mr-2">📧</span>
+        Contact Page
+      </h3>
+
+      <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+        <button
+          class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+          data-copy="// pages/contact.js\nexport default function Contact() {\n  return (\n    <div>\n      <h1>Get in Touch! 📬</h1>\n      <p>Email us at: hello@example.com</p>\n      <p>We'd love to hear from you!</p>\n    </div>\n  )\n}"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+        <pre><code class="language-javascript">// pages/contact.js
+export default function Contact() {
+  return (
+    <div>
+      <h1>Get in Touch! 📬</h1>
+      <p>Email us at: hello@example.com</p>
+      <p>We'd love to hear from you!</p>
+    </div>
+  )
+}</code></pre>
+      </div>
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        📍 Available at:
+        <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+          >http://localhost:3000/contact</code
+        >
+      </p>
+    </div>
+  </div>
+
+  <!-- Key Takeaways -->
+  <div
+    class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6"
+  >
+    <h2
+      class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+    >
+      <span class="text-3xl mr-3">🎯</span>
+      Key Points to Remember
+    </h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="flex items-start">
+        <span class="text-2xl mr-3">📝</span>
+        <div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-1">
+            File = Route
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Every file in
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >pages/</code
+            >
+            becomes a route automatically
+          </p>
+        </div>
+      </div>
+      <div class="flex items-start">
+        <span class="text-2xl mr-3">🏠</span>
+        <div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-1">
+            index.js = Home
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >pages/index.js</code
+            >
+            becomes your homepage
+          </p>
+        </div>
+      </div>
+      <div class="flex items-start">
+        <span class="text-2xl mr-3">⚛️</span>
+        <div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-1">
+            React Components
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Each page is just a React component
+          </p>
+        </div>
+      </div>
+      <div class="flex items-start">
+        <span class="text-2xl mr-3">🚀</span>
+        <div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-1">
+            No Config Needed
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Next.js handles routing automatically!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

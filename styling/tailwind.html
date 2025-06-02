@@ -1,32 +1,321 @@
 <section id="tailwind" class="mb-12">
-    <h1>Tailwind CSS</h1>
-    <p>Tailwind CSS is a utility-first CSS framework that provides low-level utility classes to build custom designs.</p>
-    
-    <h3>Installation</h3>
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="npm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init -p">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-        </button>
-        <pre><code class="language-bash">npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p</code></pre>
+  <!-- Hero Section -->
+  <div
+    class="bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 rounded-2xl p-8 mb-8"
+  >
+    <div class="flex items-center mb-6">
+      <div class="bg-cyan-500 rounded-full p-4 mr-4">
+        <svg
+          class="w-10 h-10 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
+          ></path>
+        </svg>
+      </div>
+      <div>
+        <h1
+          class="text-4xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2"
+        >
+          🎨 Tailwind CSS
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300">
+          Build beautiful UIs with utility-first CSS classes
+        </p>
+      </div>
     </div>
-    
-    <h3>Configuration</h3>
-    <p>Update your <code>tailwind.config.js</code> file:</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  content: [\n    './pages/**/*.{js,ts,jsx,tsx}',\n    './components/**/*.{js,ts,jsx,tsx}',\n  ],\n  theme: {\n    extend: {\n      colors: {\n        primary: {\n          50: '#eff6ff',\n          500: '#3b82f6',\n          900: '#1e3a8a',\n        }\n      }\n    },\n  },\n  plugins: [],\n}">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+
+    <div
+      class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-cyan-100 dark:border-cyan-800 shadow-lg"
+    >
+      <div class="flex items-center mb-4">
+        <span
+          class="bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 px-4 py-2 rounded-full text-sm font-medium"
+        >
+          ⚡ Utility-First Power
+        </span>
+      </div>
+      <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+        <strong>Style without leaving your HTML!</strong> Tailwind CSS provides
+        low-level utility classes that let you build completely custom designs
+        without writing CSS. Perfect for Next.js projects!
+      </p>
+    </div>
+  </div>
+
+  <!-- Why Tailwind is Awesome -->
+  <div
+    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8"
+  >
+    <div class="bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-white">
+            Why Developers Love Tailwind
+          </h2>
+          <p class="text-purple-100">Build faster, maintain easier</p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center">
+          <div
+            class="bg-purple-100 dark:bg-purple-900 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center"
+          >
+            <svg
+              class="w-8 h-8 text-purple-600 dark:text-purple-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              ></path>
             </svg>
-        </button>
-        <pre><code class="language-javascript">/** @type {import('tailwindcss').Config} */
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">
+            🚀 Rapid Development
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Build UI components in minutes, not hours
+          </p>
+        </div>
+        <div class="text-center">
+          <div
+            class="bg-blue-100 dark:bg-blue-900 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center"
+          >
+            <svg
+              class="w-8 h-8 text-blue-600 dark:text-blue-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">
+            ✅ No CSS Conflicts
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Utility classes eliminate stylesheet chaos
+          </p>
+        </div>
+        <div class="text-center">
+          <div
+            class="bg-green-100 dark:bg-green-900 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center"
+          >
+            <svg
+              class="w-8 h-8 text-green-600 dark:text-green-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">
+            📱 Mobile-First
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Built-in responsive design utilities
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step-by-Step Setup -->
+  <div
+    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8"
+  >
+    <div class="bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 17.5 18c-1.746 0-3.332.477-4.5 1.253"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-white">
+            How to Add Tailwind to Next.js
+          </h2>
+          <p class="text-emerald-100">Get up and running in 3 simple steps</p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <!-- Step 1: Installation -->
+      <div class="mb-8">
+        <div class="flex items-center mb-4">
+          <div
+            class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3"
+          >
+            1
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Install Tailwind CSS
+          </h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Add Tailwind and its dependencies to your Next.js project:
+        </p>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+          <button
+            class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+            data-copy="npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </button>
+          <pre><code class="language-bash">npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p</code></pre>
+        </div>
+
+        <div
+          class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded mt-4"
+        >
+          <div class="flex items-center mb-2">
+            <svg
+              class="w-5 h-5 text-blue-500 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            <h4 class="font-semibold text-blue-800 dark:text-blue-200">
+              ✨ What this does
+            </h4>
+          </div>
+          <p class="text-blue-700 dark:text-blue-300 text-sm">
+            This installs Tailwind CSS and creates a basic configuration file.
+            The <code>-p</code> flag also creates a PostCSS config file!
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 2: Configuration -->
+      <div class="mb-8">
+        <div class="flex items-center mb-4">
+          <div
+            class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3"
+          >
+            2
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Configure Tailwind
+          </h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Update your <code>tailwind.config.js</code> file to include your
+          Next.js paths:
+        </p>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+          <button
+            class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+            data-copy="/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './app/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#eff6ff',
+          500: '#3b82f6',
+          900: '#1e3a8a',
+        }
+      }
+    },
+  },
+  plugins: [],
+}"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </button>
+          <pre><code class="language-javascript">/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './app/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -41,68 +330,366 @@ module.exports = {
   },
   plugins: [],
 }</code></pre>
-    </div>
-    
-    <h3>Add Tailwind Directives</h3>
-    <p>Add the Tailwind directives to your CSS file (e.g., <code>styles/globals.css</code>):</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="@tailwind base;\n@tailwind components;\n@tailwind utilities;">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+        </div>
+      </div>
+
+      <!-- Step 3: CSS Directives -->
+      <div class="mb-8">
+        <div class="flex items-center mb-4">
+          <div
+            class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3"
+          >
+            3
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Add Tailwind Directives
+          </h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Add the Tailwind directives to your global CSS file (e.g.,
+          <code>styles/globals.css</code>):
+        </p>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+          <button
+            class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+            data-copy="@tailwind base;
+@tailwind components;
+@tailwind utilities;"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
             </svg>
-        </button>
-        <pre><code class="language-css">@tailwind base;
+          </button>
+          <pre><code class="language-css">@tailwind base;
 @tailwind components;
 @tailwind utilities;</code></pre>
-    </div>
-    
-    <h3>Using Tailwind Classes</h3>
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="export default function Home() {\n  return (\n    <div className=\"max-w-4xl mx-auto px-4 py-8\">\n      <h1 className=\"text-4xl font-bold text-gray-900 mb-6\">\n        Welcome to Next.js!\n      </h1>\n      \n      <div className=\"grid grid-cols-1 md:grid-cols-2 gap-6\">\n        <div className=\"bg-white shadow-lg rounded-lg p-6\">\n          <h2 className=\"text-xl font-semibold mb-4\">Documentation</h2>\n          <p className=\"text-gray-600 mb-4\">\n            Find in-depth information about Next.js features and API.\n          </p>\n          <button className=\"bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded\">\n            Learn More\n          </button>\n        </div>\n        \n        <div className=\"bg-white shadow-lg rounded-lg p-6\">\n          <h2 className=\"text-xl font-semibold mb-4\">Learn</h2>\n          <p className=\"text-gray-600 mb-4\">\n            Learn about Next.js in an interactive course with quizzes!\n          </p>\n          <button className=\"bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded\">\n            Start Learning\n          </button>\n        </div>\n      </div>\n    </div>\n  )\n}">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-        </button>
-        <pre><code class="language-javascript">export default function Home() {
-  return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-gray-900 mb-6">
-        Welcome to Next.js!
-      </h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white shadow-lg rounded-lg p-6">
-          <h2 className="text-xl font-semibold mb-4">Documentation</h2>
-          <p className="text-gray-600 mb-4">
-            Find in-depth information about Next.js features and API.
-          </p>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-            Learn More
-          </button>
         </div>
-        
-        <div className="bg-white shadow-lg rounded-lg p-6">
-          <h2 className="text-xl font-semibold mb-4">Learn</h2>
-          <p className="text-gray-600 mb-4">
-            Learn about Next.js in an interactive course with quizzes!
+
+        <div
+          class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-4 rounded mt-4"
+        >
+          <div class="flex items-center mb-2">
+            <svg
+              class="w-5 h-5 text-green-500 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            <h4 class="font-semibold text-green-800 dark:text-green-200">
+              🎉 You're ready to go!
+            </h4>
+          </div>
+          <p class="text-green-700 dark:text-green-300 text-sm">
+            That's it! Now you can use Tailwind classes anywhere in your Next.js
+            components.
           </p>
-          <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
-            Start Learning
-          </button>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Real-World Example -->
+  <div
+    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8"
+  >
+    <div class="bg-gradient-to-r from-indigo-500 to-purple-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-white">See It in Action</h2>
+          <p class="text-indigo-100">Build a beautiful card component</p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-gray-600 dark:text-gray-300 mb-4">
+        Here's how easy it is to create a stunning product card with Tailwind:
+      </p>
+
+      <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+        <button
+          class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+          data-copy='export default function ProductCard() {
+  return (
+    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800">
+      <img className="w-full h-48 object-cover" src="/product.jpg" alt="Product" />
+      <div className="px-6 py-4">
+        <h3 className="font-bold text-xl mb-2 text-gray-900 dark:text-white">
+          Amazing Product
+        </h3>
+        <p className="text-gray-700 dark:text-gray-300 text-base">
+          This is an incredible product that will change your life!
+        </p>
+      </div>
+      <div className="px-6 py-4">
+        <span className="inline-block bg-blue-100 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">
+          #awesome
+        </span>
+        <span className="inline-block bg-blue-100 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">
+          #nextjs
+        </span>
+      </div>
+    </div>
+  )
+}'
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+        <pre><code class="language-javascript">export default function ProductCard() {
+  return (
+    &lt;div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800"&gt;
+      &lt;img className="w-full h-48 object-cover" src="/product.jpg" alt="Product" /&gt;
+      &lt;div className="px-6 py-4"&gt;
+        &lt;h3 className="font-bold text-xl mb-2 text-gray-900 dark:text-white"&gt;
+          Amazing Product
+        &lt;/h3&gt;
+        &lt;p className="text-gray-700 dark:text-gray-300 text-base"&gt;
+          This is an incredible product that will change your life!
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div className="px-6 py-4"&gt;
+        &lt;span className="inline-block bg-blue-100 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2"&gt;
+          #awesome
+        &lt;/span&gt;
+        &lt;span className="inline-block bg-blue-100 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2"&gt;
+          #nextjs
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
   )
 }</code></pre>
+      </div>
+
+      <div
+        class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-4 rounded"
+      >
+        <div class="flex items-center mb-2">
+          <svg
+            class="w-5 h-5 text-yellow-500 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+            ></path>
+          </svg>
+          <h4 class="font-semibold text-yellow-800 dark:text-yellow-200">
+            💡 Pro Tip
+          </h4>
+        </div>
+        <p class="text-yellow-700 dark:text-yellow-300 text-sm">
+          Notice how readable the HTML is? Each class describes exactly what it
+          does - no guessing about custom CSS classes!
+        </p>
+      </div>
     </div>
-    
-    <h3>Benefits of Tailwind CSS</h3>
-    <ul>
-        <li><strong>Utility-first:</strong> Build complex components from simple utility classes</li>
-        <li><strong>Responsive design:</strong> Built-in responsive modifiers</li>
-        <li><strong>Dark mode support:</strong> Easy dark mode implementation</li>
-        <li><strong>Customizable:</strong> Extend the framework with your own utilities</li>
-        <li><strong>Small bundle size:</strong> Only includes the CSS you actually use</li>
-    </ul>
+  </div>
+
+  <!-- Responsive Design Made Easy -->
+  <div
+    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8"
+  >
+    <div class="bg-gradient-to-r from-pink-500 to-rose-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-white">Responsive Design</h2>
+          <p class="text-pink-100">Mobile-first made simple</p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-gray-600 dark:text-gray-300 mb-4">
+        Tailwind's responsive prefixes make mobile-first design effortless:
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-3">
+            📱 Responsive Classes
+          </h4>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center">
+              <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded mr-2"
+                >sm:</code
+              >
+              <span class="text-gray-600 dark:text-gray-300">≥640px</span>
+            </div>
+            <div class="flex items-center">
+              <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded mr-2"
+                >md:</code
+              >
+              <span class="text-gray-600 dark:text-gray-300">≥768px</span>
+            </div>
+            <div class="flex items-center">
+              <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded mr-2"
+                >lg:</code
+              >
+              <span class="text-gray-600 dark:text-gray-300">≥1024px</span>
+            </div>
+            <div class="flex items-center">
+              <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded mr-2"
+                >xl:</code
+              >
+              <span class="text-gray-600 dark:text-gray-300">≥1280px</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-3">
+            🎯 Example Usage
+          </h4>
+          <div class="bg-gray-100 dark:bg-gray-700 rounded p-3">
+            <code class="text-sm text-gray-800 dark:text-gray-200">
+              &lt;div className="text-sm md:text-lg lg:text-xl"&gt;<br />
+              &nbsp;&nbsp;Responsive text!<br />
+              &lt;/div&gt;
+            </code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Start Checklist -->
+  <div
+    class="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl p-6"
+  >
+    <h3
+      class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+    >
+      <span
+        class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3"
+        >✅</span
+      >
+      Quick Start Checklist
+    </h3>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="space-y-3">
+        <div class="flex items-center">
+          <div
+            class="bg-emerald-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3"
+          >
+            ✓
+          </div>
+          <span class="text-gray-700 dark:text-gray-300"
+            >Install Tailwind CSS and dependencies</span
+          >
+        </div>
+        <div class="flex items-center">
+          <div
+            class="bg-emerald-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3"
+          >
+            ✓
+          </div>
+          <span class="text-gray-700 dark:text-gray-300"
+            >Configure content paths in tailwind.config.js</span
+          >
+        </div>
+        <div class="flex items-center">
+          <div
+            class="bg-emerald-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3"
+          >
+            ✓
+          </div>
+          <span class="text-gray-700 dark:text-gray-300"
+            >Add Tailwind directives to globals.css</span
+          >
+        </div>
+      </div>
+      <div class="space-y-3">
+        <div class="flex items-center">
+          <div
+            class="bg-emerald-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3"
+          >
+            ✓
+          </div>
+          <span class="text-gray-700 dark:text-gray-300"
+            >Start using utility classes in components</span
+          >
+        </div>
+        <div class="flex items-center">
+          <div
+            class="bg-emerald-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3"
+          >
+            ✓
+          </div>
+          <span class="text-gray-700 dark:text-gray-300"
+            >Explore responsive prefixes (sm:, md:, lg:)</span
+          >
+        </div>
+        <div class="flex items-center">
+          <div
+            class="bg-emerald-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3"
+          >
+            ✓
+          </div>
+          <span class="text-gray-700 dark:text-gray-300"
+            >Customize theme in config for brand colors</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

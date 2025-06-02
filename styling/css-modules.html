@@ -1,31 +1,190 @@
 <section id="css-modules" class="mb-12">
-  <h1>CSS Modules</h1>
-  <p>
-    Next.js has built-in support for CSS Modules using the [name].module.css
-    file naming convention.
-  </p>
+  <!-- Hero Section -->
+  <div
+    class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl p-8 mb-8"
+  >
+    <div class="flex items-center mb-6">
+      <div class="bg-purple-500 rounded-full p-4 mr-4">
+        <svg
+          class="w-10 h-10 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
+          ></path>
+        </svg>
+      </div>
+      <div>
+        <h1
+          class="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2"
+        >
+          🎨 CSS Modules
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300">
+          Write scoped, maintainable CSS without the chaos
+        </p>
+      </div>
+    </div>
 
-  <h3>Creating a CSS Module</h3>
-  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-    <button
-      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
-      data-copy="/* styles/Home.module.css */\n.container {\n  padding: 0 2rem;\n}\n\n.main {\n  min-height: 100vh;\n  padding: 4rem 0;\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.title {\n  margin: 0;\n  line-height: 1.15;\n  font-size: 4rem;\n  text-align: center;\n}"
+    <div
+      class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-purple-100 dark:border-purple-800 shadow-lg"
     >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-        ></path>
-      </svg>
-    </button>
-    <pre><code class="language-css">/* styles/Home.module.css */
+      <div class="flex items-center mb-4">
+        <span
+          class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-4 py-2 rounded-full text-sm font-medium"
+        >
+          ✨ Built-in Magic
+        </span>
+      </div>
+      <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+        <strong>No setup required!</strong> Next.js automatically transforms
+        your
+        <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+          >.module.css</code
+        >
+        files into locally scoped styles. Say goodbye to style conflicts
+        forever!
+      </p>
+    </div>
+  </div>
+
+  <!-- What are CSS Modules -->
+  <div
+    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8"
+  >
+    <div class="bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-white">What are CSS Modules?</h2>
+          <p class="text-blue-100">Think of them as CSS with superpowers</p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+            ❌ Traditional CSS Problems
+          </h3>
+          <div
+            class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-4 rounded"
+          >
+            <div class="text-sm text-red-700 dark:text-red-300 space-y-2">
+              <p>• Global scope causes conflicts</p>
+              <p>• Hard to maintain in large apps</p>
+              <p>• No way to track unused styles</p>
+              <p>• Fear of breaking other components</p>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+            ✅ CSS Modules Solution
+          </h3>
+          <div
+            class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-4 rounded"
+          >
+            <div class="text-sm text-green-700 dark:text-green-300 space-y-2">
+              <p>• Locally scoped class names</p>
+              <p>• Component-level isolation</p>
+              <p>• Automatic dead code elimination</p>
+              <p>• Safe refactoring and updates</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step-by-Step Tutorial -->
+  <div
+    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8"
+  >
+    <div class="bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 17.5 18c-1.746 0-3.332.477-4.5 1.253"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-white">Step-by-Step Tutorial</h2>
+          <p class="text-emerald-100">
+            Create your first CSS Module in 3 easy steps
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <!-- Step 1 -->
+      <div class="mb-8">
+        <div class="flex items-center mb-4">
+          <div
+            class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3"
+          >
+            1
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Creating a CSS Module
+          </h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Create a CSS file with the
+          <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+            >.module.css</code
+          >
+          extension:
+        </p>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+          <button
+            class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+            data-copy="/* styles/Home.module.css */\n.container {\n  padding: 0 2rem;\n}\n\n.main {\n  min-height: 100vh;\n  padding: 4rem 0;\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.title {\n  margin: 0;\n  line-height: 1.15;\n  font-size: 4rem;\n  text-align: center;\n}"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </button>
+          <pre><code class="language-css">/* styles/Home.module.css */
 .container {
   padding: 0 2rem;
 }
@@ -46,29 +205,44 @@
   font-size: 4rem;
   text-align: center;
 }</code></pre>
-  </div>
+        </div>
+      </div>
 
-  <h3>Using CSS Modules in Components</h3>
-  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-    <button
-      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
-      data-copy="import styles from '../styles/Home.module.css'\n\nexport default function Home() {\n  return (\n    <div className={styles.container}>\n      <main className={styles.main}>\n        <h1 className={styles.title}>\n          Welcome to Next.js!\n        </h1>\n      </main>\n    </div>\n  )\n}"
-    >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-        ></path>
-      </svg>
-    </button>
-    <pre><code class="language-javascript">import styles from '../styles/Home.module.css'
+      <!-- Step 2 -->
+      <div class="mb-8">
+        <div class="flex items-center mb-4">
+          <div
+            class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3"
+          >
+            2
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Using CSS Modules in Components
+          </h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Import your styles and use them as JavaScript objects:
+        </p>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+          <button
+            class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+            data-copy="import styles from '../styles/Home.module.css'\n\nexport default function Home() {\n  return (\n    <div className={styles.container}>\n      <main className={styles.main}>\n        <h1 className={styles.title}>\n          Welcome to Next.js!\n        </h1>\n      </main>\n    </div>\n  )\n}"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </button>
+          <pre><code class="language-javascript">import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
@@ -81,25 +255,216 @@ export default function Home() {
     </div>
   )
 }</code></pre>
+        </div>
+
+        <!-- What happens behind the scenes -->
+        <div
+          class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded mt-4"
+        >
+          <div class="flex items-center mb-2">
+            <svg
+              class="w-5 h-5 text-blue-500 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            <h4 class="font-semibold text-blue-800 dark:text-blue-200">
+              ✨ Behind the Scenes Magic
+            </h4>
+          </div>
+          <p class="text-blue-700 dark:text-blue-300 text-sm">
+            Next.js transforms
+            <code class="bg-blue-200 dark:bg-blue-800 px-1 rounded"
+              >styles.title</code
+            >
+            into something like
+            <code class="bg-blue-200 dark:bg-blue-800 px-1 rounded"
+              >Home_title__3xKyQ</code
+            >, ensuring your styles never conflict with other components!
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="mb-8">
+        <div class="flex items-center mb-4">
+          <div
+            class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3"
+          >
+            3
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Advanced: Composing Classes
+          </h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Combine multiple classes dynamically using the
+          <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+            >classnames</code
+          >
+          library:
+        </p>
+      </div>
+    </div>
   </div>
 
-  <h3>Benefits of CSS Modules</h3>
-  <ul>
-    <li>
-      <strong>Scoped styles:</strong> Class names are automatically scoped to
-      the component
-    </li>
-    <li>
-      <strong>No naming conflicts:</strong> You can use the same class name in
-      different modules
-    </li>
-    <li>
-      <strong>Tree shaking:</strong> Unused styles are removed in production
-    </li>
-    <li>
-      <strong>TypeScript support:</strong> Get autocomplete for class names
-    </li>
-  </ul>
+  <!-- Benefits Section -->
+  <div
+    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8"
+  >
+    <div class="bg-gradient-to-r from-yellow-500 to-orange-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-white">Why CSS Modules Rock</h2>
+          <p class="text-yellow-100">
+            The benefits that make developers love them
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div
+              class="bg-green-100 dark:bg-green-900 rounded-full p-2 mr-3 mt-1"
+            >
+              <svg
+                class="w-4 h-4 text-green-600 dark:text-green-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 dark:text-white">
+                🎯 Scoped Styles
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">
+                Class names are automatically scoped to the component - no more
+                conflicts!
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div
+              class="bg-green-100 dark:bg-green-900 rounded-full p-2 mr-3 mt-1"
+            >
+              <svg
+                class="w-4 h-4 text-green-600 dark:text-green-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 dark:text-white">
+                🚀 No Naming Conflicts
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">
+                Use the same class name in different modules without worry
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div
+              class="bg-green-100 dark:bg-green-900 rounded-full p-2 mr-3 mt-1"
+            >
+              <svg
+                class="w-4 h-4 text-green-600 dark:text-green-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 dark:text-white">
+                🌳 Tree Shaking
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">
+                Unused styles are automatically removed in production builds
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div
+              class="bg-green-100 dark:bg-green-900 rounded-full p-2 mr-3 mt-1"
+            >
+              <svg
+                class="w-4 h-4 text-green-600 dark:text-green-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 dark:text-white">
+                📝 TypeScript Support
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">
+                Get autocomplete and type safety for your class names
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <h3>Composing Classes</h3>
   <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
@@ -135,5 +500,177 @@ export default function Button({ primary, children }) {
     </button>
   )
 }</code></pre>
+  </div>
+
+  <!-- Pro Tips Section -->
+  <div
+    class="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-2xl p-6 mb-8"
+  >
+    <h3
+      class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+    >
+      <span
+        class="bg-indigo-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3"
+        >💡</span
+      >
+      Pro Tips for CSS Modules
+    </h3>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-indigo-200 dark:border-indigo-800"
+      >
+        <h4 class="font-semibold text-indigo-800 dark:text-indigo-200 mb-2">
+          🎨 Naming Convention
+        </h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Use descriptive names like
+          <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded"
+            >heroSection</code
+          >
+          instead of
+          <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded"
+            >section1</code
+          >
+        </p>
+      </div>
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-indigo-200 dark:border-indigo-800"
+      >
+        <h4 class="font-semibold text-indigo-800 dark:text-indigo-200 mb-2">
+          📁 File Organization
+        </h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Keep CSS modules next to their components:
+          <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded"
+            >Button.js</code
+          >
+          &
+          <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded"
+            >Button.module.css</code
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Start Checklist -->
+  <div
+    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden"
+  >
+    <div class="bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Quick Start Checklist</h3>
+          <p class="text-green-100">Everything you need to get started</p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <div class="space-y-3">
+        <div class="flex items-center">
+          <div class="bg-green-100 dark:bg-green-900 rounded-full p-1 mr-3">
+            <svg
+              class="w-4 h-4 text-green-600 dark:text-green-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              ></path>
+            </svg>
+          </div>
+          <span class="text-gray-700 dark:text-gray-300"
+            >Create a
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >.module.css</code
+            >
+            file</span
+          >
+        </div>
+        <div class="flex items-center">
+          <div class="bg-green-100 dark:bg-green-900 rounded-full p-1 mr-3">
+            <svg
+              class="w-4 h-4 text-green-600 dark:text-green-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              ></path>
+            </svg>
+          </div>
+          <span class="text-gray-700 dark:text-gray-300"
+            >Import styles as a JavaScript object</span
+          >
+        </div>
+        <div class="flex items-center">
+          <div class="bg-green-100 dark:bg-green-900 rounded-full p-1 mr-3">
+            <svg
+              class="w-4 h-4 text-green-600 dark:text-green-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              ></path>
+            </svg>
+          </div>
+          <span class="text-gray-700 dark:text-gray-300"
+            >Use
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >styles.className</code
+            >
+            syntax</span
+          >
+        </div>
+        <div class="flex items-center">
+          <div class="bg-green-100 dark:bg-green-900 rounded-full p-1 mr-3">
+            <svg
+              class="w-4 h-4 text-green-600 dark:text-green-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              ></path>
+            </svg>
+          </div>
+          <span class="text-gray-700 dark:text-gray-300"
+            >Enjoy scoped, conflict-free styling! 🎉</span
+          >
+        </div>
+      </div>
+    </div>
   </div>
 </section>

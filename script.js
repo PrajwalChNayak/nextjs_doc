@@ -2,21 +2,30 @@
 // Handles all interactive functionality including theme switching, search, navigation, etc.
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialize all functionality
-    initializeTheme();
-    initializeSearch();
-    initializeSidebar();
-    initializeNavigation();
-    initializeScrollProgress();
-    initializeCopyButtons();
-    initializeTableOfContents();
-    initializeBackToTop();
-    initializePrintStyles();
+    // Load header and sidebar first, then initialize functionality
+    Promise.all([
+        loadHeaderContent(),
+        loadSidebarContent()
+    ]).then(() => {
+        // Initialize all functionality after content is loaded
+        initializeTheme();
+        initializeSearch();
+        setupSidebarInteractivity();
 
-    // Prism.js syntax highlighting
-    if (typeof Prism !== 'undefined') {
-        Prism.highlightAll();
-    }
+        // Initialize navigation system
+        window.navigationManager = new NavigationManager();
+
+        initializeScrollProgress();
+        initializeCopyButtons();
+        initializeTableOfContents();
+        initializeBackToTop();
+        initializePrintStyles();
+
+        // Prism.js syntax highlighting
+        if (typeof Prism !== 'undefined') {
+            Prism.highlightAll();
+        }
+    });
 });
 
 // Theme Management
@@ -43,6 +52,19 @@ function initializeTheme() {
         themeIcon.innerHTML = isDark
             ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>'
             : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>';
+    }
+}
+
+// Header Management
+async function loadHeaderContent() {
+    try {
+        const response = await fetch('header.html');
+        const headerContent = await response.text();
+        const header = document.getElementById('header');
+        header.innerHTML = headerContent;
+    } catch (error) {
+        console.error('Error loading header:', error);
+        // Fallback - you could provide minimal header content here
     }
 }
 
@@ -208,51 +230,447 @@ function initializeSearch() {
     });
 }
 
+// Enhanced sidebar search functionality
+function initializeSidebarSearch() {
+    const searchInput = document.querySelector('nav input[placeholder="Search docs..."]');
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+    if (searchInput) {
+        // Add keyboard shortcut (Cmd/Ctrl + K)
+        document.addEventListener('keydown', function (e) {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        });
+
+        // Real-time search filtering
+        searchInput.addEventListener('input', function (e) {
+            const searchTerm = e.target.value.toLowerCase();
+
+            sidebarLinks.forEach(link => {
+                const text = link.textContent.toLowerCase();
+                const section = link.closest('.sidebar-section');
+
+                if (text.includes(searchTerm)) {
+                    link.style.display = 'block';
+                    link.classList.add('search-highlight');
+                } else {
+                    link.style.display = searchTerm ? 'none' : 'block';
+                    link.classList.remove('search-highlight');
+                }
+            });
+
+            // Show/hide sections based on visible links
+            document.querySelectorAll('.sidebar-section').forEach(section => {
+                const visibleLinks = section.querySelectorAll('.sidebar-link[style*="block"]');
+                section.style.display = visibleLinks.length > 0 || !searchTerm ? 'block' : 'none';
+            });
+        });
+
+        // Clear search on escape
+        searchInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                e.target.value = '';
+                e.target.dispatchEvent(new Event('input'));
+                e.target.blur();
+            }
+        });
+    }
+}
+
 // Sidebar Management
-function initializeSidebar() {
+async function loadSidebarContent() {
+    try {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.innerHTML = generateSidebarHTML();
+    } catch (error) {
+        console.error('Error loading sidebar:', error);
+        // Fallback - you could provide minimal sidebar content here
+    }
+}
+
+// Generate sidebar HTML content
+function generateSidebarHTML() {
+    // Sidebar data structure
+    const sidebarData = [
+        {
+            id: "getting-started",
+            title: "Getting Started",
+            icon: "🚀",
+            description: "Begin your journey",
+            color: "emerald",
+            items: [
+                { title: "Introduction", href: "#introduction", icon: "📖" },
+                { title: "Installation", href: "#installation", icon: "📦" },
+                { title: "Project Setup", href: "#setup", icon: "⚙️" },
+                { title: "Your First App", href: "#first-app", icon: "🎯" },
+            ],
+        },
+        {
+            id: "routing",
+            title: "Routing",
+            icon: "🛣️",
+            description: "Navigate your app",
+            color: "blue",
+            items: [
+                { title: "Routing Overview", href: "#routing-overview", icon: "🛣️" },
+                { title: "Pages", href: "#pages", icon: "📄" },
+                { title: "Dynamic Routes", href: "#dynamic-routes", icon: "🔄" },
+                { title: "API Routes", href: "#api-routes", icon: "🛠️" },
+            ],
+        },
+        {
+            id: "rendering",
+            title: "Rendering",
+            icon: "🎨",
+            description: "Render strategies",
+            color: "purple",
+            items: [
+                { title: "Server-Side Rendering", href: "#ssr", icon: "🖥️" },
+                { title: "Static Generation", href: "#ssg", icon: "📋" },
+                {
+                    title: "Incremental Static Regeneration",
+                    href: "#isr",
+                    icon: "🔄",
+                },
+                { title: "Client-Side Rendering", href: "#client-side", icon: "💻" },
+            ],
+        },
+        {
+            id: "data-fetching",
+            title: "Data Fetching",
+            icon: "📊",
+            description: "Fetch and manage data",
+            color: "green",
+            items: [
+                {
+                    title: "getServerSideProps",
+                    href: "#getserversideprops",
+                    icon: "⬇️",
+                },
+                { title: "getStaticProps", href: "#getstaticprops", icon: "📝" },
+                { title: "SWR", href: "#swr", icon: "🔄" },
+                { title: "API Routes", href: "#api-routes", icon: "🔗" },
+            ],
+        },
+        {
+            id: "styling",
+            title: "Styling",
+            icon: "🎭",
+            description: "Style your components",
+            color: "pink",
+            items: [
+                { title: "CSS Modules", href: "#css-modules", icon: "🎨" },
+                {
+                    title: "Styled Components",
+                    href: "#styled-components",
+                    icon: "💅",
+                },
+                { title: "Tailwind CSS", href: "#tailwind", icon: "🌊" },
+            ],
+        },
+        {
+            id: "performance",
+            title: "Performance",
+            icon: "⚡",
+            description: "Optimize your app",
+            color: "yellow",
+            items: [
+                {
+                    title: "Image Optimization",
+                    href: "#image-optimization",
+                    icon: "🖼️",
+                },
+                { title: "Bundle Analysis", href: "#bundle-analysis", icon: "📦" },
+                { title: "Code Splitting", href: "#code-splitting", icon: "✂️" },
+            ],
+        },
+        {
+            id: "deployment",
+            title: "Deployment",
+            icon: "🚀",
+            description: "Deploy your app",
+            color: "indigo",
+            items: [
+                { title: "Vercel", href: "#vercel", icon: "▲" },
+                { title: "Other Platforms", href: "#other-platforms", icon: "☁️" },
+                { title: "Environment Variables", href: "#env-vars", icon: "🔐" },
+            ],
+        },
+    ];
+
+    // Color classes for different sections
+    const colorClasses = {
+        emerald: {
+            bg: "bg-emerald-50 dark:bg-emerald-900/20",
+            text: "text-emerald-700 dark:text-emerald-300",
+            border: "border-emerald-200 dark:border-emerald-700",
+            hover: "hover:bg-emerald-100 dark:hover:bg-emerald-800/30",
+        },
+        blue: {
+            bg: "bg-blue-50 dark:bg-blue-900/20",
+            text: "text-blue-700 dark:text-blue-300",
+            border: "border-blue-200 dark:border-blue-700",
+            hover: "hover:bg-blue-100 dark:hover:bg-blue-800/30",
+        },
+        purple: {
+            bg: "bg-purple-50 dark:bg-purple-900/20",
+            text: "text-purple-700 dark:text-purple-300",
+            border: "border-purple-200 dark:border-purple-700",
+            hover: "hover:bg-purple-100 dark:hover:bg-purple-800/30",
+        },
+        green: {
+            bg: "bg-green-50 dark:bg-green-900/20",
+            text: "text-green-700 dark:text-green-300",
+            border: "border-green-200 dark:border-green-700",
+            hover: "hover:bg-green-100 dark:hover:bg-green-800/30",
+        },
+        pink: {
+            bg: "bg-pink-50 dark:bg-pink-900/20",
+            text: "text-pink-700 dark:text-pink-300",
+            border: "border-pink-200 dark:border-pink-700",
+            hover: "hover:bg-pink-100 dark:hover:bg-pink-800/30",
+        },
+        yellow: {
+            bg: "bg-yellow-50 dark:bg-yellow-900/20",
+            text: "text-yellow-700 dark:text-yellow-300",
+            border: "border-yellow-200 dark:border-yellow-700",
+            hover: "hover:bg-yellow-100 dark:hover:bg-yellow-800/30",
+        },
+        indigo: {
+            bg: "bg-indigo-50 dark:bg-indigo-900/20",
+            text: "text-indigo-700 dark:text-indigo-300",
+            border: "border-indigo-200 dark:border-indigo-700",
+            hover: "hover:bg-indigo-100 dark:hover:bg-indigo-800/30",
+        }
+    };
+
+    const sidebarSections = sidebarData
+        .map((section) => {
+            const colors = colorClasses[section.color] || colorClasses.blue;
+
+            return `
+                <div class="sidebar-section mb-3 relative">
+                    <button class="sidebar-toggle w-full flex items-center justify-between p-3 text-left rounded-lg ${colors.hover} font-medium text-gray-900 dark:text-white transition-all duration-300 hover:shadow-md hover:translate-x-1 group"
+                            data-section="${section.id}">
+                        <div class="flex items-center space-x-3">
+                            <div class="flex items-center justify-center w-9 h-9 ${colors.bg} rounded-lg shadow-sm transition-transform duration-300 group-hover:scale-110">
+                                <span class="text-lg">${section.icon}</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="font-semibold text-sm ${colors.text} transition-colors duration-200">${section.title}</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400 opacity-75">${section.description}</div>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400 transform transition-all duration-300 sidebar-arrow group-hover:text-gray-700 dark:group-hover:text-gray-200" 
+                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" 
+                                  d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="sidebar-content hidden ml-12 mt-2 space-y-1 border-l-2 border-gray-100 dark:border-gray-700 pl-3 transition-all duration-300" data-content="${section.id}">
+                        ${section.items
+                    .map(
+                        (item) => `
+                            <a href="${item.href}" 
+                               class="sidebar-link flex items-center space-x-3 px-3 py-2.5 text-sm text-gray-600 dark:text-gray-300 ${colors.hover} rounded-md transition-all duration-200 hover:shadow-sm hover:translate-x-1 relative group border-l-2 border-transparent hover:border-current">
+                                <span class="text-base flex-shrink-0 transition-transform duration-200 group-hover:scale-110">${item.icon}</span>
+                                <span class="font-medium transition-colors duration-200">${item.title}</span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md"></div>
+                            </a>
+                        `
+                    )
+                    .join("")}
+                    </div>
+                </div>
+            `;
+        })
+        .join("");
+
+    return `<div class="space-y-2 p-2">${sidebarSections}</div>`;
+}
+
+// Setup sidebar interactivity after content is loaded
+function setupSidebarInteractivity() {
     const sidebar = document.getElementById('sidebar');
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+
+    // Re-query elements after content is loaded
     const sidebarToggles = document.querySelectorAll('.sidebar-toggle');
     const sidebarLinks = document.querySelectorAll('.sidebar-link');
 
-    // Mobile menu toggle
+    // Mobile menu toggle with smooth animation
     mobileMenuToggle?.addEventListener('click', function () {
         sidebar.classList.toggle('-translate-x-full');
+
+        // Add animation feedback
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = 'scale(1)';
+        }, 100);
     });
 
-    // Collapsible sidebar sections
-    sidebarToggles.forEach(toggle => {
-        toggle.addEventListener('click', function () {
-            const section = this.closest('.sidebar-section');
-            const content = section.querySelector('.sidebar-content');
-            const icon = this.querySelector('svg');
+    // Initialize sidebar sections with enhanced animations
+    sidebarToggles.forEach((toggle, index) => {
+        const section = toggle.closest('.sidebar-section');
+        const content = section.querySelector('.sidebar-content');
+        const icon = toggle.querySelector('.sidebar-arrow');
 
-            if (content) {
-                const isOpen = !content.classList.contains('hidden');
-                content.classList.toggle('hidden');
-                icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+        // Set initial states - first section (Getting Started) open by default
+        if (index === 0) {
+            section.classList.add('active');
+            content.classList.remove('hidden');
+            if (icon) {
+                icon.style.transform = 'rotate(180deg)';
+                icon.style.color = '#3b82f6';
+            }
+        }
+
+        // Enhanced click handler with smooth animations
+        toggle.addEventListener('click', function () {
+            const isActive = section.classList.contains('active');
+
+            // Add click feedback
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 100);
+
+            // Smooth toggle animation
+            if (isActive) {
+                // Closing animation
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.offsetHeight; // Force reflow
+                content.style.maxHeight = '0px';
+                content.style.opacity = '0';
+
+                setTimeout(() => {
+                    content.classList.add('hidden');
+                    content.style.maxHeight = '';
+                    content.style.opacity = '';
+                }, 300);
+
+                section.classList.remove('active');
+                if (icon) {
+                    icon.style.transform = 'rotate(0deg)';
+                    icon.style.color = '';
+                }
+            } else {
+                // Opening animation
+                content.classList.remove('hidden');
+                content.style.maxHeight = '0px';
+                content.style.opacity = '0';
+                content.offsetHeight; // Force reflow
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.opacity = '1';
+
+                setTimeout(() => {
+                    content.style.maxHeight = '';
+                }, 300);
+
+                section.classList.add('active');
+                if (icon) {
+                    icon.style.transform = 'rotate(180deg)';
+                    icon.style.color = '#3b82f6';
+                }
+            }
+        });
+
+        // Enhanced hover effects for section toggles
+        toggle.addEventListener('mouseenter', function () {
+            if (!section.classList.contains('active')) {
+                this.style.transform = 'translateX(4px)';
+                if (icon) {
+                    icon.style.color = '#6b7280';
+                }
+            }
+        });
+
+        toggle.addEventListener('mouseleave', function () {
+            if (!section.classList.contains('active')) {
+                this.style.transform = 'translateX(0px)';
+                if (icon) {
+                    icon.style.color = '';
+                }
             }
         });
     });
 
-    // Active link highlighting
+    // Enhanced active link highlighting with smooth transitions
     function updateActiveLink() {
         const currentHash = window.location.hash;
-        sidebarLinks.forEach(link => {
-            link.classList.remove('bg-primary-50', 'dark:bg-primary-900/20', 'text-primary-600', 'dark:text-primary-400');
+        const currentSidebarLinks = document.querySelectorAll('.sidebar-link');
+
+        currentSidebarLinks.forEach(link => {
+            link.classList.remove('bg-blue-50', 'dark:bg-blue-900/30', 'text-blue-600', 'dark:text-blue-400', 'border-blue-500', 'shadow-md');
+
             if (link.getAttribute('href') === currentHash) {
-                link.classList.add('bg-primary-50', 'dark:bg-primary-900/20', 'text-primary-600', 'dark:text-primary-400');
+                link.classList.add('bg-blue-50', 'dark:bg-blue-900/30', 'text-blue-600', 'dark:text-blue-400', 'border-blue-500', 'shadow-md');
+
+                // Auto-expand parent section of active link
+                const parentSection = link.closest('.sidebar-section');
+                const content = parentSection.querySelector('.sidebar-content');
+                const toggle = parentSection.querySelector('.sidebar-toggle');
+                const icon = toggle.querySelector('.sidebar-arrow');
+
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    parentSection.classList.add('active');
+                    if (icon) {
+                        icon.style.transform = 'rotate(180deg)';
+                        icon.style.color = '#3b82f6';
+                    }
+                }
+
+                // Smooth scroll into view if needed
+                link.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                    inline: 'nearest'
+                });
             }
         });
     }
 
-    // Close mobile sidebar when clicking a link
+    // Enhanced link interactions with better feedback
     sidebarLinks.forEach(link => {
-        link.addEventListener('click', function () {
+        link.addEventListener('click', function (e) {
+            // Enhanced click animation
+            this.style.transform = 'scale(0.96)';
+            this.style.boxShadow = '0 2px 8px rgba(59, 130, 246, 0.3)';
+
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = '';
+            }, 150);
+
+            // Close mobile sidebar with delay for visual feedback
             if (window.innerWidth < 1024) {
-                sidebar.classList.add('-translate-x-full');
+                setTimeout(() => {
+                    sidebar.classList.add('-translate-x-full');
+                }, 200);
             }
-            updateActiveLink();
+
+            // Update active state with smooth transition
+            setTimeout(() => {
+                updateActiveLink();
+            }, 100);
+        });
+
+        // Enhanced hover effects for links
+        link.addEventListener('mouseenter', function () {
+            if (!this.classList.contains('border-blue-500')) {
+                this.style.transform = 'translateX(6px)';
+                this.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        link.addEventListener('mouseleave', function () {
+            if (!this.classList.contains('border-blue-500')) {
+                this.style.transform = 'translateX(0px)';
+                this.style.boxShadow = '';
+            }
         });
     });
 
@@ -260,58 +678,37 @@ function initializeSidebar() {
     window.addEventListener('hashchange', updateActiveLink);
     updateActiveLink(); // Initial call
 
-    // Close sidebar when clicking outside on mobile
+    // Enhanced mobile sidebar behavior
     document.addEventListener('click', function (e) {
         if (window.innerWidth < 1024 &&
             !sidebar.contains(e.target) &&
-            !mobileMenuToggle.contains(e.target) &&
+            !mobileMenuToggle?.contains(e.target) &&
             !sidebar.classList.contains('-translate-x-full')) {
+
+            // Add closing animation
+            sidebar.style.opacity = '0.8';
+            setTimeout(() => {
+                sidebar.classList.add('-translate-x-full');
+                sidebar.style.opacity = '';
+            }, 100);
+        }
+    });
+
+    // Keyboard navigation for accessibility
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && window.innerWidth < 1024) {
             sidebar.classList.add('-translate-x-full');
         }
     });
+
+    // Add smooth scroll behavior for better UX
+    const sidebarContainer = document.getElementById('sidebar');
+    if (sidebarContainer) {
+        sidebarContainer.style.scrollBehavior = 'smooth';
+    }
 }
 
-// Navigation (Previous/Next)
-function initializeNavigation() {
-    const prevButton = document.getElementById('prev-page');
-    const nextButton = document.getElementById('next-page');
-
-    // Define page order
-    const pages = [
-        'welcome', 'installation', 'setup', 'first-app', 'pages', 'dynamic-routes',
-        'api-routes', 'ssr', 'ssg', 'isr', 'getstaticprops', 'css-modules',
-        'image-optimization', 'vercel', 'api-reference', 'best-practices', 'examples'
-    ];
-
-    function updateNavigation() {
-        const currentHash = window.location.hash.replace('#', '') || 'welcome';
-        const currentIndex = pages.indexOf(currentHash);
-
-        // Update previous button
-        if (currentIndex > 0) {
-            prevButton.disabled = false;
-            prevButton.onclick = () => navigateToSection(pages[currentIndex - 1]);
-        } else {
-            prevButton.disabled = true;
-        }
-
-        // Update next button
-        if (currentIndex < pages.length - 1) {
-            nextButton.disabled = false;
-            nextButton.onclick = () => navigateToSection(pages[currentIndex + 1]);
-        } else {
-            nextButton.disabled = true;
-        }
-    }
-
-    function navigateToSection(sectionId) {
-        window.location.hash = '#' + sectionId;
-        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    window.addEventListener('hashchange', updateNavigation);
-    updateNavigation(); // Initial call
-}
+// Navigation (Previous/Next) - Now handled by NavigationManager
 
 // Scroll Progress Indicator
 function initializeScrollProgress() {
@@ -597,3 +994,81 @@ window.NextJsDocs = {
     generateTOC: initializeTableOfContents,
     toggleTheme: () => document.getElementById('theme-toggle').click()
 };
+
+// Enhanced notification system
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="flex items-center space-x-3">
+            <div class="notification-icon">
+                ${type === 'success' ? '✓' : type === 'error' ? '✗' : 'ℹ'}
+            </div>
+            <span>${message}</span>
+        </div>
+    `;
+
+    // Add styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        padding: 12px 16px;
+        border-radius: 8px;
+        color: white;
+        font-weight: 500;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        ${type === 'success' ? 'background: linear-gradient(135deg, #10b981, #059669);' :
+            type === 'error' ? 'background: linear-gradient(135deg, #ef4444, #dc2626);' :
+                'background: linear-gradient(135deg, #3b82f6, #2563eb);'}
+    `;
+
+    document.body.appendChild(notification);
+
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+
+    // Remove after delay
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
+// Animate sidebar stats on scroll
+function animateSidebarStats() {
+    const statsCards = document.querySelectorAll('.sidebar-footer .grid > div');
+
+    if (statsCards.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const numberElement = entry.target.querySelector('.text-lg');
+                if (numberElement) {
+                    animateNumber(numberElement, parseInt(numberElement.textContent));
+                }
+            }
+        });
+    });
+
+    statsCards.forEach(card => observer.observe(card));
+}
+
+// Number animation function
+function animateNumber(element, target) {
+    let current = 0;
+    const increment = target / 30;
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current);
+    }, 50);
+}

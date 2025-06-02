@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Next.js - Next.js Documentation</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            animation: {
+              "fade-in-up": "fadeInUp 0.8s ease-out",
+              "bounce-custom": "bounce 2s infinite",
+              "pulse-custom": "pulse 2s infinite",
+              "slide-in-left": "slideInLeft 0.8s ease-out",
+              "slide-in-right": "slideInRight 0.8s ease-out",
+              shimmer: "shimmer 3s infinite",
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              slideInLeft: {
+                "0%": { opacity: "0", transform: "translateX(-50px)" },
+                "100%": { opacity: "1", transform: "translateX(0)" },
+              },
+              slideInRight: {
+                "0%": { opacity: "0", transform: "translateX(50px)" },
+                "100%": { opacity: "1", transform: "translateX(0)" },
+              },
+              shimmer: {
+                "0%": {
+                  transform:
+                    "translateX(-100%) translateY(-100%) rotate(30deg)",
+                },
+                "100%": {
+                  transform: "translateX(100%) translateY(100%) rotate(30deg)",
+                },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 leading-normal text-sm transition-colors duration-300"
+  >
+    <div class="min-h-screen">
+      <header id="header-placeholder"></header>
+
+      <div class="flex">
+        <aside id="sidebar-placeholder"></aside>
+
+        <main class="flex-1 p-2 lg:p-3 max-w-4xl mx-auto">
+          <!-- Hero Section -->
+          <div
+            class="relative text-center py-3 mb-3 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 dark:from-blue-700 dark:via-purple-700 dark:to-blue-900 text-white rounded-lg overflow-hidden animate-fade-in-up"
+          >
+            <!-- Animated background effect -->
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-y-12 animate-shimmer"
+            ></div>
+
+            <h1
+              class="relative text-lg md:text-xl font-bold mb-1 tracking-tight"
+            >
+              <i class="fas fa-rocket text-yellow-300 animate-bounce mr-2"></i>
+              Welcome to Next.js
+            </h1>
+            <p
+              class="relative text-xs md:text-sm text-blue-100 font-light max-w-xl mx-auto"
+            >
+              React framework that makes web development a breeze!
+            </p>
+          </div>
+
+          <nav class="mb-2 animate-slide-in-left">
+            <ul class="flex flex-wrap gap-1 justify-center text-xs">
+              <li>
+                <a
+                  href="#what-is-nextjs"
+                  class="inline-flex items-center px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-md hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors duration-200 font-medium"
+                >
+                  <i class="fas fa-question-circle mr-1"></i> What is Next.js?
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#key-features"
+                  class="inline-flex items-center px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-md hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors duration-200 font-medium"
+                >
+                  <i class="fas fa-star mr-1"></i> Key Features
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#nextjs-vs-react"
+                  class="inline-flex items-center px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md hover:bg-green-200 dark:hover:bg-green-800 transition-colors duration-200 font-medium"
+                >
+                  <i class="fas fa-balance-scale mr-1"></i> Next.js vs React
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#when-to-choose"
+                  class="inline-flex items-center px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-md hover:bg-yellow-200 dark:hover:bg-yellow-800 transition-colors duration-200 font-medium"
+                >
+                  <i class="fas fa-lightbulb mr-1"></i> When to Choose
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <section id="what-is-nextjs" class="mb-4 animate-fade-in-up">
+            <h2
+              class="text-base font-bold mb-2 text-gray-800 dark:text-gray-200 flex items-center"
+            >
+              <i
+                class="fas fa-rocket text-blue-600 dark:text-blue-400 mr-2"
+              ></i>
+              What is Next.js?
+            </h2>
+
+            <div
+              class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 border-l-4 border-blue-500 dark:border-blue-600 p-2 rounded-md mb-2 shadow-sm"
+            >
+              <h3
+                class="text-xs font-semibold mb-1 text-gray-800 dark:text-gray-200 flex items-center"
+              >
+                <i
+                  class="fas fa-brain text-purple-600 dark:text-purple-400 mr-1"
+                ></i>
+                In Simple Terms
+              </h3>
+              <p class="text-xs text-gray-700 dark:text-gray-300 leading-tight">
+                <strong class="text-blue-600 dark:text-blue-400"
+                  >Next.js = React + Superpowers!</strong
+                >
+                It's like getting a fully-equipped kitchen instead of just basic
+                cooking tools.
+              </p>
+            </div>
+
+            <div
+              class="flex items-center justify-center mb-2 p-2 bg-white dark:bg-gray-800 rounded-md shadow-sm border border-gray-100 dark:border-gray-700"
+            >
+              <i
+                class="fas fa-check-circle text-green-500 dark:text-green-400 text-sm mr-2"
+              ></i>
+              <p class="text-xs text-gray-700 dark:text-gray-300">
+                <strong class="text-blue-600 dark:text-blue-400">React</strong>
+                builds user interfaces →
+                <strong class="text-purple-600 dark:text-purple-400"
+                  >Next.js</strong
+                >
+                builds complete web applications
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-2">
+              <div
+                class="bg-white dark:bg-gray-800 p-1.5 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-700 animate-slide-in-left group cursor-pointer"
+              >
+                <i
+                  class="fas fa-magic text-2xl text-purple-600 dark:text-purple-400 mb-1 group-hover:scale-110 transition-transform duration-200"
+                ></i>
+                <h4
+                  class="text-xs font-semibold mb-1 text-gray-800 dark:text-gray-200"
+                >
+                  Zero Setup
+                </h4>
+                <p class="text-gray-600 dark:text-gray-400 text-xs">
+                  Just run one command and start coding!
+                </p>
+              </div>
+              <div
+                class="bg-white dark:bg-gray-800 p-1.5 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-700 animate-slide-in-right group cursor-pointer"
+              >
+                <i
+                  class="fas fa-tachometer-alt text-2xl text-green-600 dark:text-green-400 mb-1 group-hover:scale-110 transition-transform duration-200"
+                ></i>
+                <h4
+                  class="text-xs font-semibold mb-1 text-gray-800 dark:text-gray-200"
+                >
+                  Lightning Fast
+                </h4>
+                <p class="text-gray-600 dark:text-gray-400 text-xs">
+                  Built-in optimizations for speed
+                </p>
+              </div>
+              <div
+                class="bg-white dark:bg-gray-800 p-1.5 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-700 animate-slide-in-left group cursor-pointer"
+              >
+                <i
+                  class="fas fa-search text-2xl text-blue-600 dark:text-blue-400 mb-1 group-hover:scale-110 transition-transform duration-200"
+                ></i>
+                <h4
+                  class="text-xs font-semibold mb-1 text-gray-800 dark:text-gray-200"
+                >
+                  SEO Ready
+                </h4>
+                <p class="text-gray-600 dark:text-gray-400 text-xs">
+                  Google loves Next.js sites!
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="key-features" class="mb-4 animate-fade-in-up">
+            <h2
+              class="text-base font-bold mb-2 text-gray-800 dark:text-gray-200 flex items-center"
+            >
+              <i
+                class="fas fa-star text-yellow-500 dark:text-yellow-400 mr-2"
+              ></i>
+              Key Features That Make Next.js Awesome
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-1.5">
+              <div
+                class="bg-white dark:bg-gray-800 p-1.5 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-700 group cursor-pointer"
+              >
+                <i
+                  class="fas fa-server text-2xl text-blue-600 dark:text-blue-400 mb-1 group-hover:scale-110 transition-transform duration-200"
+                ></i>
+                <h3
+                  class="text-xs font-bold mb-1 text-gray-800 dark:text-gray-200"
+                >
+                  Server-Side Rendering (SSR)
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-0.5 text-xs">
+                  <strong class="text-blue-600 dark:text-blue-400"
+                    >What:</strong
+                  >
+                  Pages are prepared on the server first
+                </p>
+                <p class="text-gray-600 dark:text-gray-400 text-xs">
+                  <strong class="text-green-600 dark:text-green-400"
+                    >Why:</strong
+                  >
+                  Faster loading + Better SEO = Happy users & Google!
+                </p>
+              </div>
+
+              <div
+                class="bg-white dark:bg-gray-800 p-1.5 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-700 group cursor-pointer"
+              >
+                <i
+                  class="fas fa-bolt text-2xl text-yellow-500 dark:text-yellow-400 mb-1 group-hover:scale-110 transition-transform duration-200"
+                ></i>
+                <h3
+                  class="text-xs font-bold mb-1 text-gray-800 dark:text-gray-200"
+                >
+                  Static Site Generation (SSG)
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-0.5 text-xs">
+                  <strong class="text-blue-600 dark:text-blue-400"
+                    >What:</strong
+                  >
+                  Pre-builds super-fast static pages
+                </p>
+                <p class="text-gray-600 dark:text-gray-400 text-xs">
+                  <strong class="text-green-600 dark:text-green-400"
+                    >Why:</strong
+                  >
+                  Lightning speed + Can host anywhere = Win-win!
+                </p>
+              </div>
+
+              <div
+                class="bg-white dark:bg-gray-800 p-1.5 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-700 group cursor-pointer"
+              >
+                <i
+                  class="fas fa-route text-2xl text-purple-600 dark:text-purple-400 mb-1 group-hover:scale-110 transition-transform duration-200"
+                ></i>
+                <h3
+                  class="text-xs font-bold mb-1 text-gray-800 dark:text-gray-200"
+                >
+                  File-Based Routing
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-0.5 text-xs">
+                  <strong class="text-blue-600 dark:text-blue-400"
+                    >What:</strong
+                  >
+                  Create
+                  <code
+                    class="bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded text-xs dark:text-gray-300"
+                    >pages/about.js</code
+                  >
+                  → Get
+                  <code
+                    class="bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded text-xs dark:text-gray-300"
+                    >/about</code
+                  >
+                  route
+                </p>
+                <p class="text-gray-600 dark:text-gray-400 text-xs">
+                  <strong class="text-green-600 dark:text-green-400"
+                    >Why:</strong
+                  >
+                  No complex setup = More time coding!
+                </p>
+              </div>
+
+              <div
+                class="bg-white dark:bg-gray-800 p-1.5 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-700 group cursor-pointer"
+              >
+                <i
+                  class="fas fa-image text-2xl text-green-600 dark:text-green-400 mb-1 group-hover:scale-110 transition-transform duration-200"
+                ></i>
+                <h3
+                  class="text-xs font-bold mb-1 text-gray-800 dark:text-gray-200"
+                >
+                  Smart Image Optimization
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-0.5 text-xs">
+                  <strong class="text-blue-600 dark:text-blue-400"
+                    >What:</strong
+                  >
+                  Auto-optimizes images for all devices
+                </p>
+                <p class="text-gray-600 dark:text-gray-400 text-xs">
+                  <strong class="text-green-600 dark:text-green-400"
+                    >Why:</strong
+                  >
+                  Faster loading without manual work = Lazy developer's dream!
+                </p>
+              </div>
+
+              <div
+                class="bg-white dark:bg-gray-800 p-1.5 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-700 group cursor-pointer"
+              >
+                <i
+                  class="fas fa-code text-base text-indigo-600 dark:text-indigo-400 mb-1 group-hover:scale-110 transition-transform duration-200"
+                ></i>
+                <h3
+                  class="text-xs font-bold mb-1 text-gray-800 dark:text-gray-200"
+                >
+                  API Routes
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-0.5 text-xs">
+                  <strong class="text-blue-600 dark:text-blue-400"
+                    >What:</strong
+                  >
+                  Build backend APIs in the same project
+                </p>
+                <p class="text-gray-600 dark:text-gray-400 text-xs">
+                  <strong class="text-green-600 dark:text-green-400"
+                    >Why:</strong
+                  >
+                  Full-stack in one place = Simplified development!
+                </p>
+              </div>
+
+              <div
+                class="bg-white dark:bg-gray-800 p-1.5 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-700 group cursor-pointer"
+              >
+                <i
+                  class="fas fa-palette text-base text-pink-600 dark:text-pink-400 mb-1 group-hover:scale-110 transition-transform duration-200"
+                ></i>
+                <h3
+                  class="text-xs font-bold mb-1 text-gray-800 dark:text-gray-200"
+                >
+                  CSS Superpowers
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-0.5 text-xs">
+                  <strong class="text-blue-600 dark:text-blue-400"
+                    >What:</strong
+                  >
+                  CSS Modules, Sass, styled-components ready
+                </p>
+                <p class="text-gray-600 dark:text-gray-400 text-xs">
+                  <strong class="text-green-600 dark:text-green-400"
+                    >Why:</strong
+                  >
+                  Style however you want = Creative freedom!
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="nextjs-vs-react" class="mb-4 animate-fade-in-up">
+            <h2
+              class="text-base font-bold mb-2 text-gray-800 dark:text-gray-200 flex items-center"
+            >
+              <i
+                class="fas fa-balance-scale text-green-600 dark:text-green-400 mr-2"
+              ></i>
+              Next.js vs React: The Ultimate Showdown
+            </h2>
+
+            <div class="grid lg:grid-cols-2 gap-1.5">
+              <div
+                class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30 p-2 rounded-md shadow-sm border border-blue-200 dark:border-blue-700 animate-slide-in-left"
+              >
+                <div class="flex items-center mb-1">
+                  <i
+                    class="fab fa-react text-lg text-blue-500 dark:text-blue-400 mr-2"
+                  ></i>
+                  <h3
+                    class="text-sm font-bold text-gray-800 dark:text-gray-200"
+                  >
+                    React (Library)
+                  </h3>
+                </div>
+                <p class="text-xs text-gray-700 dark:text-gray-300 mb-1">
+                  <strong class="text-blue-600 dark:text-blue-400"
+                    >Like a toolbox:</strong
+                  >
+                  Great tools, but you build everything from scratch
+                </p>
+
+                <h4
+                  class="text-xs font-semibold mb-0.5 text-green-700 dark:text-green-400 flex items-center"
+                >
+                  <i class="fas fa-plus-circle mr-1"></i>
+                  Pros:
+                </h4>
+                <ul
+                  class="space-y-0.5 mb-1 text-gray-700 dark:text-gray-300 text-xs"
+                >
+                  <li class="flex items-center">
+                    <i
+                      class="fas fa-check text-green-500 dark:text-green-400 mr-1"
+                    ></i
+                    >Lightweight & flexible
+                  </li>
+                  <li class="flex items-center">
+                    <i
+                      class="fas fa-check text-green-500 dark:text-green-400 mr-1"
+                    ></i
+                    >Huge ecosystem
+                  </li>
+                  <li class="flex items-center">
+                    <i
+                      class="fas fa-check text-green-500 dark:text-green-400 mr-1"
+                    ></i
+                    >Learn once, use everywhere
+                  </li>
+                  <li class="flex items-center">
+                    <i
+                      class="fas fa-check text-green-500 dark:text-green-400 mr-1"
+                    ></i
+                    >Perfect for SPAs
+                  </li>
+                </ul>
+
+                <h4
+                  class="text-xs font-semibold mb-0.5 text-red-700 dark:text-red-400 flex items-center"
+                >
+                  <i class="fas fa-minus-circle mr-1"></i>
+                  Setup needed:
+                </h4>
+                <ul
+                  class="space-y-0.5 text-gray-700 dark:text-gray-300 text-xs"
+                >
+                  <li class="flex items-center">
+                    <i
+                      class="fas fa-wrench text-orange-500 dark:text-orange-400 mr-1"
+                    ></i
+                    >Routing (React Router)
+                  </li>
+                  <li class="flex items-center">
+                    <i
+                      class="fas fa-wrench text-orange-500 dark:text-orange-400 mr-1"
+                    ></i
+                    >Build tools (Webpack)
+                  </li>
+                  <li class="flex items-center">
+                    <i
+                      class="fas fa-wrench text-orange-500 dark:text-orange-400 mr-1"
+                    ></i
+                    >SEO solutions
+                  </li>
+                  <li class="flex items-center">
+                    <i
+                      class="fas fa-wrench text-orange-500 dark:text-orange-400 mr-1"
+                    ></i
+                    >Performance optimization
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-800 dark:to-gray-700 text-white p-2 rounded-lg shadow-md border border-gray-700 dark:border-gray-600 animate-slide-in-right"
+              >
+                <div class="flex items-center mb-1">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="mr-2"
+                  >
+                    <path
+                      d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 01-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 00-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 00-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 01-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 01-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 01.174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 004.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 002.466-2.163 11.944 11.944 0 002.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747C19.146 4.318 15.194.906 10.342.232 9.94.185 11.949.004 11.572 0z"
+                    />
+                  </svg>
+                  <h3 class="text-base font-bold">Next.js (Framework)</h3>
+                </div>
+                <p class="text-sm text-gray-300 dark:text-gray-200 mb-1">
+                  <strong class="text-white">Like a smart factory:</strong>
+                  Everything pre-built and optimized
+                </p>
+
+                <h4
+                  class="text-xs font-semibold mb-0.5 text-green-400 flex items-center"
+                >
+                  <i class="fas fa-plus-circle mr-1"></i>
+                  Built-in:
+                </h4>
+                <ul
+                  class="space-y-0.5 mb-1 text-gray-300 dark:text-gray-200 text-xs"
+                >
+                  <li class="flex items-center">
+                    <i class="fas fa-check text-green-400 mr-1"></i>Zero
+                    configuration setup
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check text-green-400 mr-1"></i>File-based
+                    routing
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check text-green-400 mr-1"></i>SEO
+                    optimization
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check text-green-400 mr-1"></i>Performance
+                    features
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check text-green-400 mr-1"></i>Image
+                    optimization
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check text-green-400 mr-1"></i>API routes
+                  </li>
+                </ul>
+
+                <h4
+                  class="text-xs font-semibold mb-0.5 text-blue-400 flex items-center"
+                >
+                  <i class="fas fa-info-circle mr-1"></i> Best for:
+                </h4>
+                <ul
+                  class="space-y-0.5 text-gray-300 dark:text-gray-200 text-xs"
+                >
+                  <li class="flex items-center">
+                    <i class="fas fa-star text-yellow-400 mr-1"></i>Websites &
+                    blogs
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-star text-yellow-400 mr-1"></i>E-commerce
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-star text-yellow-400 mr-1"></i>Marketing
+                    sites
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-star text-yellow-400 mr-1"></i>Full-stack
+                    apps
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 border-l-4 border-yellow-500 dark:border-yellow-600 p-2 rounded-md mt-2 shadow-sm"
+            >
+              <h3
+                class="text-sm font-semibold mb-1 text-gray-800 dark:text-gray-200 flex items-center"
+              >
+                <i
+                  class="fas fa-lightbulb text-yellow-600 dark:text-yellow-500 mr-2"
+                ></i>
+                Quick Decision Guide
+              </h3>
+              <div class="grid md:grid-cols-2 gap-2">
+                <div class="flex items-start">
+                  <i
+                    class="fab fa-react text-base text-blue-500 dark:text-blue-400 mr-1 mt-0.5"
+                  ></i>
+                  <p class="text-gray-700 dark:text-gray-300 text-xs">
+                    <strong class="text-blue-600 dark:text-blue-400"
+                      >Choose React if:</strong
+                    >
+                    Building complex SPAs, mobile apps, or learning fundamentals
+                  </p>
+                </div>
+                <div class="flex items-start">
+                  <i
+                    class="fas fa-rocket text-base text-gray-800 dark:text-gray-300 mr-1 mt-0.5"
+                  ></i>
+                  <p class="text-gray-700 dark:text-gray-300 text-xs">
+                    <strong class="text-gray-800 dark:text-gray-200"
+                      >Choose Next.js if:</strong
+                    >
+                    Building websites, need SEO, want faster development
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="when-to-choose" class="mb-4 animate-fade-in-up">
+            <h2
+              class="text-base font-bold mb-2 text-gray-800 dark:text-gray-200 flex items-center"
+            >
+              <i
+                class="fas fa-compass text-blue-600 dark:text-blue-400 mr-2"
+              ></i>
+              When to Choose Next.js
+            </h2>
+
+            <div class="grid lg:grid-cols-2 gap-2">
+              <div
+                class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 p-2 rounded-md shadow-sm border border-green-200 dark:border-green-700 animate-slide-in-left"
+              >
+                <h3
+                  class="text-base font-bold mb-2 text-green-800 dark:text-green-400 flex items-center"
+                >
+                  <i
+                    class="fas fa-check-circle text-green-600 dark:text-green-500 mr-2"
+                  ></i>
+                  Choose Next.js When:
+                </h3>
+                <div class="space-y-1">
+                  <div class="flex items-start">
+                    <i
+                      class="fas fa-globe text-base text-blue-600 dark:text-blue-400 mr-2 mt-0.5"
+                    ></i>
+                    <p class="text-gray-700 dark:text-gray-300 text-xs">
+                      <strong class="text-gray-800 dark:text-gray-200"
+                        >Building websites</strong
+                      >
+                      - Blogs, portfolios, marketing sites
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <i
+                      class="fas fa-shopping-cart text-base text-purple-600 dark:text-purple-400 mr-2 mt-0.5"
+                    ></i>
+                    <p class="text-gray-700 dark:text-gray-300 text-xs">
+                      <strong class="text-gray-800 dark:text-gray-200"
+                        >E-commerce</strong
+                      >
+                      - Need fast loading + SEO
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <i
+                      class="fas fa-chart-line text-base text-green-600 dark:text-green-400 mr-2 mt-0.5"
+                    ></i>
+                    <p class="text-gray-700 dark:text-gray-300 text-xs">
+                      <strong class="text-gray-800 dark:text-gray-200"
+                        >Business sites</strong
+                      >
+                      - Performance matters
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <i
+                      class="fas fa-graduation-cap text-base text-indigo-600 dark:text-indigo-400 mr-2 mt-0.5"
+                    ></i>
+                    <p class="text-gray-700 dark:text-gray-300 text-xs">
+                      <strong class="text-gray-800 dark:text-gray-200"
+                        >Learning React</strong
+                      >
+                      - Less setup confusion
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <i
+                      class="fas fa-layer-group text-base text-orange-600 dark:text-orange-400 mr-2 mt-0.5"
+                    ></i>
+                    <p class="text-gray-700 dark:text-gray-300 text-xs">
+                      <strong class="text-gray-800 dark:text-gray-200"
+                        >Full-stack apps</strong
+                      >
+                      - Frontend + API in one
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30 p-2 rounded-lg shadow-md border border-blue-200 dark:border-blue-700 animate-slide-in-right"
+              >
+                <h3
+                  class="text-base font-bold mb-2 text-blue-800 dark:text-blue-300 flex items-center"
+                >
+                  <i
+                    class="fab fa-react text-blue-600 dark:text-blue-400 mr-2"
+                  ></i>
+                  Stick with React When:
+                </h3>
+                <div class="space-y-1">
+                  <div class="flex items-start">
+                    <i
+                      class="fas fa-mobile-alt text-base text-green-600 dark:text-green-400 mr-2 mt-0.5"
+                    ></i>
+                    <p class="text-gray-700 dark:text-gray-300 text-xs">
+                      <strong class="text-gray-800 dark:text-gray-200"
+                        >Mobile apps</strong
+                      >
+                      - React Native projects
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <i
+                      class="fas fa-gamepad text-base text-purple-600 dark:text-purple-400 mr-2 mt-0.5"
+                    ></i>
+                    <p class="text-gray-700 dark:text-gray-300 text-xs">
+                      <strong class="text-gray-800 dark:text-gray-200"
+                        >Interactive apps</strong
+                      >
+                      - Games, drawing tools
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <i
+                      class="fas fa-cogs text-base text-orange-600 dark:text-orange-400 mr-2 mt-0.5"
+                    ></i>
+                    <p class="text-gray-700 dark:text-gray-300 text-xs">
+                      <strong class="text-gray-800 dark:text-gray-200"
+                        >Complex SPAs</strong
+                      >
+                      - Like Gmail, Facebook
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <i
+                      class="fas fa-book text-base text-indigo-600 dark:text-indigo-400 mr-2 mt-0.5"
+                    ></i>
+                    <p class="text-gray-700 dark:text-gray-300 text-xs">
+                      <strong class="text-gray-800 dark:text-gray-200"
+                        >Learning fundamentals</strong
+                      >
+                      - Understanding React basics
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <i
+                      class="fas fa-building text-base text-red-600 dark:text-red-400 mr-2 mt-0.5"
+                    ></i>
+                    <p class="text-gray-700 dark:text-gray-300 text-xs">
+                      <strong class="text-gray-800 dark:text-gray-200"
+                        >Large existing project</strong
+                      >
+                      - Migration complexity
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border-l-4 border-purple-500 dark:border-purple-600 p-2 rounded-lg mt-2 shadow-sm"
+            >
+              <h3
+                class="text-base font-semibold mb-2 text-gray-800 dark:text-gray-200 flex items-center"
+              >
+                <i
+                  class="fas fa-star text-purple-600 dark:text-purple-400 mr-2"
+                ></i>
+                Real-World Success Stories
+              </h3>
+              <div class="grid md:grid-cols-2 gap-2">
+                <div
+                  class="bg-white dark:bg-gray-800 p-2 rounded-md shadow-sm border border-gray-100 dark:border-gray-700"
+                >
+                  <h4
+                    class="text-base font-semibold mb-2 text-gray-800 dark:text-gray-200 flex items-center"
+                  >
+                    <i
+                      class="fas fa-rocket text-green-600 dark:text-green-400 mr-2"
+                    ></i>
+                    Next.js Powers:
+                  </h4>
+                  <ul
+                    class="space-y-1 text-gray-700 dark:text-gray-300 text-sm"
+                  >
+                    <li class="flex items-center">
+                      <i
+                        class="fas fa-check text-green-500 dark:text-green-400 mr-2"
+                      ></i
+                      ><strong class="dark:text-gray-200">Netflix</strong> -
+                      Landing pages
+                    </li>
+                    <li class="flex items-center">
+                      <i
+                        class="fas fa-check text-green-500 dark:text-green-400 mr-2"
+                      ></i
+                      ><strong class="dark:text-gray-200">TikTok</strong> - Main
+                      website
+                    </li>
+                    <li class="flex items-center">
+                      <i
+                        class="fas fa-check text-green-500 dark:text-green-400 mr-2"
+                      ></i
+                      ><strong class="dark:text-gray-200">Twitch</strong> -
+                      Creator sites
+                    </li>
+                    <li class="flex items-center">
+                      <i
+                        class="fas fa-check text-green-500 dark:text-green-400 mr-2"
+                      ></i
+                      ><strong class="dark:text-gray-200">Hulu</strong> -
+                      Marketing pages
+                    </li>
+                    <li class="flex items-center">
+                      <i
+                        class="fas fa-check text-green-500 dark:text-green-400 mr-2"
+                      ></i
+                      ><strong class="dark:text-gray-200">Notion</strong> -
+                      Public pages
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="bg-white dark:bg-gray-800 p-2 rounded-md shadow-sm border border-gray-100 dark:border-gray-700"
+                >
+                  <h4
+                    class="text-base font-semibold mb-2 text-gray-800 dark:text-gray-200 flex items-center"
+                  >
+                    <i
+                      class="fab fa-react text-blue-500 dark:text-blue-400 mr-2"
+                    ></i>
+                    React Powers:
+                  </h4>
+                  <ul
+                    class="space-y-1 text-gray-700 dark:text-gray-300 text-sm"
+                  >
+                    <li class="flex items-center">
+                      <i
+                        class="fas fa-check text-blue-500 dark:text-blue-400 mr-2"
+                      ></i
+                      ><strong class="dark:text-gray-200">WhatsApp Web</strong>
+                      - Chat interface
+                    </li>
+                    <li class="flex items-center">
+                      <i
+                        class="fas fa-check text-blue-500 dark:text-blue-400 mr-2"
+                      ></i
+                      ><strong class="dark:text-gray-200">Facebook</strong> -
+                      Social features
+                    </li>
+                    <li class="flex items-center">
+                      <i
+                        class="fas fa-check text-blue-500 dark:text-blue-400 mr-2"
+                      ></i
+                      ><strong class="dark:text-gray-200">Instagram</strong> -
+                      Photo sharing
+                    </li>
+                    <li class="flex items-center">
+                      <i
+                        class="fas fa-check text-blue-500 dark:text-blue-400 mr-2"
+                      ></i
+                      ><strong class="dark:text-gray-200">Airbnb</strong> -
+                      Booking system
+                    </li>
+                    <li class="flex items-center">
+                      <i
+                        class="fas fa-check text-blue-500 dark:text-blue-400 mr-2"
+                      ></i
+                      ><strong class="dark:text-gray-200">Uber</strong> - Driver
+                      apps
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div
+            class="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-800 dark:to-purple-800 text-white p-3 rounded-lg shadow-md animate-fade-in-up"
+          >
+            <div class="text-center">
+              <h3
+                class="text-base font-bold mb-1 flex items-center justify-center"
+              >
+                <i class="fas fa-lightbulb text-yellow-300 mr-2"></i> The Bottom
+                Line
+              </h3>
+              <p class="text-sm mb-1">
+                <strong>Next.js = React + Production-Ready Features</strong>
+              </p>
+              <p
+                class="text-xs text-blue-100 dark:text-blue-200 mb-2 max-w-2xl mx-auto"
+              >
+                Perfect for websites that need to be found on Google and load
+                lightning-fast. If you want to build something people will
+                discover and use, Next.js makes it easier than ever!
+              </p>
+
+              <div
+                class="bg-white/10 dark:bg-white/5 backdrop-blur-sm p-2 rounded-md border border-white/20"
+              >
+                <h4
+                  class="text-sm font-semibold mb-1 flex items-center justify-center"
+                >
+                  <i class="fas fa-rocket text-yellow-300 mr-2"></i> Ready to
+                  Start Your Next.js Journey?
+                </h4>
+                <p class="text-blue-100 dark:text-blue-200 mb-1 text-xs">
+                  You now know what Next.js is, when to use it, and why it's
+                  awesome. Time to get your hands dirty!
+                </p>
+                <div class="text-center">
+                  <a
+                    href="installation.html"
+                    class="inline-flex items-center px-3 py-1 bg-yellow-400 dark:bg-yellow-500 text-gray-900 dark:text-gray-800 font-semibold rounded-md hover:bg-yellow-300 dark:hover:bg-yellow-400 transform hover:scale-105 transition-all duration-200 shadow-md animate-pulse text-xs"
+                  >
+                    <i class="fas fa-download mr-1"></i> Let's Install Next.js →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <footer id="footer-placeholder"></footer>
+    </div>
+
+    <script>
+      // Enhanced dark mode support
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      // Add scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Observe all animated elements
+      document
+        .querySelectorAll(
+          ".animate-fade-in-up, .animate-slide-in-left, .animate-slide-in-right"
+        )
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(30px)";
+          observer.observe(el);
+        });
+
+      // Add smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Add click animation to feature cards (now using group class)
+      document.querySelectorAll(".group").forEach((card) => {
+        card.addEventListener("click", function () {
+          this.style.transform = "scale(0.95)";
+          setTimeout(() => {
+            this.style.transform = "";
+          }, 150);
+        });
+      });
+    </script>
+  </body>
+</html>

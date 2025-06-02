@@ -1,40 +1,332 @@
 <!-- Your First App Section -->
 <section id="first-app" class="mb-12">
-    <h2>Your First App</h2>
-    <p>Let's create your first page. Next.js uses a file-system based router built on the concept of pages.</p>
-    
-    <h3>Creating a Page</h3>
-    <p>Create a file called <code>about.js</code> in the <code>pages</code> directory:</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="// pages/about.js\nexport default function About() {\n  return (\n    <div>\n      <h1>About Us</h1>\n      <p>This is the about page</p>\n    </div>\n  )\n}">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+  <div
+    class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-8 mb-8"
+  >
+    <div class="flex items-center mb-4">
+      <div class="bg-blue-500 rounded-full p-3 mr-4">
+        <svg
+          class="w-8 h-8 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"
+          ></path>
+        </svg>
+      </div>
+      <div>
+        <h2
+          class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+        >
+          Build Your First App
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mt-2">
+          Let's create something amazing! We'll build a simple multi-page
+          website step by step.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-blue-100 dark:border-blue-800"
+    >
+      <div class="flex items-center mb-3">
+        <span
+          class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium"
+        >
+          💡 Key Concept
+        </span>
+      </div>
+      <p class="text-gray-700 dark:text-gray-300">
+        <strong>File-based routing:</strong> In Next.js, creating a new page is
+        as simple as adding a new file! No complex setup required - just create
+        a file and it becomes a page.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6 mb-8">
+    <div
+      class="bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-xl p-6 text-center"
+    >
+      <div
+        class="bg-emerald-500 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4"
+      >
+        <span class="text-white font-bold text-xl">1</span>
+      </div>
+      <h4 class="font-semibold text-emerald-800 dark:text-emerald-200 mb-2">
+        Create a Page
+      </h4>
+      <p class="text-sm text-emerald-700 dark:text-emerald-300">
+        Add a new file to get a new page
+      </p>
+    </div>
+    <div
+      class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6 text-center"
+    >
+      <div
+        class="bg-blue-500 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4"
+      >
+        <span class="text-white font-bold text-xl">2</span>
+      </div>
+      <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">
+        Add Styles
+      </h4>
+      <p class="text-sm text-blue-700 dark:text-blue-300">
+        Make it look beautiful with CSS
+      </p>
+    </div>
+    <div
+      class="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-xl p-6 text-center"
+    >
+      <div
+        class="bg-purple-500 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4"
+      >
+        <span class="text-white font-bold text-xl">3</span>
+      </div>
+      <h4 class="font-semibold text-purple-800 dark:text-purple-200 mb-2">
+        Connect Pages
+      </h4>
+      <p class="text-sm text-purple-700 dark:text-purple-300">
+        Link pages together with navigation
+      </p>
+    </div>
+  </div>
+
+  <div
+    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8"
+  >
+    <div class="bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">
+            Step 1: Creating Your First Page
+          </h3>
+          <p class="text-emerald-100">
+            Let's create an "About" page for your website
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <div
+        class="bg-amber-50 dark:bg-amber-900/20 border-l-4 border-amber-400 p-4 mb-4"
+      >
+        <div class="flex items-center">
+          <svg
+            class="w-5 h-5 text-amber-600 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <p class="text-amber-800 dark:text-amber-200">
+            <strong>Quick tip:</strong> Create a file named
+            <code class="bg-amber-200 dark:bg-amber-800 px-2 py-1 rounded"
+              >about.js</code
+            >
+            in the
+            <code class="bg-amber-200 dark:bg-amber-800 px-2 py-1 rounded"
+              >pages</code
+            >
+            folder
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="bg-gray-900 dark:bg-gray-800 rounded-xl shadow-lg p-4 mb-6 relative border border-gray-700"
+      >
+        <div
+          class="flex items-center justify-between mb-3 pb-3 border-b border-gray-700"
+        >
+          <div class="flex items-center space-x-2">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            <span class="text-gray-400 text-sm ml-4">pages/about.js</span>
+          </div>
+          <button
+            class="copy-btn bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-lg text-gray-300 hover:text-white transition-all duration-200 text-sm font-medium"
+            data-copy="// pages/about.js&#10;export default function About() {&#10;  return (&#10;    &lt;div&gt;&#10;      &lt;h1&gt;About Us&lt;/h1&gt;&#10;      &lt;p&gt;This is the about page&lt;/p&gt;&#10;    &lt;/div&gt;&#10;  )&#10;}"
+          >
+            <svg
+              class="w-4 h-4 inline mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
             </svg>
-        </button>
-        <pre><code class="language-javascript">// pages/about.js
+            Copy
+          </button>
+        </div>
+        <pre><code class="language-javascript text-sm">// pages/about.js
 export default function About() {
   return (
-    <div>
-      <h1>About Us</h1>
-      <p>This is the about page</p>
-    </div>
+    &lt;div&gt;
+      &lt;h1&gt;About Us&lt;/h1&gt;
+      &lt;p&gt;This is the about page&lt;/p&gt;
+    &lt;/div&gt;
   )
 }</code></pre>
-    </div>
-    
-    <p>Now you can access this page at <code>http://localhost:3000/about</code>.</p>
+      </div>
 
-    <h3>Adding Styles</h3>
-    <p>Let's add some CSS to make our page look better. Create a CSS module:</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="/* styles/About.module.css */\n.container {\n  max-width: 800px;\n  margin: 0 auto;\n  padding: 2rem;\n}\n\n.title {\n  color: #0070f3;\n  font-size: 2rem;\n  margin-bottom: 1rem;\n}\n\n.description {\n  font-size: 1.2rem;\n  line-height: 1.6;\n  color: #666;\n}">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+      <div
+        class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-4 mb-6"
+      >
+        <div class="flex items-center">
+          <svg
+            class="w-6 h-6 text-green-500 mr-3"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <div>
+            <p class="font-semibold text-green-800 dark:text-green-200">
+              🎉 That's it!
+            </p>
+            <p class="text-green-700 dark:text-green-300 text-sm">
+              Visit
+              <code class="bg-green-200 dark:bg-green-800 px-2 py-1 rounded"
+                >http://localhost:3000/about</code
+              >
+              to see your new page!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8"
+  >
+    <div class="bg-gradient-to-r from-blue-500 to-cyan-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">
+            Step 2: Making It Look Amazing
+          </h3>
+          <p class="text-blue-100">
+            Add CSS styles to make your page beautiful
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <div
+        class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-400 p-4 mb-4"
+      >
+        <div class="flex items-center">
+          <svg
+            class="w-5 h-5 text-blue-600 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <p class="text-blue-800 dark:text-blue-200">
+            <strong>CSS Modules:</strong> Create reusable styles that won't
+            conflict with other pages
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="bg-gray-900 dark:bg-gray-800 rounded-xl shadow-lg p-4 mb-6 relative border border-gray-700"
+      >
+        <div
+          class="flex items-center justify-between mb-3 pb-3 border-b border-gray-700"
+        >
+          <div class="flex items-center space-x-2">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            <span class="text-gray-400 text-sm ml-4"
+              >styles/About.module.css</span
+            >
+          </div>
+          <button
+            class="copy-btn bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-lg text-gray-300 hover:text-white transition-all duration-200 text-sm font-medium"
+            data-copy="/* styles/About.module.css */&#10;.container {&#10;  max-width: 800px;&#10;  margin: 0 auto;&#10;  padding: 2rem;&#10;}&#10;&#10;.title {&#10;  color: #0070f3;&#10;  font-size: 2rem;&#10;  margin-bottom: 1rem;&#10;}&#10;&#10;.description {&#10;  font-size: 1.2rem;&#10;  line-height: 1.6;&#10;  color: #666;&#10;}"
+          >
+            <svg
+              class="w-4 h-4 inline mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
             </svg>
-        </button>
-        <pre><code class="language-css">/* styles/About.module.css */
+            Copy
+          </button>
+        </div>
+        <pre><code class="language-css text-sm">/* styles/About.module.css */
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -52,73 +344,264 @@ export default function About() {
   line-height: 1.6;
   color: #666;
 }</code></pre>
-    </div>
+      </div>
 
-    <p>Now update your about page to use these styles:</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="// pages/about.js\nimport styles from '../styles/About.module.css'\n\nexport default function About() {\n  return (\n    <div className={styles.container}>\n      <h1 className={styles.title}>About Us</h1>\n      <p className={styles.description}>\n        Welcome to our Next.js application! This is a simple example\n        of how to create pages and add styling in Next.js.\n      </p>\n    </div>\n  )\n}">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+      <p class="text-gray-600 dark:text-gray-400 mb-4">
+        Now let's use these styles in our page. Update your
+        <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+          >about.js</code
+        >
+        file:
+      </p>
+
+      <div
+        class="bg-gray-900 dark:bg-gray-800 rounded-xl shadow-lg p-4 mb-6 relative border border-gray-700"
+      >
+        <div
+          class="flex items-center justify-between mb-3 pb-3 border-b border-gray-700"
+        >
+          <div class="flex items-center space-x-2">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            <span class="text-gray-400 text-sm ml-4"
+              >pages/about.js (updated)</span
+            >
+          </div>
+          <button
+            class="copy-btn bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-lg text-gray-300 hover:text-white transition-all duration-200 text-sm font-medium"
+            data-copy="// pages/about.js&#10;import styles from '../styles/About.module.css'&#10;&#10;export default function About() {&#10;  return (&#10;    &lt;div className={styles.container}&gt;&#10;      &lt;h1 className={styles.title}&gt;About Us&lt;/h1&gt;&#10;      &lt;p className={styles.description}&gt;&#10;        Welcome to our Next.js application! This is a simple example&#10;        of how to create pages and add styling in Next.js.&#10;      &lt;/p&gt;&#10;    &lt;/div&gt;&#10;  )&#10;}"
+          >
+            <svg
+              class="w-4 h-4 inline mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
             </svg>
-        </button>
-        <pre><code class="language-javascript">// pages/about.js
+            Copy
+          </button>
+        </div>
+        <pre><code class="language-javascript text-sm">// pages/about.js
 import styles from '../styles/About.module.css'
 
 export default function About() {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>About Us</h1>
-      <p className={styles.description}>
+    &lt;div className={styles.container}&gt;
+      &lt;h1 className={styles.title}&gt;About Us&lt;/h1&gt;
+      &lt;p className={styles.description}&gt;
         Welcome to our Next.js application! This is a simple example
         of how to create pages and add styling in Next.js.
-      </p>
-    </div>
+      &lt;/p&gt;
+    &lt;/div&gt;
   )
 }</code></pre>
+      </div>
     </div>
+  </div>
 
-    <h3>Adding Navigation</h3>
-    <p>Let's add navigation between pages using Next.js Link component:</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="// pages/index.js\nimport Link from 'next/link'\nimport styles from '../styles/Home.module.css'\n\nexport default function Home() {\n  return (\n    <div className={styles.container}>\n      <main className={styles.main}>\n        <h1 className={styles.title}>\n          Welcome to <a href=\"https://nextjs.org\">Next.js!</a>\n        </h1>\n        \n        <nav className={styles.nav}>\n          <Link href=\"/about\">\n            <a className={styles.card}>Go to About Page →</a>\n          </Link>\n        </nav>\n      </main>\n    </div>\n  )\n}">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+  <div
+    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8"
+  >
+    <div class="bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">
+            Step 3: Connecting Your Pages
+          </h3>
+          <p class="text-purple-100">
+            Add navigation so users can move between pages easily
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <div
+        class="bg-purple-50 dark:bg-purple-900/20 border-l-4 border-purple-400 p-4 mb-4"
+      >
+        <div class="flex items-center">
+          <svg
+            class="w-5 h-5 text-purple-600 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <p class="text-purple-800 dark:text-purple-200">
+            <strong>Link Component:</strong> Next.js provides a special Link
+            component for fast page navigation
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="bg-gray-900 dark:bg-gray-800 rounded-xl shadow-lg p-4 mb-6 relative border border-gray-700"
+      >
+        <div
+          class="flex items-center justify-between mb-3 pb-3 border-b border-gray-700"
+        >
+          <div class="flex items-center space-x-2">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            <span class="text-gray-400 text-sm ml-4"
+              >pages/index.js (home page)</span
+            >
+          </div>
+          <button
+            class="copy-btn bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded-lg text-gray-300 hover:text-white transition-all duration-200 text-sm font-medium"
+            data-copy="// pages/index.js&#10;import Link from 'next/link'&#10;import styles from '../styles/Home.module.css'&#10;&#10;export default function Home() {&#10;  return (&#10;    &lt;div className={styles.container}&gt;&#10;      &lt;main className={styles.main}&gt;&#10;        &lt;h1 className={styles.title}&gt;&#10;          Welcome to &lt;a href=&quot;https://nextjs.org&quot;&gt;Next.js!&lt;/a&gt;&#10;        &lt;/h1&gt;&#10;        &#10;        &lt;nav className={styles.nav}&gt;&#10;          &lt;Link href=&quot;/about&quot;&gt;&#10;            &lt;a className={styles.card}&gt;Go to About Page →&lt;/a&gt;&#10;          &lt;/Link&gt;&#10;        &lt;/nav&gt;&#10;      &lt;/main&gt;&#10;    &lt;/div&gt;&#10;  )&#10;}"
+          >
+            <svg
+              class="w-4 h-4 inline mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
             </svg>
-        </button>
-        <pre><code class="language-javascript">// pages/index.js
+            Copy
+          </button>
+        </div>
+        <pre><code class="language-javascript text-sm">// pages/index.js
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+    &lt;div className={styles.container}&gt;
+      &lt;main className={styles.main}&gt;
+        &lt;h1 className={styles.title}&gt;
+          Welcome to &lt;a href="https://nextjs.org"&gt;Next.js!&lt;/a&gt;
+        &lt;/h1&gt;
         
-        <nav className={styles.nav}>
-          <Link href="/about">
-            <a className={styles.card}>Go to About Page →</a>
-          </Link>
-        </nav>
-      </main>
-    </div>
+        &lt;nav className={styles.nav}&gt;
+          &lt;Link href="/about"&gt;
+            &lt;a className={styles.card}&gt;Go to About Page →&lt;/a&gt;
+          &lt;/Link&gt;
+        &lt;/nav&gt;
+      &lt;/main&gt;
+    &lt;/div&gt;
   )
 }</code></pre>
+      </div>
     </div>
+  </div>
 
-    <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6 mb-6">
-        <div class="flex">
-            <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <div>
-                <h3 class="text-lg font-semibold text-green-900 dark:text-green-100 mb-2">Congratulations!</h3>
-                <p class="text-green-800 dark:text-green-200">You've created your first Next.js application with multiple pages and styling. You're ready to explore more advanced features!</p>
-            </div>
+  <div
+    class="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 dark:from-green-900/20 dark:via-emerald-900/20 dark:to-teal-900/20 border-2 border-green-200 dark:border-green-800 rounded-2xl p-8 mb-8"
+  >
+    <div class="flex items-start">
+      <div class="bg-green-500 rounded-full p-4 mr-6">
+        <svg
+          class="w-8 h-8 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
+      </div>
+      <div>
+        <h3
+          class="text-2xl font-bold text-green-900 dark:text-green-100 mb-3 flex items-center"
+        >
+          🎉 Congratulations! You're a Next.js Developer!
+        </h3>
+        <p
+          class="text-green-800 dark:text-green-200 text-lg mb-4 leading-relaxed"
+        >
+          You've successfully built your first Next.js application with multiple
+          pages and beautiful styling. You've learned the three fundamental
+          concepts of modern web development!
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-4 mt-6">
+          <div
+            class="bg-white/70 dark:bg-gray-800/70 rounded-xl p-4 border border-green-200 dark:border-green-700"
+          >
+            <div class="text-2xl mb-2">📄</div>
+            <h4 class="font-semibold text-green-900 dark:text-green-100 mb-1">
+              File-based Routing
+            </h4>
+            <p class="text-sm text-green-700 dark:text-green-300">
+              Create pages by adding files
+            </p>
+          </div>
+          <div
+            class="bg-white/70 dark:bg-gray-800/70 rounded-xl p-4 border border-green-200 dark:border-green-700"
+          >
+            <div class="text-2xl mb-2">🎨</div>
+            <h4 class="font-semibold text-green-900 dark:text-green-100 mb-1">
+              CSS Modules
+            </h4>
+            <p class="text-sm text-green-700 dark:text-green-300">
+              Scoped and reusable styles
+            </p>
+          </div>
+          <div
+            class="bg-white/70 dark:bg-gray-800/70 rounded-xl p-4 border border-green-200 dark:border-green-700"
+          >
+            <div class="text-2xl mb-2">🔗</div>
+            <h4 class="font-semibold text-green-900 dark:text-green-100 mb-1">
+              Client-side Navigation
+            </h4>
+            <p class="text-sm text-green-700 dark:text-green-300">
+              Fast page transitions
+            </p>
+          </div>
         </div>
+
+        <div
+          class="mt-6 p-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl border border-blue-200 dark:border-blue-700"
+        >
+          <h4 class="font-semibold text-blue-900 dark:text-blue-100 mb-2">
+            🚀 Ready for more?
+          </h4>
+          <p class="text-blue-800 dark:text-blue-200 text-sm">
+            Explore advanced features like API routes, dynamic routing,
+            server-side rendering, and data fetching to build production-ready
+            applications!
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>

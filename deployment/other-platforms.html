@@ -1,47 +1,91 @@
-<section id="other-platforms" class="documentation-section">
-  <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">
-    Other Deployment Platforms
-  </h2>
+<section id="other-platforms" class="documentation-section mb-12">
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 text-white rounded-2xl p-8 mb-8 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">🌍 Deploy Anywhere</h1>
+            <p class="text-xl md:text-2xl opacity-90 mb-6">Multiple platforms, endless possibilities! Find the perfect hosting solution for your Next.js app.</p>
+            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-30">
+                <p class="text-lg font-medium">✨ From static sites to full-stack apps - we've got you covered!</p>
+            </div>
+        </div>
+    </div>
 
-  <div class="prose dark:prose-invert max-w-none">
-    <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-      While Vercel is optimized for Next.js, you can deploy your Next.js
-      applications to various other platforms based on your requirements.
-    </p>
+    <!-- Why Multiple Options Matter -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">🎯 Choose Your Perfect Platform</h2>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-blue-50 dark:bg-gray-800 p-6 rounded-xl border border-blue-200 dark:border-gray-700">
+                <div class="text-3xl mb-3">💰</div>
+                <h3 class="text-xl font-semibold mb-3 text-blue-700 dark:text-blue-300">Budget-Friendly</h3>
+                <p class="text-gray-600 dark:text-gray-300">Free hosting options and cost-effective solutions for every budget.</p>
+            </div>
+            <div class="bg-purple-50 dark:bg-gray-800 p-6 rounded-xl border border-purple-200 dark:border-gray-700">
+                <div class="text-3xl mb-3">🔧</div>
+                <h3 class="text-xl font-semibold mb-3 text-purple-700 dark:text-purple-300">Custom Control</h3>
+                <p class="text-gray-600 dark:text-gray-300">Full control over your infrastructure and deployment process.</p>
+            </div>
+            <div class="bg-green-50 dark:bg-gray-800 p-6 rounded-xl border border-green-200 dark:border-gray-700">
+                <div class="text-3xl mb-3">🚀</div>
+                <h3 class="text-xl font-semibold mb-3 text-green-700 dark:text-green-300">Easy Setup</h3>
+                <p class="text-gray-600 dark:text-gray-300">One-click deployments and automated CI/CD pipelines.</p>
+            </div>
+            <div class="bg-orange-50 dark:bg-gray-800 p-6 rounded-xl border border-orange-200 dark:border-gray-700">
+                <div class="text-3xl mb-3">🌐</div>
+                <h3 class="text-xl font-semibold mb-3 text-orange-700 dark:text-orange-300">Global Reach</h3>
+                <p class="text-gray-600 dark:text-gray-300">CDN networks and edge locations for worldwide performance.</p>
+            </div>
+        </div>
+    </div>
 
-    <h3 class="text-2xl font-semibold mb-4">Netlify</h3>
-    <p class="mb-4">
-      Popular JAMstack platform with excellent static site hosting and edge
-      functions.
-    </p>
+    <!-- Netlify Section -->
+    <div class="mb-12">
+        <div class="flex items-center mb-6">
+            <div class="bg-teal-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">1</div>
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white">📊 Netlify - JAMstack Champion</h2>
+        </div>
+        
+        <div class="bg-gradient-to-r from-teal-50 to-cyan-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl mb-6">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                <strong>Perfect for static sites!</strong> Netlify excels at hosting static Next.js exports with lightning-fast 
+                global CDN, automatic deployments, and powerful edge functions. 🚀
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">⚡</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Instant Deploys</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Deploy in seconds with Git integration</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">🌍</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Global CDN</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">190+ locations worldwide</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">🔄</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Auto Builds</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Every commit triggers deployment</p>
+                </div>
+            </div>
+        </div>
 
-    <h4 class="text-xl font-semibold mb-3">Deployment Steps</h4>
-    <ol class="list-decimal list-inside space-y-2 mb-6">
-      <li>Configure static export in next.config.js</li>
-      <li>Build and export your application</li>
-      <li>Deploy the out/ folder to Netlify</li>
-    </ol>
-
-    <div class="code-block-container">
-      <div class="code-block-header">
-        <span class="code-block-title">next.config.js</span>
-        <button class="copy-button" onclick="copyToClipboard(this)">
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <pre><code class="language-javascript">/** @type {import('next').NextConfig} */
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">🛠️ Quick Setup Guide</h3>
+        
+        <div class="space-y-6">
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 1</span>
+                    Configure Static Export
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">First, tell Next.js to generate static files:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  output: 'export',\n  trailingSlash: true,\n  images: {\n    unoptimized: true\n  }\n}\n\nmodule.exports = nextConfig">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-javascript">/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
@@ -51,28 +95,22 @@ const nextConfig = {
 }
 
 module.exports = nextConfig</code></pre>
-    </div>
+                </div>
+            </div>
 
-    <div class="code-block-container">
-      <div class="code-block-header">
-        <span class="code-block-title">netlify.toml</span>
-        <button class="copy-button" onclick="copyToClipboard(this)">
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <pre><code class="language-toml">[build]
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 2</span>
+                    Create Netlify Configuration
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Add a netlify.toml file for build settings:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="[build]\n  command = \"npm run build && npm run export\"\n  publish = \"out\"\n\n[[redirects]]\n  from = \"/*\"\n  to = \"/index.html\"\n  status = 200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012-2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-toml">[build]
   command = "npm run build && npm run export"
   publish = "out"
 
@@ -80,56 +118,100 @@ module.exports = nextConfig</code></pre>
   from = "/*"
   to = "/index.html"
   status = 200</code></pre>
+                </div>
+            </div>
+
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 3</span>
+                    Deploy to Netlify
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 dark:bg-gray-800 p-4 rounded-lg">
+                        <h5 class="font-medium mb-2 text-blue-700 dark:text-blue-300">🌐 Via Website</h5>
+                        <ol class="list-decimal list-inside space-y-1 text-sm text-gray-600 dark:text-gray-400">
+                            <li>Go to netlify.com</li>
+                            <li>Connect your Git repo</li>
+                            <li>Deploy automatically!</li>
+                        </ol>
+                    </div>
+                    <div class="bg-purple-50 dark:bg-gray-800 p-4 rounded-lg">
+                        <h5 class="font-medium mb-2 text-purple-700 dark:text-purple-300">💻 Via CLI</h5>
+                        <div class="bg-gray-900 rounded-lg p-2 text-xs">
+                            <pre><code class="language-bash">npm install -g netlify-cli
+netlify deploy --prod --dir=out</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h3 class="text-2xl font-semibold mb-4 mt-8">AWS Amplify</h3>
-    <p class="mb-4">
-      AWS's full-stack platform for building and deploying web applications.
-    </p>
+    <!-- AWS Amplify Section -->
+    <div class="mb-12">
+        <div class="flex items-center mb-6">
+            <div class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">3</div>
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white">☁️ AWS Amplify - Enterprise Ready</h2>
+        </div>
+        
+        <div class="bg-gradient-to-r from-orange-50 to-red-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl mb-6">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                <strong>Perfect for scalable apps!</strong> AWS Amplify provides enterprise-grade hosting with 
+                built-in CI/CD, authentication, databases, and global CDN. Scale from zero to millions! 🚀
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">🔐</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Full Auth</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Built-in user authentication</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">📊</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Real-time APIs</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">GraphQL and REST backends</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">📈</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Auto Scaling</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Handle any traffic load</p>
+                </div>
+            </div>
+        </div>
 
-    <div class="code-block-container">
-      <div class="code-block-header">
-        <span class="code-block-title">Installation</span>
-        <button class="copy-button" onclick="copyToClipboard(this)">
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <pre><code class="language-bash">npm install -g @aws-amplify/cli
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">🛠️ Quick Deploy Guide</h3>
+        
+        <div class="space-y-6">
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 1</span>
+                    Install Amplify CLI
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Get the Amplify command-line tools:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="npm install -g @aws-amplify/cli\namplify configure">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-bash">npm install -g @aws-amplify/cli
 amplify configure</code></pre>
-    </div>
+                </div>
+            </div>
 
-    <div class="code-block-container">
-      <div class="code-block-header">
-        <span class="code-block-title">amplify.yml</span>
-        <button class="copy-button" onclick="copyToClipboard(this)">
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <pre><code class="language-yaml">version: 1
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 2</span>
+                    Create Build Configuration
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Add amplify.yml for build settings:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="version: 1\nfrontend:\n  phases:\n    preBuild:\n      commands:\n        - npm install\n    build:\n      commands:\n        - npm run build\n  artifacts:\n    baseDirectory: .next\n    files:\n      - '**/*'\n  cache:\n    paths:\n      - node_modules/**/*\n      - .next/cache/**/*">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-yaml">version: 1
 frontend:
   phases:
     preBuild:
@@ -144,35 +226,87 @@ frontend:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/*</code></pre>
+      - node_modules/**/*
+      - .next/cache/**/*</code></pre>
+                </div>
+            </div>
+
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 3</span>
+                    Deploy to Amplify
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 dark:bg-gray-800 p-4 rounded-lg">
+                        <h5 class="font-medium mb-2 text-blue-700 dark:text-blue-300">🌐 Via Console</h5>
+                        <ol class="list-decimal list-inside space-y-1 text-sm text-gray-600 dark:text-gray-400">
+                            <li>Visit AWS Amplify Console</li>
+                            <li>Connect your Git repository</li>
+                            <li>Configure build settings</li>
+                            <li>Deploy automatically!</li>
+                        </ol>
+                    </div>
+                    <div class="bg-purple-50 dark:bg-gray-800 p-4 rounded-lg">
+                        <h5 class="font-medium mb-2 text-purple-700 dark:text-purple-300">💻 Via CLI</h5>
+                        <div class="bg-gray-900 rounded-lg p-2 text-xs">
+                            <pre><code class="language-bash">amplify init
+amplify add hosting
+amplify publish</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h3 class="text-2xl font-semibold mb-4 mt-8">Heroku</h3>
-    <p class="mb-4">
-      Platform-as-a-Service for deploying Node.js applications with full SSR
-      support.
-    </p>
+    <!-- Heroku Section -->
+    <div class="mb-12">
+        <div class="flex items-center mb-6">
+            <div class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">2</div>
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white">🚀 Heroku - The Prototyping Champion</h2>
+        </div>
+        
+        <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl mb-6">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                <strong>Perfect for rapid prototyping!</strong> Heroku excels at getting your app online in minutes with 
+                zero configuration, Git-based deployment, and rich add-on ecosystem. ⚡
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">⚡</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Lightning Deploy</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Just git push and you're live!</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">🔌</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Rich Add-ons</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Databases, monitoring, and more</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">🛠️</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Zero Config</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Automatic buildpack detection</p>
+                </div>
+            </div>
+        </div>
 
-    <div class="code-block-container">
-      <div class="code-block-header">
-        <span class="code-block-title">package.json</span>
-        <button class="copy-button" onclick="copyToClipboard(this)">
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <pre><code class="language-json">{
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">🎯 3-Step Heroku Deployment</h3>
+        
+        <div class="space-y-6">
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 1</span>
+                    Configure Your Package.json
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-3">Tell Heroku how to build and run your app:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="{\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start -p $PORT\",\n    \"heroku-postbuild\": \"npm run build\"\n  }\n}">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-json">{
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -180,153 +314,280 @@ frontend:
     "heroku-postbuild": "npm run build"
   }
 }</code></pre>
-    </div>
+                </div>
+            </div>
 
-    <div class="code-block-container">
-      <div class="code-block-header">
-        <span class="code-block-title">Terminal</span>
-        <button class="copy-button" onclick="copyToClipboard(this)">
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <pre><code class="language-bash">heroku create your-app-name
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 2</span>
+                    Deploy Your App
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Use the Heroku CLI to create and deploy your app:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="heroku create your-app-name\ngit push heroku main">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-bash">heroku create your-app-name
 git push heroku main</code></pre>
+                </div>
+            </div>
+
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 3</span>
+                    View Your Deployed App
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Open your app in the browser:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="heroku open">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-bash">heroku open</code></pre>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h3 class="text-2xl font-semibold mb-4 mt-8">GitHub Pages</h3>
-    <p class="mb-4">
-      Free static hosting for public repositories with GitHub Actions for CI/CD.
-    </p>
-
-    <div class="code-block-container">
-      <div class="code-block-header">
-        <span class="code-block-title">.github/workflows/deploy.yml</span>
-        <button class="copy-button" onclick="copyToClipboard(this)">
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <pre><code class="language-yaml">name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2
-    
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
+    <!-- GitHub Pages Section -->
+    <div class="mb-12">
+        <div class="flex items-center mb-6">
+            <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">4</div>
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white">📄 GitHub Pages - Free & Easy</h2>
+        </div>
         
-    - name: Install dependencies
-      run: npm install
-      
-    - name: Build
-      run: npm run build && npm run export
-      
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./out</code></pre>
+        <div class="bg-gradient-to-r from-blue-50 to-sky-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl mb-6">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                <strong>Great for documentation and portfolios!</strong> GitHub Pages offers a simple way to host static sites directly from your GitHub repository. Perfect for showcasing your projects. 🌟
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">📂</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Easy Setup</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Just push to GitHub and enable Pages</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">🔗</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Custom Domain</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Use your own domain name for free</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">⚙️</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Jekyll Integration</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Built-in support for Jekyll blogs</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">🛠️ GitHub Pages Setup Guide</h3>
+        
+        <div class="space-y-6">
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 1</span>
+                    Create a GitHub Repository
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Create a new repository on GitHub to host your site:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="git init\ngit add .\ngit commit -m \"Initial commit\"\ngit branch -M main\ngit remote add origin https://github.com/USERNAME/REPO_NAME.git\ngit push -u origin main">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-bash">git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/USERNAME/REPO_NAME.git
+git push -u origin main</code></pre>
+                </div>
+            </div>
+
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 2</span>
+                    Enable GitHub Pages
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Go to your repository settings and enable GitHub Pages:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="https://github.com/USERNAME/REPO_NAME/settings/pages">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-text">https://github.com/USERNAME/REPO_NAME/settings/pages</code></pre>
+                </div>
+            </div>
+
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 3</span>
+                    Access Your Site
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Visit your live site at:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="https://USERNAME.github.io/REPO_NAME/">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-text">https://USERNAME.github.io/REPO_NAME/</code></pre>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h3 class="text-2xl font-semibold mb-4 mt-8">DigitalOcean App Platform</h3>
-    <p class="mb-4">
-      Simple cloud platform with automatic scaling and built-in CI/CD.
-    </p>
+    <!-- DigitalOcean App Platform Section -->
+    <div class="mb-12">
+        <div class="flex items-center mb-6">
+            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">5</div>
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white">🌊 DigitalOcean App Platform</h2>
+        </div>
+        
+        <div class="bg-gradient-to-r from-green-50 to-teal-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl mb-6">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                <strong>Simple cloud platform!</strong> DigitalOcean App Platform offers a straightforward way to deploy, manage, and scale apps. Enjoy automatic scaling and built-in CI/CD. ☁️
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">⚙️</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Easy Configuration</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Deploy directly from your repo</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">📈</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Automatic Scaling</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Scale up or down based on traffic</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">🔄</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Built-in CI/CD</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Continuous integration and deployment</p>
+                </div>
+            </div>
+        </div>
 
-    <div class="code-block-container">
-      <div class="code-block-header">
-        <span class="code-block-title">.do/app.yaml</span>
-        <button class="copy-button" onclick="copyToClipboard(this)">
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <pre><code class="language-yaml">name: nextjs-app
-services:
-- name: web
-  source_dir: /
-  github:
-    repo: your-username/your-repo
-    branch: main
-  run_command: npm start
-  environment_slug: node-js
-  instance_count: 1
-  instance_size_slug: basic-xxs
-  routes:
-  - path: /
-  health_check:
-    http_path: /</code></pre>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">🛠️ DigitalOcean App Platform Setup Guide</h3>
+        
+        <div class="space-y-6">
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 1</span>
+                    Create a DigitalOcean Account
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Sign up for a DigitalOcean account:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="https://www.digitalocean.com/signup/">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-text">https://www.digitalocean.com/signup/</code></pre>
+                </div>
+            </div>
+
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 2</span>
+                    Create a New App
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Use the DigitalOcean dashboard to create a new app:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="https://cloud.digitalocean.com/apps/new">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-text">https://cloud.digitalocean.com/apps/new</code></pre>
+                </div>
+            </div>
+
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 3</span>
+                    Deploy Your Code
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Connect your GitHub repository and deploy your code:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="https://cloud.digitalocean.com/apps/YOUR_APP_NAME/deploy">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-text">https://cloud.digitalocean.com/apps/YOUR_APP_NAME/deploy</code></pre>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h3 class="text-2xl font-semibold mb-4 mt-8">Docker Deployment</h3>
-    <p class="mb-4">
-      Containerize your Next.js app for deployment to any platform that supports
-      Docker.
-    </p>
+    <!-- Docker Deployment Section -->
+    <div class="mb-12">
+        <div class="flex items-center mb-6">
+            <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">6</div>
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white">🐳 Docker Deployment - Containerize Your App</h2>
+        </div>
+        
+        <div class="bg-gradient-to-r from-red-50 to-pink-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl mb-6">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                <strong>Flexible and portable!</strong> Docker allows you to package your Next.js app and all its dependencies into a container, ensuring consistent performance across different environments. 📦
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">📦</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Containerization</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Package your app with all dependencies</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">🔄</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Environment Consistency</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Same environment from development to production</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">⚙️</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Easy Integration</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Works with any cloud provider or on-premises</p>
+                </div>
+            </div>
+        </div>
 
-    <div class="code-block-container">
-      <div class="code-block-header">
-        <span class="code-block-title">Dockerfile</span>
-        <button class="copy-button" onclick="copyToClipboard(this)">
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <pre><code class="language-dockerfile">FROM node:16-alpine AS deps
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">🐳 Docker Deployment Guide</h3>
+        
+        <div class="space-y-6">
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 1</span>
+                    Install Docker
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Follow the official Docker installation guide:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="https://docs.docker.com/get-docker/">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-text">https://docs.docker.com/get-docker/</code></pre>
+                </div>
+            </div>
+
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 2</span>
+                    Create a Dockerfile
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Define your app's environment and dependencies:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="FROM node:16-alpine AS deps\nWORKDIR /app\nCOPY package.json package-lock.json ./\nRUN npm ci --only=production\n\nFROM node:16-alpine AS builder\nWORKDIR /app\nCOPY package.json package-lock.json ./\nRUN npm ci\nCOPY . .\nRUN npm run build\n\nFROM node:16-alpine AS runner\nWORKDIR /app\nENV NODE_ENV production\n\nRUN addgroup --system --gid 1001 nodejs\nRUN adduser --system --uid 1001 nextjs\n\nCOPY --from=builder /app/public ./public\nCOPY --from=builder /app/package.json ./package.json\nCOPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./\nCOPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static\n\nUSER nextjs\nEXPOSE 3000\nENV PORT 3000\n\nCMD [\"node\", \"server.js\"]">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-dockerfile">FROM node:16-alpine AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --only=production
@@ -355,213 +616,220 @@ EXPOSE 3000
 ENV PORT 3000
 
 CMD ["node", "server.js"]</code></pre>
-    </div>
+                </div>
+            </div>
 
-    <div class="code-block-container">
-      <div class="code-block-header">
-        <span class="code-block-title">Build and Run</span>
-        <button class="copy-button" onclick="copyToClipboard(this)">
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <pre><code class="language-bash">docker build -t nextjs-app .
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 3</span>
+                    Build and Run Your Container
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Use Docker commands to build and run your container:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="docker build -t nextjs-app .\ndocker run -p 3000:3000 nextjs-app">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-bash">docker build -t nextjs-app .
 docker run -p 3000:3000 nextjs-app</code></pre>
-    </div>
-
-    <h3 class="text-2xl font-semibold mb-4 mt-8">Platform Comparison</h3>
-
-    <div class="overflow-x-auto">
-      <table
-        class="min-w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
-      >
-        <thead class="bg-gray-50 dark:bg-gray-700">
-          <tr>
-            <th
-              class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
-            >
-              Platform
-            </th>
-            <th
-              class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
-            >
-              Type
-            </th>
-            <th
-              class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
-            >
-              SSR Support
-            </th>
-            <th
-              class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
-            >
-              Free Tier
-            </th>
-            <th
-              class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
-            >
-              Best For
-            </th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
-          <tr>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
-            >
-              Vercel
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              Serverless
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              Yes
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              Yes
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              Next.js apps
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
-            >
-              Netlify
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              JAMstack
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              Limited
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              Yes
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              Static sites
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
-            >
-              AWS Amplify
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              Full-stack
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              Yes
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              Yes
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              AWS ecosystem
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
-            >
-              Heroku
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              PaaS
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              Yes
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              Limited
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
-            >
-              Prototyping
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3 class="text-2xl font-semibold mb-4 mt-8">
-      Choosing the Right Platform
-    </h3>
-
-    <div
-      class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-400 p-4 mb-6"
-    >
-      <div class="flex">
-        <div class="ml-3">
-          <p class="text-sm text-green-700 dark:text-green-300">
-            <strong>Recommendation:</strong> Consider your app's requirements,
-            budget, and existing infrastructure when choosing a deployment
-            platform.
-          </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
-    <ul
-      class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300"
-    >
-      <li>
-        <strong>Static sites:</strong> Netlify, GitHub Pages, or Vercel with
-        static export
-      </li>
-      <li><strong>Full SSR:</strong> Vercel, AWS Amplify, or Heroku</li>
-      <li><strong>Enterprise:</strong> AWS, Azure, or Google Cloud Platform</li>
-      <li>
-        <strong>Cost-effective:</strong> DigitalOcean App Platform or
-        self-hosted Docker
-      </li>
-      <li>
-        <strong>Existing AWS infrastructure:</strong> AWS Amplify or Lambda
-      </li>
-    </ul>
-  </div>
-</section>
+    <!-- Static Export Section -->
+    <div class="mb-12">
+        <div class="flex items-center mb-6">
+            <div class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">7</div>
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white">📂 Static Export - Generate a Static Version</h2>
+        </div>
+        
+        <div class="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl mb-6">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                <strong>Optimize for speed and SEO!</strong> Static export generates a static version of your site, which can be served directly from a CDN. Ideal for marketing sites and documentation. 🚀
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">⚡</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Fast Performance</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Serve static files from CDN</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">🔍</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">SEO Friendly</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Pre-rendered pages for better indexing</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                    <div class="text-2xl mb-2">📦</div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Easy Deployment</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Deploy as static files to any host</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">📦 Static Export Guide</h3>
+        
+        <div class="space-y-6">
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 1</span>
+                    Update next.config.js
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Configure Next.js for static export:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  output: 'export',\n  trailingSlash: true,\n  images: {\n    unoptimized: true\n  }\n}\n\nmodule.exports = nextConfig">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-javascript">/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  }
+}
+
+module.exports = nextConfig</code></pre>
+                </div>
+            </div>
+
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 2</span>
+                    Run the Export Command
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Generate the static files:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="next export">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-bash">next export</code></pre>
+                </div>
+            </div>
+
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white flex items-center">
+                    <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 px-2 py-1 rounded-full text-sm font-medium mr-3">Step 3</span>
+                    Deploy the Static Files
+                </h4>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Upload the files to your hosting provider:</p>
+                <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                    <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="rsync -avz ./out/ user@your-server:/path/to/your/site">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </button>
+                    <pre><code class="language-bash">rsync -avz ./out/ user@your-server:/path/to/your/site</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Platform Comparison Section -->
+    <div class="mb-12">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
+          Platform Comparison
+        </h3>
+    
+        <div class="overflow-x-auto">
+          <table
+            class="min-w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+          >
+            <thead class="bg-gray-50 dark:bg-gray-700">
+              <tr>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+                >
+                  Platform
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+                >
+                  Type
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+                >
+                  SSR Support
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+                >
+                  Free Tier
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+                >
+                  Best For
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
+              <tr>
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Vercel
+                </td>
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                >
+                  Serverless
+                </td>
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                >
+                  Yes
+                </td>
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                >
+                  Yes
+                </td>
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                >
+                  Next.js apps
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Netlify
+                </td>
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                >
+                  JAMstack
+                </td>
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                >
+                  Limited
+                </td>
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                >
+                  Yes
+                </td>
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                >
+                  Static sites
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  AWS Amplify
+                </td>
+                <td
+                  class="px-6 py

@@ -1,73 +1,2841 @@
 <section id="dynamic-routes" class="mb-12">
-  <h1>Dynamic Routes</h1>
-  <p>
-    Next.js supports pages with dynamic routes. For example, if you create a
-    file called <code>pages/posts/[id].js</code>, then it will be accessible at
-    <code>posts/1</code>, <code>posts/2</code>, etc.
-  </p>
-
-  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-    <button
-      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
-      data-copy="// pages/posts/[id].js\nimport { useRouter } from 'next/router'\n\nconst Post = () => {\n  const router = useRouter()\n  const { id } = router.query\n\n  return <p>Post: {id}</p>\n}\n\nexport default Post"
-    >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
+  <!-- Hero Section -->
+  <div
+    class="bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-600 text-white rounded-2xl p-8 mb-12 relative overflow-hidden"
+  >
+    <div class="absolute inset-0 bg-black opacity-10"></div>
+    <div class="relative z-10">
+      <h1
+        class="text-4xl md:text-5xl font-bold mb-4 flex items-center justify-center"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-        ></path>
-      </svg>
-    </button>
-    <pre><code class="language-javascript">// pages/posts/[id].js
+        🔗 Dynamic Routes
+      </h1>
+      <p
+        class="text-xl md:text-2xl opacity-90 mb-6 text-center max-w-4xl mx-auto"
+      >
+        Create magical routes that work like a Swiss Army knife! 🛠️ One file
+        handles infinite URLs - from blog posts to user profiles to product
+        pages!
+      </p>
+      <div
+        class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-30 max-w-2xl mx-auto"
+      >
+        <p class="text-lg font-medium text-center">
+          ✨ Think of it as a URL template that fills itself in! One file =
+          infinite possibilities! 🎯
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What Are Dynamic Routes Section -->
+  <div class="mb-12">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">
+      🤔 What Are Dynamic Routes? (Think Mad Libs for URLs!)
+    </h2>
+    <div
+      class="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-xl p-6 mb-8"
+    >
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        🎭 Remember Mad Libs? "The [ADJECTIVE] [NOUN] ran [ADVERB]!" Dynamic
+        routes work the same way - you create a template with blanks, and
+        Next.js fills them in automatically!
+      </p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div
+          class="bg-red-50 dark:bg-red-900/20 rounded-lg p-4 sm:p-6 border border-red-200 dark:border-red-800"
+        >
+          <h3
+            class="font-bold text-red-800 dark:text-red-200 mb-3 flex items-center"
+          >
+            <span class="text-2xl mr-2">😰</span>
+            The Old (Painful) Way
+          </h3>
+          <div
+            class="text-sm text-red-700 dark:text-red-300 space-y-2 font-mono"
+          >
+            <div class="bg-red-100 dark:bg-red-800/30 p-2 rounded">
+              pages/user-1.js
+            </div>
+            <div class="bg-red-100 dark:bg-red-800/30 p-2 rounded">
+              pages/user-2.js
+            </div>
+            <div class="bg-red-100 dark:bg-red-800/30 p-2 rounded">
+              pages/user-3.js
+            </div>
+            <div class="bg-red-100 dark:bg-red-800/30 p-2 rounded">
+              pages/user-999.js
+            </div>
+            <div class="text-red-600 dark:text-red-400 font-bold text-center">
+              ...You'd go crazy! 🤯
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 sm:p-6 border border-green-200 dark:border-green-800"
+        >
+          <h3
+            class="font-bold text-green-800 dark:text-green-200 mb-3 flex items-center"
+          >
+            <span class="text-2xl mr-2">🎉</span>
+            The Dynamic Way (Smart!)
+          </h3>
+          <div
+            class="text-sm text-green-700 dark:text-green-300 space-y-2 font-mono"
+          >
+            <div
+              class="bg-green-100 dark:bg-green-800/30 p-2 rounded font-bold"
+            >
+              pages/users/[id].js
+            </div>
+            <div
+              class="text-green-600 dark:text-green-400 font-bold text-center text-lg"
+            >
+              One file to rule them all! 👑
+            </div>
+            <div
+              class="text-xs text-green-600 dark:text-green-400 text-center bg-green-100 dark:bg-green-800/20 p-2 rounded"
+            >
+              Works for /users/1, /users/john, /users/anything!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Visual Explanation -->
+      <div
+        class="mt-8 bg-white dark:bg-gray-800 rounded-lg p-6 border-2 border-dashed border-purple-300 dark:border-purple-600"
+      >
+        <h4
+          class="text-lg font-bold text-gray-900 dark:text-white mb-4 text-center"
+        >
+          🧠 Think of it like this:
+        </h4>
+        <div class="flex items-center justify-center space-x-4 text-lg">
+          <div class="bg-purple-100 dark:bg-purple-900/30 px-3 py-2 rounded">
+            /users/
+          </div>
+          <div
+            class="bg-yellow-200 dark:bg-yellow-800/50 px-3 py-2 rounded font-bold"
+          >
+            [ANYTHING]
+          </div>
+          <div class="text-2xl">→</div>
+          <div class="bg-green-100 dark:bg-green-900/30 px-3 py-2 rounded">
+            Shows that user!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step-by-Step Guide -->
+  <div class="mb-12">
+    <h2
+      class="text-3xl font-bold mb-6 text-gray-800 dark:text-white flex items-center"
+    >
+      <span class="text-3xl mr-3">👨‍💻</span>
+      Let's Build Our First Dynamic Route! (Super Easy!)
+    </h2>
+
+    <!-- Step 1 -->
+    <div class="mb-8">
+      <div class="flex items-center mb-4">
+        <div
+          class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4 shadow-lg text-xl"
+        >
+          1
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+          Create the Magic File (with square brackets!)
+        </h3>
+      </div>
+
+      <div
+        class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-400 p-6 rounded-lg mb-6"
+      >
+        <div class="flex items-start">
+          <span class="text-3xl mr-3">🪄</span>
+          <div>
+            <p
+              class="font-medium text-blue-800 dark:text-blue-200 text-xl mb-3"
+            >
+              The Magic of Square Brackets []:
+            </p>
+            <p class="text-blue-700 dark:text-blue-300 text-lg mb-2">
+              The square brackets
+              <code
+                class="bg-blue-200 dark:bg-blue-800 px-3 py-1 rounded font-mono text-sm"
+                >[id]</code
+              >
+              are like saying: "Hey Next.js, this part can be ANYTHING!"
+            </p>
+            <p class="text-blue-600 dark:text-blue-400 text-sm">
+              💡 It's like a placeholder that gets filled in automatically!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <h4
+          class="font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+        >
+          <span class="text-xl mr-2">📁</span>
+          Create this file structure:
+        </h4>
+        <div
+          class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 font-mono text-sm"
+        >
+          <div class="text-gray-600 dark:text-gray-300">📂 pages/</div>
+          <div class="text-gray-600 dark:text-gray-300 ml-4">📂 blog/</div>
+          <div class="ml-8 text-blue-600 dark:text-blue-400 font-bold">
+            📄 [id].js
+            <span class="text-green-600 dark:text-green-400 ml-2"
+              >← This is our dynamic route! ✨</span
+            >
+          </div>
+        </div>
+        <div class="mt-4 p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
+          <p class="text-yellow-800 dark:text-yellow-200 text-sm">
+            💡 <strong>Pro tip:</strong> You can name it anything! [id], [slug],
+            [postId], [anything] - they all work!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="mb-8">
+      <div class="flex items-center mb-4">
+        <div
+          class="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4 shadow-lg text-xl"
+        >
+          2
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+          Write the Component (The Fun Part!)
+        </h3>
+      </div>
+
+      <div
+        class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 sm:p-6 mb-6 relative overflow-hidden"
+      >
+        <button
+          class="copy-btn absolute top-4 right-4 p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-gray-700 z-10"
+          data-copy="// pages/blog/[id].js
 import { useRouter } from 'next/router'
 
-const Post = () => {
+export default function BlogPost() {
   const router = useRouter()
   const { id } = router.query
 
-  return <p>Post: {id}</p>
-}
-
-export default Post</code></pre>
-  </div>
-
-  <h3>Multiple Dynamic Segments</h3>
-  <p>You can create routes with multiple dynamic segments:</p>
-
-  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-    <button
-      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
-      data-copy="// pages/shop/[...slug].js\nimport { useRouter } from 'next/router'\n\nexport default function Shop() {\n  const router = useRouter()\n  const { slug } = router.query\n\n  return <p>Shop: {slug?.join('/')}</p>\n}"
-    >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-        ></path>
-      </svg>
-    </button>
-    <pre><code class="language-javascript">// pages/shop/[...slug].js
+  return (
+    <div className='max-w-2xl mx-auto p-8'>
+      <h1 className='text-3xl font-bold mb-4'>
+        📝 Blog Post: {id}
+      </h1>
+      <div className='bg-blue-50 p-4 rounded-lg mb-4'>
+        <p className='text-blue-800'>
+          🎯 Current ID: <strong>{id}</strong>
+        </p>
+        <p className='text-blue-600 text-sm'>
+          This page adapts to whatever ID you put in the URL!
+        </p>
+      </div>
+      <p className='text-gray-700 leading-relaxed'>
+        This is the content for blog post with ID: {id}. 
+        In a real app, you'd use this ID to fetch the actual blog post data!
+      </p>
+    </div>
+  )
+}"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+        <div class="overflow-x-auto">
+        <pre class="whitespace-pre-wrap break-words"><code class="language-javascript text-sm">// pages/blog/[id].js
 import { useRouter } from 'next/router'
 
-export default function Shop() {
+export default function BlogPost() {
+  const router = useRouter()
+  const { id } = router.query
+
+  return (
+    <div className='max-w-2xl mx-auto p-8'>
+      <h1 className='text-3xl font-bold mb-4'>
+        📝 Blog Post: {id}
+      </h1>
+      <div className='bg-blue-50 p-4 rounded-lg mb-4'>
+        <p className='text-blue-800'>
+          🎯 Current ID: <strong>{id}</strong>
+        </p>
+        <p className='text-blue-600 text-sm'>
+          This page adapts to whatever ID you put in the URL!
+        </p>
+      </div>
+      <p className='text-gray-700 leading-relaxed'>
+        This is the content for blog post with ID: {id}. 
+        In a real app, you'd use this ID to fetch the actual blog post data!
+      </p>
+    </div>
+  )
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- Code Explanation -->
+      <div
+        class="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 border-l-4 border-green-400 p-6 rounded-lg"
+      >
+        <div class="flex items-start">
+          <span class="text-3xl mr-3">🎓</span>
+          <div>
+            <p
+              class="font-medium text-green-800 dark:text-green-200 text-xl mb-4"
+            >
+              Let's break this down (it's simpler than it looks!):
+            </p>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="space-y-3">
+                <div class="bg-white dark:bg-gray-800 p-3 rounded-lg border">
+                  <code
+                    class="text-sm font-mono text-purple-600 dark:text-purple-400"
+                    >useRouter()</code
+                  >
+                  <p class="text-gray-700 dark:text-gray-300 text-xs mt-1">
+                    🔧 A special hook that gives us access to the URL info
+                  </p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-3 rounded-lg border">
+                  <code
+                    class="text-sm font-mono text-blue-600 dark:text-blue-400"
+                    >router.query</code
+                  >
+                  <p class="text-gray-700 dark:text-gray-300 text-xs mt-1">
+                    📦 Contains all the dynamic parts of our URL
+                  </p>
+                </div>
+              </div>
+              <div class="space-y-3">
+                <div class="bg-white dark:bg-gray-800 p-3 rounded-lg border">
+                  <code
+                    class="text-sm font-mono text-green-600 dark:text-green-400"
+                    >{ id }</code
+                  >
+                  <p class="text-gray-700 dark:text-gray-300 text-xs mt-1">
+                    🎯 Extracts the [id] part from our filename
+                  </p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-3 rounded-lg border">
+                  <code
+                    class="text-sm font-mono text-orange-600 dark:text-orange-400"
+                    >{id}</code
+                  >
+                  <p class="text-gray-700 dark:text-gray-300 text-xs mt-1">
+                    ✨ Displays the actual value from the URL
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 - Test it! -->
+    <div class="mb-8">
+      <div class="flex items-center mb-4">
+        <div
+          class="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4 shadow-lg text-xl"
+        >
+          3
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+          Test it Out! (The Magic Moment! ✨)
+        </h3>
+      </div>
+
+      <div
+        class="bg-purple-50 dark:bg-purple-900/20 border-l-4 border-purple-400 p-6 rounded-lg"
+      >
+        <div class="flex items-start">
+          <span class="text-3xl mr-3">🚀</span>
+          <div>
+            <p
+              class="font-medium text-purple-800 dark:text-purple-200 text-xl mb-4"
+            >
+              Try these URLs and watch the magic happen!
+            </p>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="space-y-3">
+                <div
+                  class="bg-white dark:bg-gray-800 p-4 rounded-lg border border-purple-200 dark:border-purple-700"
+                >
+                  <div class="flex items-center mb-2">
+                    <span class="text-lg mr-2">🌐</span>
+                    <code
+                      class="text-sm font-mono bg-purple-100 dark:bg-purple-800/50 px-2 py-1 rounded"
+                    >
+                      /blog/hello-world
+                    </code>
+                  </div>
+                  <p class="text-green-600 dark:text-green-400 text-sm">
+                    → Shows: Blog Post: hello-world
+                  </p>
+                </div>
+                <div
+                  class="bg-white dark:bg-gray-800 p-4 rounded-lg border border-purple-200 dark:border-purple-700"
+                >
+                  <div class="flex items-center mb-2">
+                    <span class="text-lg mr-2">🌐</span>
+                    <code
+                      class="text-sm font-mono bg-purple-100 dark:bg-purple-800/50 px-2 py-1 rounded"
+                    >
+                      /blog/123
+                    </code>
+                  </div>
+                  <p class="text-green-600 dark:text-green-400 text-sm">
+                    → Shows: Blog Post: 123
+                  </p>
+                </div>
+              </div>
+              <div class="space-y-3">
+                <div
+                  class="bg-white dark:bg-gray-800 p-4 rounded-lg border border-purple-200 dark:border-purple-700"
+                >
+                  <div class="flex items-center mb-2">
+                    <span class="text-lg mr-2">🌐</span>
+                    <code
+                      class="text-sm font-mono bg-purple-100 dark:bg-purple-800/50 px-2 py-1 rounded"
+                    >
+                      /blog/my-awesome-post
+                    </code>
+                  </div>
+                  <p class="text-green-600 dark:text-green-400 text-sm">
+                    → Shows: Blog Post: my-awesome-post
+                  </p>
+                </div>
+                <div
+                  class="bg-white dark:bg-gray-800 p-4 rounded-lg border border-purple-200 dark:border-purple-700"
+                >
+                  <div class="flex items-center mb-2">
+                    <span class="text-lg mr-2">🌐</span>
+                    <code
+                      class="text-sm font-mono bg-purple-100 dark:bg-purple-800/50 px-2 py-1 rounded"
+                    >
+                      /blog/literally-anything
+                    </code>
+                  </div>
+                  <p class="text-green-600 dark:text-green-400 text-sm">
+                    → Shows: Blog Post: literally-anything
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-4 p-4 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg"
+            >
+              <p
+                class="text-yellow-800 dark:text-yellow-200 text-center font-medium"
+              >
+                🎉 One file, infinite possibilities! That's the power of dynamic
+                routes!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advanced: Catch-All Routes -->
+  <div class="mb-12">
+    <h2
+      class="text-3xl font-bold mb-6 text-gray-800 dark:text-white flex items-center"
+    >
+      <span class="text-3xl mr-3">🚀</span>
+      Level Up: Catch-All Routes (Like a URL Net!)
+    </h2>
+
+    <div
+      class="bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20 rounded-xl p-6 mb-8"
+    >
+      <h3
+        class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+      >
+        <span class="text-2xl mr-2">🕸️</span>
+        Need to catch URLs of ANY length?
+      </h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg">
+        Sometimes you need routes like
+        <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+          >/docs/api/auth/login</code
+        >
+        or
+        <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+          >/shop/clothes/shirts/blue/large</code
+        >
+        where the path can be any length. That's where catch-all routes shine!
+        ✨
+      </p>
+
+      <!-- Visual explanation -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 mb-6 border-2 border-dashed border-orange-300"
+      >
+        <h4
+          class="text-lg font-bold text-gray-900 dark:text-white mb-4 text-center"
+        >
+          🎯 Think of it like this:
+        </h4>
+        <div class="text-center space-y-3">
+          <div class="flex items-center justify-center space-x-2 text-lg">
+            <div class="bg-orange-100 dark:bg-orange-900/30 px-3 py-2 rounded">
+              /docs/
+            </div>
+            <div
+              class="bg-yellow-200 dark:bg-yellow-800/50 px-3 py-2 rounded font-bold"
+            >
+              [ANYTHING]
+            </div>
+            <div
+              class="bg-yellow-200 dark:bg-yellow-800/50 px-3 py-2 rounded font-bold"
+            >
+              /[ANYTHING]
+            </div>
+            <div
+              class="bg-yellow-200 dark:bg-yellow-800/50 px-3 py-2 rounded font-bold"
+            >
+              /[ANYTHING]
+            </div>
+            <div class="text-xl">...</div>
+          </div>
+          <div class="text-gray-600 dark:text-gray-400">
+            One file catches ALL possible paths! 🎉
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 mb-6"
+      >
+        <h4
+          class="font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+        >
+          <span class="text-xl mr-2">📁</span>
+          File Structure (Notice the three dots!)
+        </h4>
+        <div class="bg-gray-100 dark:bg-gray-700 rounded p-4 font-mono text-sm">
+          <div>📂 pages/</div>
+          <div>&nbsp;&nbsp;📂 docs/</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;📄 [...slug].js &nbsp;<span
+              class="text-orange-600 dark:text-orange-400"
+              >← The magic happens here! ✨</span
+            >
+          </div>
+        </div>
+        <div class="mt-4 p-3 bg-orange-50 dark:bg-orange-900/20 rounded">
+          <p class="text-orange-800 dark:text-orange-200 text-sm">
+            💡 The <code>[...slug]</code> means "catch everything and put it in
+            an array called 'slug'"
+          </p>
+        </div>
+      </div>        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 sm:p-6 mb-6 relative overflow-hidden">
+        <button
+          class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors z-10"
+          data-copy="// pages/docs/[...slug].js
+import { useRouter } from 'next/router'
+
+export default function DocsPage() {
   const router = useRouter()
   const { slug } = router.query
 
-  return <p>Shop: {slug?.join('/')}</p>
+  // Handle loading state
+  if (!slug) {
+    return <div>📚 Loading docs...</div>
+  }
+
+  return (
+    <div className='max-w-4xl mx-auto p-8'>
+      <h1 className='text-3xl font-bold mb-6'>
+        📚 Documentation
+      </h1>
+      
+      {/* Show the path breakdown */}
+      <div className='bg-blue-50 p-4 rounded-lg mb-6'>
+        <h2 className='font-bold text-blue-800 mb-2'>
+          🧭 You are here:
+        </h2>
+        <p className='text-blue-700'>
+          📍 Path: /{slug.join('/')}
+        </p>
+        <p className='text-blue-600 text-sm'>
+          🔢 Depth: {slug.length} levels deep
+        </p>
+      </div>
+
+      {/* Different content based on path depth */}
+      {slug.length === 1 && (
+        <div className='bg-green-50 p-4 rounded-lg'>
+          <h2>📖 Category: {slug[0]}</h2>
+          <p>You're viewing the main category page!</p>
+        </div>
+      )}
+
+      {slug.length === 2 && (
+        <div className='bg-yellow-50 p-4 rounded-lg'>
+          <h2>📑 Section: {slug[0]} → {slug[1]}</h2>
+          <p>You're in a specific section!</p>
+        </div>
+      )}
+
+      {slug.length >= 3 && (
+        <div className='bg-purple-50 p-4 rounded-lg'>
+          <h2>📄 Article: {slug.join(' → ')}</h2>
+          <p>You're reading a detailed article!</p>
+        </div>
+      )}
+
+      {/* Show all URL segments */}
+      <div className='mt-6'>
+        <h3 className='font-bold mb-3'>🔍 URL Breakdown:</h3>
+        <div className='space-y-2'>
+          {slug.map((segment, index) => (
+            <div key={index} className='flex items-center space-x-2'>
+              <span className='bg-gray-200 px-2 py-1 rounded text-sm'>
+                Level {index + 1}
+              </span>
+              <span className='font-mono'>{segment}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+        <div class="overflow-x-auto">
+          <pre class="whitespace-pre-wrap break-words"><code class="language-javascript text-sm">// pages/docs/[...slug].js
+import { useRouter } from 'next/router'
+
+export default function DocsPage() {
+  const router = useRouter()
+  const { slug } = router.query
+
+  // Handle loading state
+  if (!slug) {
+    return <div>📚 Loading docs...</div>
+  }
+
+  return (
+    <div className='max-w-4xl mx-auto p-8'>
+      <h1 className='text-3xl font-bold mb-6'>
+        📚 Documentation
+      </h1>
+      
+      {/* Show the path breakdown */}
+      <div className='bg-blue-50 p-4 rounded-lg mb-6'>
+        <h2 className='font-bold text-blue-800 mb-2'>
+          🧭 You are here:
+        </h2>
+        <p className='text-blue-700'>
+          📍 Path: /{slug.join('/')}
+        </p>
+        <p className='text-blue-600 text-sm'>
+          🔢 Depth: {slug.length} levels deep
+        </p>
+      </div>
+
+      {/* Different content based on path depth */}
+      {slug.length === 1 && (
+        <div className='bg-green-50 p-4 rounded-lg'>
+          <h2>📖 Category: {slug[0]}</h2>
+          <p>You're viewing the main category page!</p>
+        </div>
+      )}
+
+      {slug.length === 2 && (
+        <div className='bg-yellow-50 p-4 rounded-lg'>
+          <h2>📑 Section: {slug[0]} → {slug[1]}</h2>
+          <p>You're in a specific section!</p>
+        </div>
+      )}
+
+      {slug.length >= 3 && (
+        <div className='bg-purple-50 p-4 rounded-lg'>
+          <h2>📄 Article: {slug.join(' → ')}</h2>
+          <p>You're reading a detailed article!</p>
+        </div>
+      )}
+
+      {/* Show all URL segments */}
+      <div className='mt-6'>
+        <h3 className='font-bold mb-3'>🔍 URL Breakdown:</h3>
+        <div className='space-y-2'>
+          {slug.map((segment, index) => (
+            <div key={index} className='flex items-center space-x-2'>
+              <span className='bg-gray-200 px-2 py-1 rounded text-sm'>
+                Level {index + 1}
+              </span>
+              <span className='font-mono'>{segment}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 }</code></pre>
+      </div>
+
+      <div
+        class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-6 rounded"
+      >
+        <div class="flex items-start">
+          <span class="text-3xl mr-3">🎯</span>
+          <div>
+            <p
+              class="font-medium text-yellow-800 dark:text-yellow-200 text-lg mb-3"
+            >
+              This magic file catches ALL these paths:
+            </p>
+            <div class="text-yellow-700 dark:text-yellow-300 text-sm space-y-2">
+              <div class="bg-yellow-100 dark:bg-yellow-800/30 p-3 rounded">
+                📍
+                <code
+                  class="bg-yellow-200 dark:bg-yellow-800 px-2 py-1 rounded font-mono"
+                  >/docs/getting-started</code
+                >
+                → slug = ["getting-started"]
+              </div>
+              <div class="bg-yellow-100 dark:bg-yellow-800/30 p-3 rounded">
+                📍
+                <code
+                  class="bg-yellow-200 dark:bg-yellow-800 px-2 py-1 rounded font-mono"
+                  >/docs/api/authentication</code
+                >
+                → slug = ["api", "authentication"]
+              </div>
+              <div class="bg-yellow-100 dark:bg-yellow-800/30 p-3 rounded">
+                📍
+                <code
+                  class="bg-yellow-200 dark:bg-yellow-800 px-2 py-1 rounded font-mono"
+                  >/docs/api/auth/login/oauth</code
+                >
+                → slug = ["api", "auth", "login", "oauth"]
+              </div>
+              <div
+                class="bg-yellow-100 dark:bg-yellow-800/30 p-3 rounded text-center font-bold"
+              >
+                🎉 ANY path under /docs/ - no matter how deep!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deep Dive: Understanding .slug -->
+    <div
+      class="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl p-6 mb-8"
+    >
+      <h3
+        class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+      >
+        <span class="text-3xl mr-3">🔍</span>
+        Deep Dive: Understanding .slug
+      </h3>
+
+      <div class="space-y-6">
+        <!-- What is slug? -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700"
+        >
+          <h4
+            class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+          >
+            <span class="text-2xl mr-2">🤖</span>
+            What exactly IS a "slug"?
+          </h4>
+          <div class="space-y-3">
+            <p class="text-gray-700 dark:text-gray-300">
+              The term "slug" comes from URL-friendly strings. In web
+              development, a slug is a human-readable identifier used in URLs
+              instead of IDs.
+            </p>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div
+                class="bg-red-50 dark:bg-red-900/20 rounded-lg p-3 border border-red-200 dark:border-red-800"
+              >
+                <div class="text-sm text-red-700 dark:text-red-300">
+                  <div class="font-bold mb-1">❌ Not SEO-friendly:</div>
+                  <code>/posts/12345</code><br />
+                  <code>/products/98765</code>
+                </div>
+              </div>
+              <div
+                class="bg-green-50 dark:bg-green-900/20 rounded-lg p-3 border border-green-200 dark:border-green-800"
+              >
+                <div class="text-sm text-green-700 dark:text-green-300">
+                  <div class="font-bold mb-1">✅ SEO-friendly slugs:</div>
+                  <code>/posts/how-to-learn-nextjs</code><br />
+                  <code>/products/wireless-headphones</code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- How slug works as an array -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700"
+        >
+          <h4
+            class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+          >
+            <span class="text-2xl mr-2">📊</span>
+            Why is .slug an Array?
+          </h4>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            When you use
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >[...slug]</code
+            >, Next.js automatically splits the URL path into segments and gives
+            you an array:
+          </p>
+
+          <div
+            class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative"
+          >
+            <button
+              class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+              data-copy="// URL: /docs/getting-started/installation/npm\n// File: pages/docs/[...slug].js\n\nconst { slug } = router.query\nconsole.log(slug)\n// Output: ['getting-started', 'installation', 'npm']\n\n// You can access individual segments:\nconsole.log(slug[0]) // 'getting-started'\nconsole.log(slug[1]) // 'installation' \nconsole.log(slug[2]) // 'npm'"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </button>
+            <pre><code class="language-javascript">// URL: /docs/getting-started/installation/npm
+// File: pages/docs/[...slug].js
+
+const { slug } = router.query
+console.log(slug)
+// Output: ['getting-started', 'installation', 'npm']
+
+// You can access individual segments:
+console.log(slug[0]) // 'getting-started'
+console.log(slug[1]) // 'installation' 
+console.log(slug[2]) // 'npm'</code></pre>
+          </div>
+        </div>
+
+        <!-- Practical Examples -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700"
+        >
+          <h4
+            class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+          >
+            <span class="text-2xl mr-2">🛠️</span>
+            Practical .slug Examples
+          </h4>
+
+          <div class="space-y-4">
+            <!-- Blog Example -->
+            <div class="border-l-4 border-blue-400 pl-4">
+              <h5 class="font-bold text-blue-800 dark:text-blue-200 mb-2">
+                📝 Blog with Categories
+              </h5>
+              <div
+                class="bg-gray-100 dark:bg-gray-700 rounded p-3 font-mono text-sm mb-2"
+              >
+                pages/blog/[...slug].js
+              </div>
+              <div class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                <div><code>/blog/tech</code> → slug = ["tech"]</div>
+                <div>
+                  <code>/blog/tech/javascript</code> → slug = ["tech",
+                  "javascript"]
+                </div>
+                <div>
+                  <code>/blog/tech/javascript/async-await</code> → slug =
+                  ["tech", "javascript", "async-await"]
+                </div>
+              </div>
+            </div>
+
+            <!-- Docs Example -->
+            <div class="border-l-4 border-green-400 pl-4">
+              <h5 class="font-bold text-green-800 dark:text-green-200 mb-2">
+                📚 Documentation Site
+              </h5>
+              <div
+                class="bg-gray-100 dark:bg-gray-700 rounded p-3 font-mono text-sm mb-2"
+              >
+                pages/docs/[...slug].js
+              </div>
+              <div class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                <div><code>/docs/api</code> → slug = ["api"]</div>
+                <div>
+                  <code>/docs/api/authentication</code> → slug = ["api",
+                  "authentication"]
+                </div>
+                <div>
+                  <code>/docs/api/authentication/oauth</code> → slug = ["api",
+                  "authentication", "oauth"]
+                </div>
+              </div>
+            </div>
+
+            <!-- E-commerce Example -->
+            <div class="border-l-4 border-purple-400 pl-4">
+              <h5 class="font-bold text-purple-800 dark:text-purple-200 mb-2">
+                🛒 E-commerce Categories
+              </h5>
+              <div
+                class="bg-gray-100 dark:bg-gray-700 rounded p-3 font-mono text-sm mb-2"
+              >
+                pages/category/[...slug].js
+              </div>
+              <div class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                <div>
+                  <code>/category/electronics</code> → slug = ["electronics"]
+                </div>
+                <div>
+                  <code>/category/electronics/laptops</code> → slug =
+                  ["electronics", "laptops"]
+                </div>
+                <div>
+                  <code>/category/electronics/laptops/gaming</code> → slug =
+                  ["electronics", "laptops", "gaming"]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Working with slug array -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700"
+        >
+          <h4
+            class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+          >
+            <span class="text-2xl mr-2">⚙️</span>
+            Working with the .slug Array
+          </h4>
+
+          <div
+            class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative"
+          >
+            <pre><code class="language-javascript">// pages/docs/[...slug].js
+import { useRouter } from 'next/router'
+
+export default function DocsPage() {
+  const router = useRouter()
+  const { slug } = router.query
+
+  // Handle different levels of nesting
+  const getContent = () => {
+    if (!slug) return <div>Loading...</div>
+    
+    if (slug.length === 1) {
+      // /docs/getting-started
+      return <CategoryPage category={slug[0]} />
+    }
+    
+    if (slug.length === 2) {
+      // /docs/getting-started/installation
+      return <SubCategoryPage 
+        category={slug[0]} 
+        subcategory={slug[1]} 
+      />
+    }
+    
+    if (slug.length === 3) {
+      // /docs/getting-started/installation/npm
+      return <ArticlePage 
+        category={slug[0]} 
+        subcategory={slug[1]}
+        article={slug[2]}
+      />
+    }
+    
+    return <div>Page not found</div>
+  }
+
+  // Create breadcrumbs from slug
+  const breadcrumbs = slug?.map((segment, index) => ({
+    name: segment.replace('-', ' '),
+    path: `/docs/${slug.slice(0, index + 1).join('/')}`
+  }))
+
+  return (
+    <div>
+      {/* Breadcrumb navigation */}
+      <nav className="breadcrumbs">
+        <a href="/docs">Docs</a>
+        {breadcrumbs?.map((crumb, index) => (
+          <span key={index}>
+            <span> / </span>
+            <a href={crumb.path}>{crumb.name}</a>
+          </span>
+        ))}
+      </nav>
+      
+      {/* Dynamic content based on slug depth */}
+      {getContent()}
+    </div>
+  )
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- Common slug operations -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700"
+        >
+          <h4
+            class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+          >
+            <span class="text-2xl mr-2">🧰</span>
+            Common .slug Operations
+          </h4>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="space-y-3">
+              <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3">
+                <h5 class="font-bold text-blue-800 dark:text-blue-200 mb-2">
+                  📏 Check Length
+                </h5>
+                <code class="text-sm">slug?.length || 0</code>
+                <p class="text-xs text-blue-600 dark:text-blue-300 mt-1">
+                  How deep is the URL?
+                </p>
+              </div>
+
+              <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-3">
+                <h5 class="font-bold text-green-800 dark:text-green-200 mb-2">
+                  🔗 Join Path
+                </h5>
+                <code class="text-sm">slug?.join('/')</code>
+                <p class="text-xs text-green-600 dark:text-green-300 mt-1">
+                  Recreate the full path
+                </p>
+              </div>
+
+              <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-3">
+                <h5 class="font-bold text-purple-800 dark:text-purple-200 mb-2">
+                  ✂️ Get Portion
+                </h5>
+                <code class="text-sm">slug?.slice(0, 2)</code>
+                <p class="text-xs text-purple-600 dark:text-purple-300 mt-1">
+                  Get first 2 segments
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-3">
+                <h5 class="font-bold text-orange-800 dark:text-orange-200 mb-2">
+                  🎯 Last Segment
+                </h5>
+                <code class="text-sm">slug?.[slug.length - 1]</code>
+                <p class="text-xs text-orange-600 dark:text-orange-300 mt-1">
+                  Get the final segment
+                </p>
+              </div>
+
+              <div class="bg-rose-50 dark:bg-rose-900/20 rounded-lg p-3">
+                <h5 class="font-bold text-rose-800 dark:text-rose-200 mb-2">
+                  🔍 Find Segment
+                </h5>
+                <code class="text-sm">slug?.includes('admin')</code>
+                <p class="text-xs text-rose-600 dark:text-rose-300 mt-1">
+                  Check if contains 'admin'
+                </p>
+              </div>
+
+              <div class="bg-teal-50 dark:bg-teal-900/20 rounded-lg p-3">
+                <h5 class="font-bold text-teal-800 dark:text-teal-200 mb-2">
+                  🔄 Transform
+                </h5>
+                <code class="text-sm">slug?.map(s => s.toUpperCase())</code>
+                <p class="text-xs text-teal-600 dark:text-teal-300 mt-1">
+                  Transform each segment
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Edge cases and tips -->
+        <div
+          class="bg-amber-50 dark:bg-amber-900/20 border-l-4 border-amber-400 p-4 rounded"
+        >
+          <div class="flex items-start">
+            <span class="text-2xl mr-2">⚠️</span>
+            <div>
+              <h4 class="font-bold text-amber-800 dark:text-amber-200 mb-2">
+                Important Tips & Edge Cases
+              </h4>
+              <ul class="text-amber-700 dark:text-amber-300 text-sm space-y-1">
+                <li>
+                  • <strong>Empty URL:</strong> Visiting just
+                  <code>/docs</code> makes <code>slug = undefined</code>
+                </li>
+                <li>
+                  • <strong>Single slash:</strong> <code>/docs/</code> still
+                  makes <code>slug = undefined</code>
+                </li>
+                <li>
+                  • <strong>Always check:</strong> Use
+                  <code>slug?.length</code> to avoid errors
+                </li>
+                <li>
+                  • <strong>URL encoding:</strong> Spaces become
+                  <code>%20</code>, Next.js handles decoding
+                </li>
+                <li>
+                  • <strong>Case sensitive:</strong> <code>/Docs/API</code> ≠
+                  <code>/docs/api</code>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auth Guard Implementation -->
+    <div
+      class="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-xl p-6 mb-8"
+    >
+      <h3
+        class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+      >
+        <span class="text-3xl mr-3">🛡️</span>
+        Implementing Auth Guard for Route Protection
+      </h3>
+
+      <div class="space-y-6">
+        <!-- What is Auth Guard? -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700"
+        >
+          <h4
+            class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+          >
+            <span class="text-2xl mr-2">🔐</span>
+            What is an Auth Guard?
+          </h4>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            An Auth Guard is a security mechanism that automatically checks if a
+            user is authenticated before allowing access to protected routes. It
+            acts as a bouncer at the door of your application.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div
+              class="bg-green-50 dark:bg-green-900/20 rounded-lg p-3 border border-green-200 dark:border-green-800"
+            >
+              <div class="text-green-700 dark:text-green-300">
+                <div class="font-bold mb-2 flex items-center">
+                  <span class="mr-2">✅</span>
+                  Protected Routes
+                </div>
+                <ul class="text-sm space-y-1">
+                  <li>• /dashboard/*</li>
+                  <li>• /profile/*</li>
+                  <li>• /admin/*</li>
+                  <li>• /settings/*</li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3 border border-blue-200 dark:border-blue-800"
+            >
+              <div class="text-blue-700 dark:text-blue-300">
+                <div class="font-bold mb-2 flex items-center">
+                  <span class="mr-2">🌍</span>
+                  Public Routes
+                </div>
+                <ul class="text-sm space-y-1">
+                  <li>• /login</li>
+                  <li>• /register</li>
+                  <li>• /forgot-password</li>
+                  <li>• / (homepage)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middleware Auth Guard -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700"
+        >
+          <h4
+            class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+          >
+            <span class="text-2xl mr-2">⚡</span>
+            Method 1: Middleware Auth Guard (Recommended)
+          </h4>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Middleware runs at the edge before any page renders, making it the
+            most efficient way to protect routes.
+          </p>
+
+          <div
+            class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative"
+          >
+            <button
+              class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+              data-copy="// middleware.js (place in root directory)\nimport { NextResponse } from 'next/server'\nimport { jwtVerify } from 'jose'\n\n// Define protected and public routes\nconst protectedRoutes = ['/dashboard', '/profile', '/admin', '/settings']\nconst publicRoutes = ['/login', '/register', '/forgot-password', '/']\nconst authRoutes = ['/login', '/register'] // Redirect if already logged in\n\nexport async function middleware(request) {\n  const { pathname } = request.nextUrl\n  const token = request.cookies.get('auth-token')?.value\n\n  // Check if route is protected\n  const isProtectedRoute = protectedRoutes.some(route => \n    pathname.startsWith(route)\n  )\n  \n  // Check if route is auth-related (login/register)\n  const isAuthRoute = authRoutes.some(route => \n    pathname.startsWith(route)\n  )\n\n  // If no token and trying to access protected route\n  if (isProtectedRoute && !token) {\n    const loginUrl = new URL('/login', request.url)\n    loginUrl.searchParams.set('callbackUrl', pathname)\n    return NextResponse.redirect(loginUrl)\n  }\n\n  // Verify token if present\n  if (token) {\n    try {\n      const secret = new TextEncoder().encode(process.env.JWT_SECRET)\n      await jwtVerify(token, secret)\n      \n      // If valid token and trying to access auth routes, redirect to dashboard\n      if (isAuthRoute) {\n        return NextResponse.redirect(new URL('/dashboard', request.url))\n      }\n    } catch (error) {\n      // Invalid token - clear it and redirect to login if protected route\n      const response = isProtectedRoute \n        ? NextResponse.redirect(new URL('/login', request.url))\n        : NextResponse.next()\n      \n      response.cookies.delete('auth-token')\n      return response\n    }\n  }\n\n  return NextResponse.next()\n}\n\n// Configure which routes middleware should run on\nexport const config = {\n  matcher: [\n    '/((?!api|_next/static|_next/image|favicon.ico).*)',\n  ],\n}"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </button>
+            <pre><code class="language-javascript">// middleware.js (place in root directory)
+import { NextResponse } from 'next/server'
+import { jwtVerify } from 'jose'
+
+// Define protected and public routes
+const protectedRoutes = ['/dashboard', '/profile', '/admin', '/settings']
+const publicRoutes = ['/login', '/register', '/forgot-password', '/']
+const authRoutes = ['/login', '/register'] // Redirect if already logged in
+
+export async function middleware(request) {
+  const { pathname } = request.nextUrl
+  const token = request.cookies.get('auth-token')?.value
+
+  // Check if route is protected
+  const isProtectedRoute = protectedRoutes.some(route => 
+    pathname.startsWith(route)
+  )
+  
+  // Check if route is auth-related (login/register)
+  const isAuthRoute = authRoutes.some(route => 
+    pathname.startsWith(route)
+  )
+
+  // If no token and trying to access protected route
+  if (isProtectedRoute && !token) {
+    const loginUrl = new URL('/login', request.url)
+    loginUrl.searchParams.set('callbackUrl', pathname)
+    return NextResponse.redirect(loginUrl)
+  }
+
+  // Verify token if present
+  if (token) {
+    try {
+      const secret = new TextEncoder().encode(process.env.JWT_SECRET)
+      await jwtVerify(token, secret)
+      
+      // If valid token and trying to access auth routes, redirect to dashboard
+      if (isAuthRoute) {
+        return NextResponse.redirect(new URL('/dashboard', request.url))
+      }
+    } catch (error) {
+      // Invalid token - clear it and redirect to login if protected route
+      const response = isProtectedRoute 
+        ? NextResponse.redirect(new URL('/login', request.url))
+        : NextResponse.next()
+      
+      response.cookies.delete('auth-token')
+      return response
+    }
+  }
+
+  return NextResponse.next()
+}
+
+// Configure which routes middleware should run on
+export const config = {
+  matcher: [
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+  ],
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- App Router Auth Guard -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700"
+        >
+          <h4
+            class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+          >
+            <span class="text-2xl mr-2">📱</span>
+            Method 2: App Router Auth Guard
+          </h4>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Create a reusable auth guard component for the new App Router (app/
+            directory).
+          </p>
+
+          <div class="space-y-4">
+            <!-- Auth Guard Component -->
+            <div>
+              <h5 class="font-bold text-gray-800 dark:text-gray-200 mb-2">
+                1. Create Auth Guard Component
+              </h5>
+              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                <pre><code class="language-javascript">// components/AuthGuard.js
+'use client'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { useAuth } from '@/hooks/useAuth'
+
+export default function AuthGuard({ children, fallback = null }) {
+  const { user, loading } = useAuth()
+  const router = useRouter()
+  const [isReady, setIsReady] = useState(false)
+
+  useEffect(() => {
+    if (!loading) {
+      if (!user) {
+        // Store the current URL to redirect back after login
+        const currentUrl = window.location.pathname
+        localStorage.setItem('callbackUrl', currentUrl)
+        router.push('/login')
+        return
+      }
+      setIsReady(true)
+    }
+  }, [user, loading, router])
+
+  // Show loading state
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
+      </div>
+    )
+  }
+
+  // Show fallback if user not authenticated
+  if (!user || !isReady) {
+    return fallback
+  }
+
+  // Render children if authenticated
+  return children
+}</code></pre>
+              </div>
+            </div>
+
+            <!-- Using Auth Guard -->
+            <div>
+              <h5 class="font-bold text-gray-800 dark:text-gray-200 mb-2">
+                2. Use Auth Guard in App Router
+              </h5>
+              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                <pre><code class="language-javascript">// app/dashboard/layout.js
+import AuthGuard from '@/components/AuthGuard'
+
+export default function DashboardLayout({ children }) {
+  return (
+    <AuthGuard>
+      <div className="dashboard-layout">
+        <nav className="sidebar">
+          {/* Dashboard navigation */}
+        </nav>
+        <main className="main-content">
+          {children}
+        </main>
+      </div>
+    </AuthGuard>
+  )
+}
+
+// app/dashboard/page.js
+export default function Dashboard() {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <p>This page is protected by AuthGuard!</p>
+    </div>
+  )
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pages Router Auth Guard -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700"
+        >
+          <h4
+            class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+          >
+            <span class="text-2xl mr-2">📄</span>
+            Method 3: Pages Router Auth Guard
+          </h4>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Implement auth guards using Higher-Order Components (HOC) for the
+            traditional Pages Router.
+          </p>
+
+          <div class="space-y-4">
+            <!-- HOC Auth Guard -->
+            <div>
+              <h5 class="font-bold text-gray-800 dark:text-gray-200 mb-2">
+                1. Create HOC Auth Guard
+              </h5>
+              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                <pre><code class="language-javascript">// hoc/withAuth.js
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import { useAuth } from '@/hooks/useAuth'
+
+const withAuth = (WrappedComponent) => {
+  return function AuthComponent(props) {
+    const { user, loading } = useAuth()
+    const router = useRouter()
+
+    useEffect(() => {
+      if (!loading && !user) {
+        // Store current URL for redirect after login
+        const callbackUrl = router.asPath
+        router.push({
+          pathname: '/login',
+          query: { callbackUrl }
+        })
+      }
+    }, [user, loading, router])
+
+    // Show loading spinner while checking auth
+    if (loading) {
+      return (
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
+        </div>
+      )
+    }
+
+    // Don't render component if user is not authenticated
+    if (!user) {
+      return null
+    }
+
+    // Render the wrapped component if authenticated
+    return <WrappedComponent {...props} />
+  }
+}
+
+export default withAuth</code></pre>
+              </div>
+            </div>
+
+            <!-- Using HOC -->
+            <div>
+              <h5 class="font-bold text-gray-800 dark:text-gray-200 mb-2">
+                2. Use HOC in Pages Router
+              </h5>
+              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                <button
+                  class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+                  data-copy="// pages/dashboard.js\nimport withAuth from '@/hoc/withAuth'\n\nfunction Dashboard() {\n  return (\n    <div>\n      <h1>Dashboard</h1>\n      <p>This page is protected!</p>\n    </div>\n  )\n}\n\n// Wrap the component with auth guard\nexport default withAuth(Dashboard)\n\n// pages/profile.js\nimport withAuth from '@/hoc/withAuth'\n\nfunction Profile() {\n  return (\n    <div>\n      <h1>User Profile</h1>\n      <p>Private user information</p>\n    </div>\n  )\n}\n\nexport default withAuth(Profile)"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </button>
+                <pre><code class="language-javascript">// pages/dashboard.js
+import withAuth from '@/hoc/withAuth'
+
+function Dashboard() {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <p>This page is protected!</p>
+    </div>
+  )
+}
+
+// Wrap the component with auth guard
+export default withAuth(Dashboard)
+
+// pages/profile.js
+import withAuth from '@/hoc/withAuth'
+
+function Profile() {
+  return (
+    <div>
+      <h1>User Profile</h1>
+      <p>Private user information</p>
+    </div>
+  )
+}
+
+export default withAuth(Profile)</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Auth Hook Implementation -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700"
+        >
+          <h4
+            class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+          >
+            <span class="text-2xl mr-2">🎣</span>
+            useAuth Hook Implementation
+          </h4>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Create a custom hook to manage authentication state with token
+            validation and cookie handling.
+          </p>
+
+          <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+            <button
+              class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+              data-copy="// hooks/useAuth.js\nimport { useState, useEffect, useContext, createContext } from 'react'\nimport { useRouter } from 'next/router'\nimport Cookies from 'js-cookie'\n\nconst AuthContext = createContext()\n\nexport function AuthProvider({ children }) {\n  const [user, setUser] = useState(null)\n  const [loading, setLoading] = useState(true)\n  const router = useRouter()\n\n  // Check token validity\n  const validateToken = async (token) => {\n    try {\n      const response = await fetch('/api/auth/verify', {\n        headers: {\n          'Authorization': `Bearer ${token}`\n        }\n      })\n      \n      if (response.ok) {\n        const userData = await response.json()\n        return userData\n      }\n      return null\n    } catch (error) {\n      console.error('Token validation failed:', error)\n      return null\n    }\n  }\n\n  // Initialize auth state\n  useEffect(() => {\n    const initAuth = async () => {\n      const token = Cookies.get('auth-token')\n      \n      if (token) {\n        const userData = await validateToken(token)\n        if (userData) {\n          setUser(userData)\n        } else {\n          // Invalid token, remove it\n          Cookies.remove('auth-token')\n        }\n      }\n      \n      setLoading(false)\n    }\n\n    initAuth()\n  }, [])\n\n  // Login function\n  const login = async (email, password) => {\n    try {\n      const response = await fetch('/api/auth/login', {\n        method: 'POST',\n        headers: {\n          'Content-Type': 'application/json',\n        },\n        body: JSON.stringify({ email, password }),\n      })\n\n      if (response.ok) {\n        const { token, user: userData } = await response.json()\n        \n        // Set secure cookie\n        Cookies.set('auth-token', token, {\n          expires: 7, // 7 days\n          secure: process.env.NODE_ENV === 'production',\n          sameSite: 'strict'\n        })\n        \n        setUser(userData)\n        \n        // Redirect to callback URL or dashboard\n        const callbackUrl = localStorage.getItem('callbackUrl') || '/dashboard'\n        localStorage.removeItem('callbackUrl')\n        router.push(callbackUrl)\n        \n        return { success: true }\n      } else {\n        const error = await response.json()\n        return { success: false, error: error.message }\n      }\n    } catch (error) {\n      return { success: false, error: 'Login failed' }\n    }\n  }\n\n  // Logout function\n  const logout = () => {\n    Cookies.remove('auth-token')\n    setUser(null)\n    router.push('/login')\n  }\n\n  const value = {\n    user,\n    loading,\n    login,\n    logout\n  }\n\n  return (\n    <AuthContext.Provider value={value}>\n      {children}\n    </AuthContext.Provider>\n  )\n}\n\nexport function useAuth() {\n  const context = useContext(AuthContext)\n  if (!context) {\n    throw new Error('useAuth must be used within an AuthProvider')\n  }\n  return context\n}"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </button>
+            <pre><code class="language-javascript">// hooks/useAuth.js
+import { useState, useEffect, useContext, createContext } from 'react'
+import { useRouter } from 'next/router'
+import Cookies from 'js-cookie'
+
+const AuthContext = createContext()
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const router = useRouter()
+
+  // Check token validity
+  const validateToken = async (token) => {
+    try {
+      const response = await fetch('/api/auth/verify', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      
+      if (response.ok) {
+        const userData = await response.json()
+        return userData
+      }
+      return null
+    } catch (error) {
+      console.error('Token validation failed:', error)
+      return null
+    }
+  }
+
+  // Initialize auth state
+  useEffect(() => {
+    const initAuth = async () => {
+      const token = Cookies.get('auth-token')
+      
+      if (token) {
+        const userData = await validateToken(token)
+        if (userData) {
+          setUser(userData)
+        } else {
+          // Invalid token, remove it
+          Cookies.remove('auth-token')
+        }
+      }
+      
+      setLoading(false)
+    }
+
+    initAuth()
+  }, [])
+
+  // Login function
+  const login = async (email, password) => {
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      })
+
+      if (response.ok) {
+        const { token, user: userData } = await response.json()
+        
+        // Set secure cookie
+        Cookies.set('auth-token', token, {
+          expires: 7, // 7 days
+          secure: process.env.NODE_ENV === 'production',
+          sameSite: 'strict'
+        })
+        
+        setUser(userData)
+        
+        // Redirect to callback URL or dashboard
+        const callbackUrl = localStorage.getItem('callbackUrl') || '/dashboard'
+        localStorage.removeItem('callbackUrl')
+        router.push(callbackUrl)
+        
+        return { success: true }
+      } else {
+        const error = await response.json()
+        return { success: false, error: error.message }
+      }
+    } catch (error) {
+      return { success: false, error: 'Login failed' }
+    }
+  }
+
+  // Logout function
+  const logout = () => {
+    Cookies.remove('auth-token')
+    setUser(null)
+    router.push('/login')
+  }
+
+  const value = {
+    user,
+    loading,
+    login,
+    logout
+  }
+
+  return (
+    <AuthContext.Provider value={value}>
+      {children}
+    </AuthContext.Provider>
+  )
+}
+
+export function useAuth() {
+  const context = useContext(AuthContext)
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthProvider')
+  }
+  return context
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- API Routes for Auth -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700"
+        >
+          <h4
+            class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+          >
+            <span class="text-2xl mr-2">🔌</span>
+            API Routes for Authentication
+          </h4>
+
+          <div class="space-y-4">
+            <!-- Login API -->
+            <div>
+              <h5 class="font-bold text-gray-800 dark:text-gray-200 mb-2">
+                Login API Route
+              </h5>
+              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                <button
+                  class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+                  data-copy="// pages/api/auth/login.js (or app/api/auth/login/route.js for App Router)\nimport bcrypt from 'bcryptjs'\nimport jwt from 'jsonwebtoken'\nimport { connectDB } from '@/lib/db'\nimport User from '@/models/User'\n\nexport default async function handler(req, res) {\n  if (req.method !== 'POST') {\n    return res.status(405).json({ message: 'Method not allowed' })\n  }\n\n  try {\n    await connectDB()\n    \n    const { email, password } = req.body\n\n    // Find user by email\n    const user = await User.findOne({ email })\n    if (!user) {\n      return res.status(401).json({ message: 'Invalid credentials' })\n    }\n\n    // Check password\n    const isValidPassword = await bcrypt.compare(password, user.password)\n    if (!isValidPassword) {\n      return res.status(401).json({ message: 'Invalid credentials' })\n    }\n\n    // Generate JWT token\n    const token = jwt.sign(\n      { \n        userId: user._id, \n        email: user.email,\n        role: user.role \n      },\n      process.env.JWT_SECRET,\n      { expiresIn: '7d' }\n    )\n\n    // Return user data and token\n    res.status(200).json({\n      token,\n      user: {\n        id: user._id,\n        email: user.email,\n        name: user.name,\n        role: user.role\n      }\n    })\n  } catch (error) {\n    console.error('Login error:', error)\n    res.status(500).json({ message: 'Internal server error' })\n  }\n}"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </button>
+                <pre><code class="language-javascript">// pages/api/auth/login.js (or app/api/auth/login/route.js for App Router)
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
+import { connectDB } from '@/lib/db'
+import User from '@/models/User'
+
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method not allowed' })
+  }
+
+  try {
+    await connectDB()
+    
+    const { email, password } = req.body
+
+    // Find user by email
+    const user = await User.findOne({ email })
+    if (!user) {
+      return res.status(401).json({ message: 'Invalid credentials' })
+    }
+
+    // Check password
+    const isValidPassword = await bcrypt.compare(password, user.password)
+    if (!isValidPassword) {
+      return res.status(401).json({ message: 'Invalid credentials' })
+    }
+
+    // Generate JWT token
+    const token = jwt.sign(
+      { 
+        userId: user._id, 
+        email: user.email,
+        role: user.role 
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: '7d' }
+    )
+
+    // Return user data and token
+    res.status(200).json({
+      token,
+      user: {
+        id: user._id,
+        email: user.email,
+        name: user.name,
+        role: user.role
+      }
+    })
+  } catch (error) {
+    console.error('Login error:', error)
+    res.status(500).json({ message: 'Internal server error' })
+  }
+}</code></pre>
+              </div>
+            </div>
+
+            <!-- Verify API -->
+            <div>
+              <h5 class="font-bold text-gray-800 dark:text-gray-200 mb-2">
+                Token Verification API Route
+              </h5>
+              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+                <button
+                  class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+                  data-copy="// pages/api/auth/verify.js\nimport jwt from 'jsonwebtoken'\nimport { connectDB } from '@/lib/db'\nimport User from '@/models/User'\n\nexport default async function handler(req, res) {\n  if (req.method !== 'GET') {\n    return res.status(405).json({ message: 'Method not allowed' })\n  }\n\n  try {\n    const token = req.headers.authorization?.replace('Bearer ', '')\n    \n    if (!token) {\n      return res.status(401).json({ message: 'No token provided' })\n    }\n\n    // Verify JWT token\n    const decoded = jwt.verify(token, process.env.JWT_SECRET)\n    \n    await connectDB()\n    \n    // Get fresh user data\n    const user = await User.findById(decoded.userId).select('-password')\n    if (!user) {\n      return res.status(401).json({ message: 'User not found' })\n    }\n\n    res.status(200).json({\n      id: user._id,\n      email: user.email,\n      name: user.name,\n      role: user.role\n    })\n  } catch (error) {\n    console.error('Token verification error:', error)\n    res.status(401).json({ message: 'Invalid token' })\n  }\n}"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </button>
+                <pre><code class="language-javascript">// pages/api/auth/verify.js
+import jwt from 'jsonwebtoken'
+import { connectDB } from '@/lib/db'
+import User from '@/models/User'
+
+export default async function handler(req, res) {
+  if (req.method !== 'GET') {
+    return res.status(405).json({ message: 'Method not allowed' })
+  }
+
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '')
+    
+    if (!token) {
+      return res.status(401).json({ message: 'No token provided' })
+    }
+
+    // Verify JWT token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET)
+    
+    await connectDB()
+    
+    // Get fresh user data
+    const user = await User.findById(decoded.userId).select('-password')
+    if (!user) {
+      return res.status(401).json({ message: 'User not found' })
+    }
+
+    res.status(200).json({
+      id: user._id,
+      email: user.email,
+      name: user.name,
+      role: user.role
+    })
+  } catch (error) {
+    console.error('Token verification error:', error)
+    res.status(401).json({ message: 'Invalid token' })
+  }
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Best Practices -->
+        <div
+          class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-l-4 border-green-400 p-4 rounded"
+        >
+          <div class="flex items-start">
+            <span class="text-2xl mr-2">✅</span>
+            <div>
+              <h4 class="font-bold text-green-800 dark:text-green-200 mb-3">
+                Auth Guard Best Practices
+              </h4>
+              <ul class="text-green-700 dark:text-green-300 text-sm space-y-2">
+                <li>
+                  <strong>🔐 Secure Cookies:</strong> Use httpOnly, secure, and
+                  sameSite flags for production
+                </li>
+                <li>
+                  <strong>⚡ Middleware First:</strong> Use middleware for
+                  better performance and SEO
+                </li>
+                <li>
+                  <strong>🔄 Token Refresh:</strong> Implement automatic token
+                  refresh for better UX
+                </li>
+                <li>
+                  <strong>📱 Loading States:</strong> Always show loading
+                  spinners during auth checks
+                </li>
+                <li>
+                  <strong>🎯 Callback URLs:</strong> Store and redirect users to
+                  their intended destination
+                </li>
+                <li>
+                  <strong>🛡️ Role-Based Access:</strong> Extend guards to check
+                  user roles and permissions
+                </li>
+                <li>
+                  <strong>🔍 Error Handling:</strong> Gracefully handle network
+                  errors and token expiration
+                </li>
+                <li>
+                  <strong>📊 Analytics:</strong> Track auth events for security
+                  monitoring
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Complete Mini-Project -->
+  <div class="mb-12">
+    <h2
+      class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+    >
+      <span class="text-3xl mr-3">🚀</span>
+      Complete Mini-Project: Simple Blog
+    </h2>
+
+    <div
+      class="bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 rounded-xl p-6 mb-8"
+    >
+      <h3
+        class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+      >
+        <span class="text-2xl mr-2">📝</span>
+        Let's Build a Blog Together!
+      </h3>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        Ready to practice? Let's create a simple blog with categories and posts using dynamic routes! 🎯
+      </p>
+
+      <!-- File Structure -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 mb-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <h4
+          class="font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+        >
+          <span class="text-xl mr-2">📁</span>
+          Step 1: Create the File Structure
+        </h4>
+        <div
+          class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 font-mono text-sm"
+        >
+          <div class="text-gray-600 dark:text-gray-300">📂 pages/</div>
+          <div class="text-gray-600 dark:text-gray-300 ml-4">📄 index.js <span class="text-green-600 dark:text-green-400">← Homepage</span></div>
+          <div class="text-gray-600 dark:text-gray-300 ml-4">📂 blog/</div>
+          <div class="ml-8 text-blue-600 dark:text-blue-400 font-bold">
+            📄 index.js <span class="text-green-600 dark:text-green-400">← Blog homepage</span>
+          </div>
+          <div class="ml-8 text-blue-600 dark:text-blue-400 font-bold">
+            📄 [category].js <span class="text-green-600 dark:text-green-400">← Category pages</span>
+          </div>
+          <div class="ml-8 text-blue-600 dark:text-blue-400 font-bold">
+            📄 [category]/[slug].js <span class="text-green-600 dark:text-green-400">← Individual posts</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Homepage -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 mb-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <h4
+          class="font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+        >
+          <span class="text-xl mr-2">🏠</span>
+          Step 2: Blog Homepage (pages/blog/index.js)
+        </h4>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+          <button
+            class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+            data-copy="// pages/blog/index.js
+import Link from 'next/link'
+
+export default function BlogHome() {
+  const categories = [
+    { name: 'tech', title: 'Technology', count: 15, emoji: '💻' },
+    { name: 'lifestyle', title: 'Lifestyle', count: 8, emoji: '🌱' },
+    { name: 'food', title: 'Food & Recipes', count: 12, emoji: '🍳' },
+    { name: 'travel', title: 'Travel', count: 6, emoji: '✈️' }
+  ]
+
+  return (
+    <div className='max-w-4xl mx-auto p-8'>
+      <h1 className='text-4xl font-bold mb-6 text-center'>
+        📝 My Awesome Blog
+      </h1>
+      <p className='text-xl text-gray-600 mb-8 text-center'>
+        Explore amazing content across different categories!
+      </p>
+      
+      <div className='grid md:grid-cols-2 gap-6'>
+        {categories.map((category) => (
+          <Link
+            key={category.name}
+            href={`/blog/${category.name}`}
+            className='block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200'
+          >
+            <div className='flex items-center mb-3'>
+              <span className='text-3xl mr-3'>{category.emoji}</span>
+              <h2 className='text-xl font-bold'>{category.title}</h2>
+            </div>
+            <p className='text-gray-600'>
+              {category.count} amazing articles waiting for you!
+            </p>
+            <div className='mt-4 text-blue-600 font-medium'>
+              Explore {category.title} →
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  )
+}"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </button>
+          <pre><code class="language-javascript">// pages/blog/index.js
+import Link from 'next/link'
+
+export default function BlogHome() {
+  const categories = [
+    { name: 'tech', title: 'Technology', count: 15, emoji: '💻' },
+    { name: 'lifestyle', title: 'Lifestyle', count: 8, emoji: '🌱' },
+    { name: 'food', title: 'Food & Recipes', count: 12, emoji: '🍳' },
+    { name: 'travel', title: 'Travel', count: 6, emoji: '✈️' }
+  ]
+
+  return (
+    <div className='max-w-4xl mx-auto p-8'>
+      <h1 className='text-4xl font-bold mb-6 text-center'>
+        📝 My Awesome Blog
+      </h1>
+      <p className='text-xl text-gray-600 mb-8 text-center'>
+        Explore amazing content across different categories!
+      </p>
+      
+      <div className='grid md:grid-cols-2 gap-6'>
+        {categories.map((category) => (
+          <Link
+            key={category.name}
+            href={`/blog/${category.name}`}
+            className='block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200'
+          >
+            <div className='flex items-center mb-3'>
+              <span className='text-3xl mr-3'>{category.emoji}</span>
+              <h2 className='text-xl font-bold'>{category.title}</h2>
+            </div>
+            <p className='text-gray-600'>
+              {category.count} amazing articles waiting for you!
+            </p>
+            <div className='mt-4 text-blue-600 font-medium'>
+              Explore {category.title} →
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  )
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- Category Pages -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 mb-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <h4
+          class="font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+        >
+          <span class="text-xl mr-2">📂</span>
+          Step 3: Category Page (pages/blog/[category].js)
+        </h4>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+          <pre><code class="language-javascript">// pages/blog/[category].js
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+
+export default function CategoryPage() {
+  const router = useRouter()
+  const { category } = router.query
+
+  // Mock posts data (in real app, fetch from API/database)
+  const posts = {
+    tech: [
+      { slug: 'react-hooks-guide', title: 'Master React Hooks', excerpt: 'Learn useState, useEffect and more!' },
+      { slug: 'nextjs-dynamic-routes', title: 'Next.js Dynamic Routes', excerpt: 'Build dynamic pages easily' },
+      { slug: 'javascript-es6-features', title: 'ES6 Features You Should Know', excerpt: 'Modern JavaScript essentials' }
+    ],
+    lifestyle: [
+      { slug: 'morning-routine', title: 'Perfect Morning Routine', excerpt: 'Start your day right!' },
+      { slug: 'work-life-balance', title: 'Achieving Work-Life Balance', excerpt: 'Tips for a healthier lifestyle' }
+    ],
+    food: [
+      { slug: 'easy-pasta-recipe', title: 'Quick Pasta Recipes', excerpt: '15-minute delicious meals' },
+      { slug: 'healthy-smoothies', title: 'Healthy Smoothie Ideas', excerpt: 'Nutritious and tasty!' }
+    ],
+    travel: [
+      { slug: 'budget-travel-tips', title: 'Budget Travel Hacks', excerpt: 'Travel more, spend less' },
+      { slug: 'packing-checklist', title: 'Ultimate Packing List', excerpt: 'Never forget anything again' }
+    ]
+  }
+
+  const categoryPosts = posts[category] || []
+  const categoryInfo = {
+    tech: { title: 'Technology', emoji: '💻' },
+    lifestyle: { title: 'Lifestyle', emoji: '🌱' },
+    food: { title: 'Food & Recipes', emoji: '🍳' },
+    travel: { title: 'Travel', emoji: '✈️' }
+  }
+
+  const info = categoryInfo[category] || { title: category, emoji: '📝' }
+
+  return (
+    <div className='max-w-4xl mx-auto p-8'>
+      <div className='mb-6'>
+        <Link href='/blog' className='text-blue-600 hover:underline'>
+          ← Back to Blog
+        </Link>
+      </div>
+      
+      <h1 className='text-4xl font-bold mb-6 flex items-center'>
+        <span className='text-4xl mr-3'>{info.emoji}</span>
+        {info.title}
+      </h1>
+      
+      <div className='bg-blue-50 p-4 rounded-lg mb-8'>
+        <p className='text-blue-800'>
+          📍 You're viewing: <strong>/blog/{category}</strong>
+        </p>
+        <p className='text-blue-600 text-sm'>
+          Found {categoryPosts.length} articles in this category
+        </p>
+      </div>
+
+      <div className='space-y-6'>
+        {categoryPosts.map((post) => (
+          <Link
+            key={post.slug}
+            href={`/blog/${category}/${post.slug}`}
+            className='block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200'
+          >
+            <h2 className='text-xl font-bold mb-2'>{post.title}</h2>
+            <p className='text-gray-600 mb-3'>{post.excerpt}</p>
+            <div className='text-blue-600 font-medium'>
+              Read more →
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  )
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- Individual Post -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 mb-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <h4
+          class="font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+        >
+          <span class="text-xl mr-2">📄</span>
+          Step 4: Individual Post (pages/blog/[category]/[slug].js)
+        </h4>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+          <pre><code class="language-javascript">// pages/blog/[category]/[slug].js
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+
+export default function BlogPost() {
+  const router = useRouter()
+  const { category, slug } = router.query
+
+  // Mock post data (in real app, fetch based on category and slug)
+  const post = {
+    title: 'How to Master Dynamic Routes in Next.js',
+    author: 'John Developer',
+    date: '2024-01-15',
+    readTime: '5 min read',
+    content: `
+      This is where your amazing blog content would go! 
+      
+      In a real application, you would:
+      1. Fetch the post data from your database/API
+      2. Use the category and slug to find the right post
+      3. Handle cases where the post doesn't exist
+      4. Add SEO meta tags
+      5. Maybe add comments, related posts, etc.
+      
+      The beauty of dynamic routes is that this one file
+      handles ALL your blog posts automatically! 🎉
+    `
+  }
+
+  return (
+    <div className='max-w-4xl mx-auto p-8'>
+      {/* Breadcrumb */}
+      <div className='mb-6 text-sm'>
+        <Link href='/blog' className='text-blue-600 hover:underline'>
+          Blog
+        </Link>
+        <span className='text-gray-500 mx-2'>/</span>
+        <Link href={`/blog/${category}`} className='text-blue-600 hover:underline'>
+          {category}
+        </Link>
+        <span className='text-gray-500 mx-2'>/</span>
+        <span className='text-gray-700'>{slug}</span>
+      </div>
+
+      {/* URL Debug Info */}
+      <div className='bg-yellow-50 p-4 rounded-lg mb-8'>
+        <h3 className='font-bold text-yellow-800 mb-2'>🔍 Route Info:</h3>
+        <p className='text-yellow-700 text-sm'>
+          📂 Category: <code className='bg-yellow-200 px-2 py-1 rounded'>{category}</code>
+        </p>
+        <p className='text-yellow-700 text-sm'>
+          📄 Slug: <code className='bg-yellow-200 px-2 py-1 rounded'>{slug}</code>
+        </p>
+        <p className='text-yellow-700 text-sm'>
+          🌐 Full URL: <code className='bg-yellow-200 px-2 py-1 rounded'>/blog/{category}/{slug}</code>
+        </p>
+      </div>
+
+      <article>
+        <h1 className='text-4xl font-bold mb-4'>{post.title}</h1>
+        
+        <div className='flex items-center space-x-4 text-gray-600 mb-8'>
+          <span>👤 {post.author}</span>
+          <span>📅 {post.date}</span>
+          <span>⏱️ {post.readTime}</span>
+        </div>
+
+        <div className='prose max-w-none'>
+          <p className='text-lg leading-relaxed whitespace-pre-line'>
+            {post.content}
+          </p>
+        </div>
+
+        {/* Navigation */}
+        <div className='mt-12 pt-8 border-t border-gray-200'>
+          <Link
+            href={`/blog/${category}`}
+            className='inline-flex items-center text-blue-600 hover:underline'
+          >
+            ← Back to {category} articles
+          </Link>
+        </div>
+      </article>
+    </div>
+  )
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- Testing URLs -->
+      <div
+        class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-l-4 border-green-400 p-6 rounded"
+      >
+        <h4
+          class="font-bold text-green-800 dark:text-green-200 mb-4 flex items-center"
+        >
+          <span class="text-2xl mr-2">🧪</span>
+          Test These URLs in Your Browser!
+        </h4>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <div class="text-green-700 dark:text-green-300 text-sm">
+              <strong>Homepage:</strong><br>
+              <code class="bg-green-100 dark:bg-green-800/30 px-2 py-1 rounded">localhost:3000/blog</code>
+            </div>
+            <div class="text-green-700 dark:text-green-300 text-sm">
+              <strong>Tech Category:</strong><br>
+              <code class="bg-green-100 dark:bg-green-800/30 px-2 py-1 rounded">localhost:3000/blog/tech</code>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div class="text-green-700 dark:text-green-300 text-sm">
+              <strong>Specific Post:</strong><br>
+              <code class="bg-green-100 dark:bg-green-800/30 px-2 py-1 rounded">localhost:3000/blog/tech/react-hooks-guide</code>
+            </div>
+            <div class="text-green-700 dark:text-green-300 text-sm">
+              <strong>Any Category:</strong><br>
+              <code class="bg-green-100 dark:bg-green-800/30 px-2 py-1 rounded">localhost:3000/blog/anything</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Common Pitfalls & Troubleshooting -->
+  <div class="mb-12">
+    <h2
+      class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+    >
+      <span class="text-3xl mr-3">⚠️</span>
+      Common Pitfalls & How to Fix Them
+    </h2>
+
+    <div class="space-y-6">
+      <!-- Pitfall 1 -->
+      <div
+        class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-400 p-6 rounded-lg"
+      >
+        <h3
+          class="font-bold text-red-800 dark:text-red-200 mb-3 flex items-center"
+        >
+          <span class="text-2xl mr-2">❌</span>
+          "router.query is undefined"
+        </h3>
+        <div class="space-y-3">
+          <div class="text-red-700 dark:text-red-300">
+            <p class="mb-2"><strong>Problem:</strong> You're trying to access router.query immediately but it's undefined.</p>
+            <div class="bg-red-100 dark:bg-red-800/30 p-3 rounded font-mono text-sm">
+              const { id } = router.query // ❌ undefined on first render
+            </div>
+          </div>
+          <div class="text-green-700 dark:text-green-300">
+            <p class="mb-2"><strong>Solution:</strong> Always check if the query exists first:</p>
+            <div class="bg-green-100 dark:bg-green-800/30 p-3 rounded font-mono text-sm">
+              const { id } = router.query<br>
+              if (!id) return &lt;div&gt;Loading...&lt;/div&gt; // ✅ Safe!<br>
+              // Now use id safely
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pitfall 2 -->
+      <div
+        class="bg-orange-50 dark:bg-orange-900/20 border-l-4 border-orange-400 p-6 rounded-lg"
+      >
+        <h3
+          class="font-bold text-orange-800 dark:text-orange-200 mb-3 flex items-center"
+        >
+          <span class="text-2xl mr-2">⚠️</span>
+          Route conflicts (static vs dynamic)
+        </h3>
+        <div class="space-y-3">
+          <div class="text-orange-700 dark:text-orange-300">
+            <p class="mb-2"><strong>Problem:</strong> You have both <code>pages/blog/about.js</code> and <code>pages/blog/[slug].js</code></p>
+            <div class="bg-orange-100 dark:bg-orange-800/30 p-3 rounded text-sm">
+              Which one handles <code>/blog/about</code>? 🤔
+            </div>
+          </div>
+          <div class="text-green-700 dark:text-green-300">
+            <p class="mb-2"><strong>Solution:</strong> Static routes always win! Next.js priority:</p>
+            <div class="bg-green-100 dark:bg-green-800/30 p-3 rounded text-sm">
+              1. Static routes (about.js) ✅<br>
+              2. Dynamic routes ([slug].js)<br>
+              3. Catch-all routes ([...slug].js)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pitfall 3 -->
+      <div
+        class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-400 p-6 rounded-lg"
+      >
+        <h3
+          class="font-bold text-blue-800 dark:text-blue-200 mb-3 flex items-center"
+        >
+          <span class="text-2xl mr-2">🔄</span>
+          "Page shows old data when route changes"
+        </h3>
+        <div class="space-y-3">
+          <div class="text-blue-700 dark:text-blue-300">
+            <p class="mb-2"><strong>Problem:</strong> Component doesn't update when URL changes.</p>
+            <div class="bg-blue-100 dark:bg-blue-800/30 p-3 rounded font-mono text-sm">
+              // Data fetched once, never updates ❌<br>
+              const [data, setData] = useState(null)
+            </div>
+          </div>
+          <div class="text-green-700 dark:text-green-300">
+            <p class="mb-2"><strong>Solution:</strong> Watch for route changes:</p>
+            <div class="bg-green-100 dark:bg-green-800/30 p-3 rounded font-mono text-sm">
+              useEffect(() => {<br>
+              &nbsp;&nbsp;if (router.query.id) {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;fetchData(router.query.id) // ✅ Refetch on change<br>
+              &nbsp;&nbsp;}<br>
+              }, [router.query.id])
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pitfall 4 -->
+      <div
+        class="bg-purple-50 dark:bg-purple-900/20 border-l-4 border-purple-400 p-6 rounded-lg"
+      >
+        <h3
+          class="font-bold text-purple-800 dark:text-purple-200 mb-3 flex items-center"
+        >
+          <span class="text-2xl mr-2">🚫</span>
+          "404 - This page could not be found"
+        </h3>
+        <div class="space-y-3">
+          <div class="text-purple-700 dark:text-purple-300">
+            <p class="mb-2"><strong>Problem:</strong> Your dynamic route isn't working at all.</p>
+          </div>
+          <div class="text-green-700 dark:text-green-300">
+            <p class="mb-2"><strong>Checklist:</strong></p>
+            <ul class="text-sm space-y-1 bg-green-100 dark:bg-green-800/30 p-3 rounded">
+              <li>✅ File is in the <code>pages/</code> directory</li>
+              <li>✅ Filename has square brackets: <code>[id].js</code></li>
+              <li>✅ File exports a default React component</li>
+              <li>✅ Next.js dev server is running</li>
+              <li>✅ You restarted the server after creating the file</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Performance Tips -->
+  <div class="mb-12">
+    <h2
+      class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+    >
+      <span class="text-3xl mr-3">⚡</span>
+      Performance & SEO Tips
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- SSG -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <h3
+          class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+        >
+          <span class="text-2xl mr-2">🏗️</span>
+          Static Generation (SSG)
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+          Pre-build pages at build time for lightning-fast loading!
+        </p>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded p-3 font-mono text-xs">
+          <div class="text-green-400">// For dynamic routes</div>
+          <div class="text-white">export async function getStaticPaths() {</div>
+          <div class="text-white">&nbsp;&nbsp;return { paths: [...], fallback: true }</div>
+          <div class="text-white">}</div>
+          <div class="text-white mt-2">export async function getStaticProps({ params }) {</div>
+          <div class="text-white">&nbsp;&nbsp;return { props: { data } }</div>
+          <div class="text-white">}</div>
+        </div>
+      </div>
+
+      <!-- ISR -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <h3
+          class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+        >
+          <span class="text-2xl mr-2">🔄</span>
+          Incremental Static Regeneration
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+          Update static pages without rebuilding the entire site!
+        </p>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded p-3 font-mono text-xs">
+          <div class="text-green-400">// Revalidate every 60 seconds</div>
+          <div class="text-white">export async function getStaticProps({ params }) {</div>
+          <div class="text-white">&nbsp;&nbsp;return {</div>
+          <div class="text-white">&nbsp;&nbsp;&nbsp;&nbsp;props: { data },</div>
+          <div class="text-yellow-400">&nbsp;&nbsp;&nbsp;&nbsp;revalidate: 60</div>
+          <div class="text-white">&nbsp;&nbsp;}</div>
+          <div class="text-white">}</div>
+        </div>
+      </div>
+
+      <!-- SEO -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <h3
+          class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+        >
+          <span class="text-2xl mr-2">🔍</span>
+          SEO Optimization
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+          Dynamic meta tags for better search rankings!
+        </p>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded p-3 font-mono text-xs">
+          <div class="text-white">import Head from 'next/head'</div>
+          <div class="text-white mt-2">&lt;Head&gt;</div>
+          <div class="text-white">&nbsp;&nbsp;&lt;title&gt;{`Post: ${title}`}&lt;/title&gt;</div>
+          <div class="text-white">&nbsp;&nbsp;&lt;meta name="description" content={excerpt} /&gt;</div>
+          <div class="text-white">&lt;/Head&gt;</div>
+        </div>
+      </div>
+
+      <!-- Error Handling -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <h3
+          class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+        >
+          <span class="text-2xl mr-2">🛡️</span>
+          Error Handling
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">
+          Gracefully handle missing pages and errors!
+        </p>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded p-3 font-mono text-xs">
+          <div class="text-green-400">// Return 404 for missing content</div>
+          <div class="text-white">if (!post) {</div>
+          <div class="text-white">&nbsp;&nbsp;return { notFound: true }</div>
+          <div class="text-white">}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Real-World Examples -->
+  <div class="mb-8">
+    <h2
+      class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+    >
+      <span class="text-3xl mr-3">🌍</span>
+      Real-World Examples
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- User Profiles -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <h3
+          class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+        >
+          <span class="text-2xl mr-2">👤</span>
+          User Profiles
+        </h3>
+
+        <div
+          class="bg-gray-100 dark:bg-gray-700 rounded p-3 font-mono text-sm mb-3"
+        >
+          pages/users/[username].js
+        </div>
+
+        <div class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+          <div>
+            📍
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >/users/john</code
+            >
+          </div>
+          <div>
+            📍
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >/users/sarah</code
+            >
+          </div>
+          <div>
+            📍
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >/users/developer123</code
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Pages -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <h3
+          class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+        >
+          <span class="text-2xl mr-2">🛒</span>
+          Product Pages
+        </h3>
+
+        <div
+          class="bg-gray-100 dark:bg-gray-700 rounded p-3 font-mono text-sm mb-3"
+        >
+          pages/products/[id].js
+        </div>
+
+        <div class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+          <div>
+            📍
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >/products/123</code
+            >
+          </div>
+          <div>
+            📍
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >/products/awesome-shoes</code
+            >
+          </div>
+          <div>
+            📍
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >/products/laptop-pro</code
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Takeaways & Next Steps -->
+  <div
+    class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-8 mb-8"
+  >
+    <h2
+      class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+    >
+      <span class="text-3xl mr-3">🎯</span>
+      You Did It! Here's Your Next Steps
+    </h2>
+    
+    <!-- Quick Reference -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="space-y-4">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">🚀 Quick Reference</h3>
+        <div class="space-y-3">
+          <div class="flex items-start">
+            <span class="text-2xl mr-3">📝</span>
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white mb-1">
+                [id].js
+              </h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">
+                Single dynamic segment - perfect for IDs, usernames, slugs
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <span class="text-2xl mr-3">🕸️</span>
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white mb-1">
+                [...slug].js
+              </h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">
+                Catch-all route - handles any depth of nested paths
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <span class="text-2xl mr-3">🔗</span>
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white mb-1">
+                useRouter()
+              </h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">
+                Hook to access route parameters via router.query
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="space-y-4">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">✅ What You've Learned</h3>
+        <div class="space-y-2 text-sm">
+          <div class="flex items-center">
+            <span class="text-green-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">How to create dynamic routes with square brackets</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-green-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Understanding router.query and URL parameters</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-green-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Building catch-all routes for complex paths</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-green-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Implementing auth guards for protected routes</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-green-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Common pitfalls and how to avoid them</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-green-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Performance optimization techniques</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Items -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 mb-6">
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+        <span class="text-2xl mr-2">🎯</span>
+        Your Action Plan (Pick One to Start!)
+      </h3>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-800">
+          <h4 class="font-bold text-blue-800 dark:text-blue-200 mb-2">🚀 Beginner</h4>
+          <p class="text-blue-700 dark:text-blue-300 text-sm mb-3">
+            Build the blog example from this tutorial
+          </p>
+          <ul class="text-xs text-blue-600 dark:text-blue-400 space-y-1">
+            <li>• Create the file structure</li>
+            <li>• Add sample data</li>
+            <li>• Test different URLs</li>
+          </ul>
+        </div>
+        <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg border border-purple-200 dark:border-purple-800">
+          <h4 class="font-bold text-purple-800 dark:text-purple-200 mb-2">⚡ Intermediate</h4>
+          <p class="text-purple-700 dark:text-purple-300 text-sm mb-3">
+            Add auth guards to your existing project
+          </p>
+          <ul class="text-xs text-purple-600 dark:text-purple-400 space-y-1">
+            <li>• Implement middleware auth</li>
+            <li>• Create protected routes</li>
+            <li>• Add user authentication</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border border-green-200 dark:border-green-800">
+          <h4 class="font-bold text-green-800 dark:text-green-200 mb-2">🏆 Advanced</h4>
+          <p class="text-green-700 dark:text-green-300 text-sm mb-3">
+            Build a full e-commerce site with categories
+          </p>
+          <ul class="text-xs text-green-600 dark:text-green-400 space-y-1">
+            <li>• Nested category routes</li>
+            <li>• Product search & filters</li>
+            <li>• SEO optimization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pro Tips -->
+    <div class="bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-900/20 dark:to-yellow-900/20 border-l-4 border-amber-400 p-6 rounded">
+      <h3 class="font-bold text-amber-800 dark:text-amber-200 mb-4 flex items-center">
+        <span class="text-2xl mr-2">💡</span>
+        Pro Tips for Your Next Project
+      </h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <div class="text-amber-700 dark:text-amber-300 text-sm">
+            <strong>🎨 Always think UX first:</strong> Design your URL structure to be intuitive for users
+          </div>
+          <div class="text-amber-700 dark:text-amber-300 text-sm">
+            <strong>🔍 SEO matters:</strong> Use descriptive slugs instead of just IDs
+          </div>
+          <div class="text-amber-700 dark:text-amber-300 text-sm">
+            <strong>⚡ Performance counts:</strong> Use getStaticProps when possible
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="text-amber-700 dark:text-amber-300 text-sm">
+            <strong>🛡️ Security first:</strong> Always validate and sanitize params
+          </div>
+          <div class="text-amber-700 dark:text-amber-300 text-sm">
+            <strong>📱 Mobile-friendly:</strong> Test your routes on different devices
+          </div>
+          <div class="text-amber-700 dark:text-amber-300 text-sm">
+            <strong>🚨 Error handling:</strong> Always have 404 and error pages ready
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What's Next -->
+  <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+    <h2
+      class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+    >
+      <span class="text-3xl mr-3">🚀</span>
+      What's Next in Your Next.js Journey?
+    </h2>
+    
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="space-y-4">
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white">📚 Keep Learning</h3>
+        <div class="space-y-3">
+          <div class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+            <h4 class="font-medium text-blue-800 dark:text-blue-200">API Routes</h4>
+            <p class="text-sm text-blue-700 dark:text-blue-300">Build backend APIs right in your Next.js app</p>
+          </div>
+          <div class="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+            <h4 class="font-medium text-green-800 dark:text-green-200">Server-Side Rendering</h4>
+            <p class="text-sm text-green-700 dark:text-green-300">Master getServerSideProps for dynamic data</p>
+          </div>
+          <div class="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
+            <h4 class="font-medium text-purple-800 dark:text-purple-200">App Router</h4>
+            <p class="text-sm text-purple-700 dark:text-purple-300">Explore the new App Router for modern apps</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="space-y-4">
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white">🛠️ Practice Projects</h3>
+        <div class="space-y-3">
+          <div class="p-3 bg-orange-50 dark:bg-orange-900/20 rounded-lg border border-orange-200 dark:border-orange-800">
+            <h4 class="font-medium text-orange-800 dark:text-orange-200">Portfolio Site</h4>
+            <p class="text-sm text-orange-700 dark:text-orange-300">Dynamic project pages: /projects/[id]</p>
+          </div>
+          <div class="p-3 bg-teal-50 dark:bg-teal-900/20 rounded-lg border border-teal-200 dark:border-teal-800">
+            <h4 class="font-medium text-teal-800 dark:text-teal-200">Documentation Site</h4>
+            <p class="text-sm text-teal-700 dark:text-teal-300">Nested docs: /docs/[...slug]</p>
+          </div>
+          <div class="p-3 bg-rose-50 dark:bg-rose-900/20 rounded-lg border border-rose-200 dark:border-rose-800">
+            <h4 class="font-medium text-rose-800 dark:text-rose-200">E-commerce Store</h4>
+            <p class="text-sm text-rose-700 dark:text-rose-300">Products, categories, and user profiles</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Encouragement -->
+    <div class="mt-8 p-6 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 rounded-lg text-center">
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+        🎉 You're Ready to Build Amazing Things!
+      </h3>
+      <p class="text-gray-700 dark:text-gray-300">
+        Dynamic routes are one of Next.js's superpowers. Now you have the knowledge to create 
+        scalable, SEO-friendly applications that can handle any URL structure. Go build something awesome! 🚀
+      </p>
+    </div>
   </div>
 </section>

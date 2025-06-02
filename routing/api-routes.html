@@ -1,65 +1,440 @@
 <section id="api-routes" class="mb-12">
-  <h1>API Routes</h1>
-  <p>
-    API routes provide a solution to build your API with Next.js. Any file
-    inside the folder <code>pages/api</code> is mapped to
-    <code>/api/*</code> and will be treated as an API endpoint instead of a
-    page.
-  </p>
-
-  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-    <button
-      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
-      data-copy="// pages/api/hello.js\nexport default function handler(req, res) {\n  res.status(200).json({ name: 'John Doe' })\n}"
+  <!-- Hero Section -->
+  <div class="text-center mb-8">
+    <h1
+      class="text-4xl font-bold text-gray-900 dark:text-white mb-4 flex items-center justify-center"
     >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-        ></path>
-      </svg>
-    </button>
-    <pre><code class="language-javascript">// pages/api/hello.js
-export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
-}</code></pre>
+      🔌 API Routes
+    </h1>
+    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+      Build your backend API right inside your Next.js app! No separate server
+      needed. Create endpoints for data, authentication, payments, and more! 🚀
+    </p>
   </div>
 
-  <h3>HTTP Methods</h3>
-  <p>You can handle different HTTP methods in your API routes:</p>
-
-  <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-    <button
-      class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
-      data-copy="export default function handler(req, res) {\n  if (req.method === 'POST') {\n    // Process a POST request\n  } else {\n    // Handle any other HTTP method\n  }\n}"
+  <!-- What Are API Routes Section -->
+  <div
+    class="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-xl p-6 mb-8"
+  >
+    <h2
+      class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center"
     >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
+      <span class="text-3xl mr-3">🤔</span>
+      What Are API Routes?
+    </h2>
+    <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+      Think of API routes as your app's <strong>backend functions</strong>. They
+      handle data processing, database operations, authentication, and more -
+      all without needing a separate server!
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
+        <h3
+          class="font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+        >
+          <span class="text-2xl mr-2">📁</span>
+          File Location
+        </h3>
+        <div class="bg-gray-100 dark:bg-gray-700 rounded p-3 font-mono text-sm">
+          <div>pages/</div>
+          <div>&nbsp;&nbsp;api/</div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;hello.js &nbsp;<span
+              class="text-blue-600 dark:text-blue-400"
+              >← API endpoint!</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
+        <h3
+          class="font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+        >
+          <span class="text-2xl mr-2">🌐</span>
+          URL Access
+        </h3>
+        <div class="space-y-2 text-sm">
+          <div class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded">
+            <code class="text-blue-700 dark:text-blue-300">GET /api/hello</code>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">
+            Automatically available at this URL!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Simple Example -->
+  <div class="mb-8">
+    <h2
+      class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+    >
+      <span class="text-3xl mr-3">👶</span>
+      Your First API Route
+    </h2>
+
+    <div
+      class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6 mb-6"
+    >
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+        🎯 Let's create a simple "Hello World" API!
+      </h3>
+
+      <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+        <button
+          class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+          data-copy="// pages/api/hello.js\nexport default function handler(req, res) {\n  // Send back a JSON response\n  res.status(200).json({ \n    message: 'Hello from Next.js API! 👋',\n    timestamp: new Date().toISOString(),\n    success: true\n  })\n}"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+        <pre><code class="language-javascript">// pages/api/hello.js
+export default function handler(req, res) {
+  // Send back a JSON response
+  res.status(200).json({ 
+    message: 'Hello from Next.js API! 👋',
+    timestamp: new Date().toISOString(),
+    success: true
+  })
+}</code></pre>
+      </div>
+
+      <div
+        class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-400 p-4 rounded"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-        ></path>
-      </svg>
-    </button>
-    <pre><code class="language-javascript">export default function handler(req, res) {
-  if (req.method === 'POST') {
-    // Process a POST request
-  } else {
-    // Handle any other HTTP method
+        <div class="flex items-start">
+          <span class="text-2xl mr-2">🎉</span>
+          <div>
+            <p class="font-medium text-green-800 dark:text-green-200">
+              Test it out!
+            </p>
+            <p class="text-green-700 dark:text-green-300">
+              Visit
+              <code class="bg-green-200 dark:bg-green-800 px-2 py-1 rounded"
+                >http://localhost:3000/api/hello</code
+              >
+              in your browser and see the JSON response!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HTTP Methods -->
+  <div class="mb-8">
+    <h2
+      class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+    >
+      <span class="text-3xl mr-3">🔄</span>
+      Handling Different HTTP Methods
+    </h2>
+
+    <div
+      class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 mb-6"
+    >
+      <h3
+        class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+      >
+        <span class="text-2xl mr-2">🎯</span>
+        Real-World Example: User Management API
+      </h3>
+
+      <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+        <button
+          class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+          data-copy="// pages/api/users.js\nexport default function handler(req, res) {\n  const { method } = req\n\n  switch (method) {\n    case 'GET':\n      // Get all users\n      res.status(200).json({ \n        users: ['John', 'Jane', 'Bob'],\n        message: 'Users retrieved successfully! 📋'\n      })\n      break\n      \n    case 'POST':\n      // Create a new user\n      const { name } = req.body\n      res.status(201).json({ \n        message: `User ${name} created! 🎉`,\n        user: { id: Date.now(), name }\n      })\n      break\n      \n    case 'DELETE':\n      // Delete a user\n      res.status(200).json({ \n        message: 'User deleted! 🗑️'\n      })\n      break\n      \n    default:\n      res.setHeader('Allow', ['GET', 'POST', 'DELETE'])\n      res.status(405).end(`Method ${method} Not Allowed`)\n  }\n}"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+        <pre><code class="language-javascript">// pages/api/users.js
+export default function handler(req, res) {
+  const { method } = req
+
+  switch (method) {
+    case 'GET':
+      // Get all users
+      res.status(200).json({ 
+        users: ['John', 'Jane', 'Bob'],
+        message: 'Users retrieved successfully! 📋'
+      })
+      break
+      
+    case 'POST':
+      // Create a new user
+      const { name } = req.body
+      res.status(201).json({ 
+        message: `User ${name} created! 🎉`,
+        user: { id: Date.now(), name }
+      })
+      break
+      
+    case 'DELETE':
+      // Delete a user
+      res.status(200).json({ 
+        message: 'User deleted! 🗑️'
+      })
+      break
+      
+    default:
+      res.setHeader('Allow', ['GET', 'POST', 'DELETE'])
+      res.status(405).end(`Method ${method} Not Allowed`)
   }
 }</code></pre>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <div
+          class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded border border-blue-200 dark:border-blue-800"
+        >
+          <h4 class="font-bold text-blue-800 dark:text-blue-200 mb-1">
+            GET Request
+          </h4>
+          <p class="text-sm text-blue-700 dark:text-blue-300">
+            Retrieve data (like getting user list)
+          </p>
+        </div>
+        <div
+          class="bg-green-50 dark:bg-green-900/20 p-3 rounded border border-green-200 dark:border-green-800"
+        >
+          <h4 class="font-bold text-green-800 dark:text-green-200 mb-1">
+            POST Request
+          </h4>
+          <p class="text-sm text-green-700 dark:text-green-300">
+            Create new data (like adding a user)
+          </p>
+        </div>
+        <div
+          class="bg-red-50 dark:bg-red-900/20 p-3 rounded border border-red-200 dark:border-red-800"
+        >
+          <h4 class="font-bold text-red-800 dark:text-red-200 mb-1">
+            DELETE Request
+          </h4>
+          <p class="text-sm text-red-700 dark:text-red-300">
+            Remove data (like deleting a user)
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Common Use Cases -->
+  <div class="mb-8">
+    <h2
+      class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+    >
+      <span class="text-3xl mr-3">💡</span>
+      What Can You Build?
+    </h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Authentication -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <div class="text-center mb-4">
+          <span class="text-4xl">🔐</span>
+        </div>
+        <h3
+          class="text-lg font-bold text-gray-900 dark:text-white mb-2 text-center"
+        >
+          Authentication
+        </h3>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+          <li>• User login/logout</li>
+          <li>• Password reset</li>
+          <li>• JWT token creation</li>
+          <li>• Session management</li>
+        </ul>
+      </div>
+
+      <!-- Database Operations -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <div class="text-center mb-4">
+          <span class="text-4xl">🗄️</span>
+        </div>
+        <h3
+          class="text-lg font-bold text-gray-900 dark:text-white mb-2 text-center"
+        >
+          Database
+        </h3>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+          <li>• Save user data</li>
+          <li>• Fetch blog posts</li>
+          <li>• Product catalog</li>
+          <li>• Search functionality</li>
+        </ul>
+      </div>
+
+      <!-- External APIs -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <div class="text-center mb-4">
+          <span class="text-4xl">🌐</span>
+        </div>
+        <h3
+          class="text-lg font-bold text-gray-900 dark:text-white mb-2 text-center"
+        >
+          External APIs
+        </h3>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+          <li>• Weather data</li>
+          <li>• Payment processing</li>
+          <li>• Social media posts</li>
+          <li>• Email sending</li>
+        </ul>
+      </div>
+
+      <!-- File Uploads -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <div class="text-center mb-4">
+          <span class="text-4xl">📁</span>
+        </div>
+        <h3
+          class="text-lg font-bold text-gray-900 dark:text-white mb-2 text-center"
+        >
+          File Handling
+        </h3>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+          <li>• Image uploads</li>
+          <li>• File processing</li>
+          <li>• Document storage</li>
+          <li>• PDF generation</li>
+        </ul>
+      </div>
+
+      <!-- Real-time Features -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <div class="text-center mb-4">
+          <span class="text-4xl">⚡</span>
+        </div>
+        <h3
+          class="text-lg font-bold text-gray-900 dark:text-white mb-2 text-center"
+        >
+          Real-time
+        </h3>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+          <li>• Chat messages</li>
+          <li>• Live notifications</li>
+          <li>• Stock prices</li>
+          <li>• Game scores</li>
+        </ul>
+      </div>
+
+      <!-- Analytics -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+      >
+        <div class="text-center mb-4">
+          <span class="text-4xl">📊</span>
+        </div>
+        <h3
+          class="text-lg font-bold text-gray-900 dark:text-white mb-2 text-center"
+        >
+          Analytics
+        </h3>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+          <li>• Page views tracking</li>
+          <li>• User behavior</li>
+          <li>• Performance metrics</li>
+          <li>• Custom events</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Benefits -->
+  <div
+    class="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl p-6"
+  >
+    <h2
+      class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center"
+    >
+      <span class="text-3xl mr-3">⭐</span>
+      Why API Routes Are Awesome
+    </h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <span class="text-2xl mr-3">🚀</span>
+          <div>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-1">
+              No Separate Server
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Everything runs in one Next.js app
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start">
+          <span class="text-2xl mr-3">⚡</span>
+          <div>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-1">
+              Automatic Deployment
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Deploy frontend and backend together
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <span class="text-2xl mr-3">🔒</span>
+          <div>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-1">
+              Built-in Security
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Server-side code stays private
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start">
+          <span class="text-2xl mr-3">🛠️</span>
+          <div>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-1">
+              Easy to Use
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Just create a file and export a function
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

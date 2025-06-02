@@ -1,54 +1,272 @@
 <section id="styling-overview" class="mb-12">
-  <h1>Styling Your Next.js App</h1>
-  <p>
-    Next.js supports multiple ways to style your application, each with its own
-    benefits and use cases.
-  </p>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-    <div
-      class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6"
-    >
-      <h3 class="font-semibold text-blue-900 dark:text-blue-100 mb-2">
-        CSS Modules
-      </h3>
-      <p class="text-blue-800 dark:text-blue-200 text-sm">
-        Scoped CSS with automatic class name generation
-      </p>
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-br from-pink-600 via-purple-600 to-indigo-600 text-white rounded-2xl p-8 mb-12 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">🎨 Styling Your Next.js App</h1>
+            <p class="text-xl md:text-2xl opacity-90 mb-6">Express your creativity! From CSS modules to utility frameworks - style your app exactly how you envision it.</p>
+            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-30">
+                <p class="text-lg font-medium">✨ Multiple styling approaches, one amazing developer experience!</p>
+            </div>
+        </div>
     </div>
 
-    <div
-      class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6"
-    >
-      <h3 class="font-semibold text-green-900 dark:text-green-100 mb-2">
-        Styled Components
-      </h3>
-      <p class="text-green-800 dark:text-green-200 text-sm">
-        CSS-in-JS with component-based styling
-      </p>
+    <!-- Why Styling Matters -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">🎯 Why Great Styling Matters</h2>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-pink-50 dark:bg-gray-800 p-6 rounded-xl border border-pink-200 dark:border-gray-700">
+                <div class="text-3xl mb-3">👥</div>
+                <h3 class="text-xl font-semibold mb-3 text-pink-700 dark:text-pink-300">User Experience</h3>
+                <p class="text-gray-600 dark:text-gray-300">Beautiful, responsive design that delights users across all devices.</p>
+            </div>
+            <div class="bg-purple-50 dark:bg-gray-800 p-6 rounded-xl border border-purple-200 dark:border-gray-700">
+                <div class="text-3xl mb-3">🚀</div>
+                <h3 class="text-xl font-semibold mb-3 text-purple-700 dark:text-purple-300">Performance</h3>
+                <p class="text-gray-600 dark:text-gray-300">Optimized CSS delivery with automatic code splitting and minification.</p>
+            </div>
+            <div class="bg-indigo-50 dark:bg-gray-800 p-6 rounded-xl border border-indigo-200 dark:border-gray-700">
+                <div class="text-3xl mb-3">🛠️</div>
+                <h3 class="text-xl font-semibold mb-3 text-indigo-700 dark:text-indigo-300">Developer Experience</h3>
+                <p class="text-gray-600 dark:text-gray-300">Scoped styles, hot reloading, and TypeScript support out of the box.</p>
+            </div>
+            <div class="bg-blue-50 dark:bg-gray-800 p-6 rounded-xl border border-blue-200 dark:border-gray-700">
+                <div class="text-3xl mb-3">🎨</div>
+                <h3 class="text-xl font-semibold mb-3 text-blue-700 dark:text-blue-300">Brand Identity</h3>
+                <p class="text-gray-600 dark:text-gray-300">Consistent design system that reflects your brand perfectly.</p>
+            </div>
+        </div>
     </div>
 
-    <div
-      class="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-lg p-6"
-    >
-      <h3 class="font-semibold text-purple-900 dark:text-purple-100 mb-2">
-        Tailwind CSS
-      </h3>
-      <p class="text-purple-800 dark:text-purple-200 text-sm">
-        Utility-first CSS framework
-      </p>
-    </div>
-  </div>
+    <!-- Styling Options -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">🛠️ Choose Your Styling Approach</h2>
 
-  <h3>Choosing a Styling Method</h3>
-  <ul>
-    <li>
-      <strong>CSS Modules:</strong> Great for traditional CSS approaches with
-      scoping
-    </li>
-    <li>
-      <strong>Styled Components:</strong> Perfect for component-based
-      architecture
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+            <div class="bg-gradient-to-br from-blue-50 to-cyan-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-8 border border-blue-200 dark:border-gray-600">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">CSS Modules</h3>
+                        <p class="text-sm text-blue-600 dark:text-blue-400">Scoped CSS perfection</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    Scoped CSS with automatic class name generation. Perfect for traditional CSS developers who want modern scoping.
+                </p>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 mb-4">
+                    <p class="text-sm font-medium text-gray-800 dark:text-white mb-2">✅ Perfect for:</p>
+                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                        <li>• Traditional CSS workflow</li>
+                        <li>• Component-scoped styles</li>
+                        <li>• Existing CSS codebases</li>
+                    </ul>
+                </div>
+                <a href="css-modules.html" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium">
+                    Learn CSS Modules
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-8 border border-green-200 dark:border-gray-600">
+                <div class="flex items-center mb-4">
+                    <div class="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Styled Components</h3>
+                        <p class="text-sm text-green-600 dark:text-green-400">CSS-in-JS magic</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    CSS-in-JS with component-based styling. Dynamic styles that respond to props and state changes seamlessly.
+                </p>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 mb-4">
+                    <p class="text-sm font-medium text-gray-800 dark:text-white mb-2">✅ Perfect for:</p>
+                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                        <li>• Dynamic styling with props</li>
+                        <li>• Component-based architecture</li>
+                        <li>• Theme-driven design systems</li>
+                    </ul>
+                </div>
+                <a href="styled-components.html" class="inline-flex items-center text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 font-medium">
+                    Master Styled Components
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="bg-gradient-to-br from-purple-50 to-violet-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-8 border border-purple-200 dark:border-gray-600">
+                <div class="flex items-center mb-4">
+                    <div class="bg-purple-500 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Tailwind CSS</h3>
+                        <p class="text-sm text-purple-600 dark:text-purple-400">Utility-first power</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    Utility-first CSS framework for rapid UI development. Build complex designs with simple, composable classes.
+                </p>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-4 mb-4">
+                    <p class="text-sm font-medium text-gray-800 dark:text-white mb-2">✅ Perfect for:</p>
+                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                        <li>• Rapid prototyping</li>
+                        <li>• Consistent design systems</li>
+                        <li>• Responsive-first development</li>
+                    </ul>
+                </div>
+                <a href="tailwind.html" class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 font-medium">
+                    Get Started with Tailwind
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Styling Decision Guide -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">🤔 Which Styling Method Should You Choose?</h2>
+        <div class="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-8 border border-gray-200 dark:border-gray-600">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-500 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white">New to React/Next.js?</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Start with CSS Modules for familiar CSS workflow with modern scoping benefits.</p>
+                    <a href="css-modules.html" class="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-800 dark:hover:text-blue-300">Start with CSS Modules →</a>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white">Building Complex Apps?</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Use Styled Components for dynamic theming and component-based architecture.</p>
+                    <a href="styled-components.html" class="text-green-600 dark:text-green-400 font-medium hover:text-green-800 dark:hover:text-green-300">Try Styled Components →</a>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-purple-500 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white">Want Speed & Consistency?</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Choose Tailwind for rapid development with a comprehensive design system.</p>
+                    <a href="tailwind.html" class="text-purple-600 dark:text-purple-400 font-medium hover:text-purple-800 dark:hover:text-purple-300">Go with Tailwind →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Best Practices -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">✨ Next.js Styling Best Practices</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-6">
+                <h3 class="text-xl font-semibold text-green-700 dark:text-green-300 flex items-center">
+                    <span class="text-2xl mr-2">✅</span> Do This
+                </h3>
+                <div class="space-y-4">
+                    <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+                        <p class="font-medium text-green-800 dark:text-green-200">Use CSS Modules for scoping</p>
+                        <p class="text-sm text-green-700 dark:text-green-300">Avoid global CSS conflicts with automatic class name generation</p>
+                    </div>
+                    <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+                        <p class="font-medium text-green-800 dark:text-green-200">Optimize for Core Web Vitals</p>
+                        <p class="text-sm text-green-700 dark:text-green-300">Use critical CSS and avoid layout shifts for better performance</p>
+                    </div>
+                    <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+                        <p class="font-medium text-green-800 dark:text-green-200">Implement dark mode support</p>
+                        <p class="text-sm text-green-700 dark:text-green-300">Use CSS custom properties and next-themes for seamless dark mode</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <h3 class="text-xl font-semibold text-red-700 dark:text-red-300 flex items-center">
+                    <span class="text-2xl mr-2">❌</span> Avoid This
+                </h3>
+                <div class="space-y-4">
+                    <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+                        <p class="font-medium text-red-800 dark:text-red-200">Don't use global styles everywhere</p>
+                        <p class="text-sm text-red-700 dark:text-red-300">Global CSS can cause conflicts and is harder to maintain</p>
+                    </div>
+                    <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+                        <p class="font-medium text-red-800 dark:text-red-200">Don't ignore responsive design</p>
+                        <p class="text-sm text-red-700 dark:text-red-300">Mobile-first approach is essential for modern web apps</p>
+                    </div>
+                    <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+                        <p class="font-medium text-red-800 dark:text-red-200">Don't mix multiple styling approaches</p>
+                        <p class="text-sm text-red-700 dark:text-red-300">Stick to one primary method to avoid complexity and conflicts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Start Guide -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">🚀 Quick Start Guide</h2>
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="bg-pink-500 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Choose Your Method</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Pick CSS Modules, Styled Components, or Tailwind based on your project needs</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-purple-500 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Set Up Your Environment</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Install dependencies and configure your chosen styling solution</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-indigo-500 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Start Styling!</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Begin creating beautiful, responsive components with your preferred approach</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Get Started CTA -->
+    <div class="bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-2xl p-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Style Your App? 🎨</h2>
+        <p class="text-xl opacity-90 mb-6">Choose your styling adventure and start building beautiful Next.js applications!</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="css-modules.html" class="inline-block bg-white text-pink-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                CSS Modules
+            </a>
+            <a href="styled-components.html" class="inline-block bg-pink-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-pink-400 transition-colors border border-white border-opacity-30">
+                Styled Components
+            </a>
+            <a href="tailwind.html" class="inline-block bg-pink-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-pink-400 transition-colors border border-white border-opacity-30">
+                Tailwind CSS
+            </a>
+        </div>
+    </div>
     </li>
     <li>
       <strong>Tailwind CSS:</strong> Ideal for rapid development and consistent

@@ -1,8 +1,111 @@
 <section id="image-optimization" class="mb-12">
-    <h1>Image Optimization</h1>
-    <p>The Next.js Image component extends the HTML <code>&lt;img&gt;</code> element with automatic image optimization features.</p>
-    
-    <h3>Basic Usage</h3>
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl p-8 mb-8">
+    <div class="flex items-center mb-6">
+      <div class="bg-green-500 rounded-full p-4 mr-4">
+        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+      </div>
+      <div>
+        <h1 class="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-2">
+          🖼️ Image Optimization
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300">
+          Blazing fast images with zero configuration
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-green-100 dark:border-green-800 shadow-lg">
+      <div class="flex items-center mb-4">
+        <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full text-sm font-medium">
+          ⚡ Automatic Optimization
+        </span>
+      </div>
+      <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+        <strong>Performance out of the box!</strong> The Next.js Image component automatically optimizes images for modern web performance - 
+        smaller file sizes, lazy loading, and responsive sizing included!
+      </p>
+    </div>
+  </div>
+
+  <!-- What Makes It Special -->
+  <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8">
+    <div class="bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-white">Why Next.js Images Are Amazing</h2>
+          <p class="text-blue-100">All the modern web optimizations you need</p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center">
+          <div class="bg-blue-100 dark:bg-blue-900 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">⚡ Faster Loading</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">Automatic format optimization (WebP, AVIF) and compression</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-green-100 dark:bg-green-900 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">👁️ Lazy Loading</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">Images load only when they enter the viewport</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-purple-100 dark:bg-purple-900 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">📱 Responsive</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">Automatically serves right size for each device</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step-by-Step Guide -->
+  <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8">
+    <div class="bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 17.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-white">How to Use Next.js Images</h2>
+          <p class="text-emerald-100">Replace img tags with the Image component</p>
+        </div>
+      </div>
+    </div>
+    <div class="p-6">
+      <!-- Basic Usage -->
+      <div class="mb-8">
+        <div class="flex items-center mb-4">
+          <div class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">
+            1
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Basic Local Images</h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          For images in your project, import them and Next.js will automatically handle the optimization:
+        </p>
     <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
         <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="import Image from 'next/image'\nimport profilePic from '../public/me.png'\n\nexport default function Home() {\n  return (\n    <div>\n      <h1>My Homepage</h1>\n      <Image\n        src={profilePic}\n        alt=\"Picture of the author\"\n        width={500}\n        height={500}\n      />\n      <p>Welcome to my homepage!</p>\n    </div>\n  )\n}">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -26,83 +129,228 @@ export default function Home() {
     </div>
   )
 }</code></pre>
-    </div>
-    
-    <h3>Remote Images</h3>
-    <p>For remote images, you need to provide the <code>width</code> and <code>height</code> props:</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="import Image from 'next/image'\n\nexport default function Home() {\n  return (\n    <div>\n      <Image\n        src=\"https://example.com/image.jpg\"\n        alt=\"Description\"\n        width={500}\n        height={300}\n      />\n    </div>\n  )\n}">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-        </button>
-        <pre><code class="language-javascript">import Image from 'next/image'
+        </div>
+      </div>
 
-export default function Home() {
+      <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded mt-4">
+          <div class="flex items-center mb-2">
+            <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <h4 class="font-semibold text-blue-800 dark:text-blue-200">✨ Automatic Optimization</h4>
+          </div>
+          <p class="text-blue-700 dark:text-blue-300 text-sm">
+            Next.js automatically detects image dimensions from imported files, so you don't need to specify width and height for local images!
+          </p>
+        </div>
+      </div>
+
+      <!-- Remote Images -->
+      <div class="mb-8">
+        <div class="flex items-center mb-4">
+          <div class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">
+            2
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Remote Images</h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          For external images, specify dimensions and configure allowed domains:
+        </p>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative">
+          <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+            data-copy="// next.config.js\nmodule.exports = {\n  images: {\n    domains: ['example.com', 'api.unsplash.com']\n  }\n}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+          </button>
+          <pre><code class="language-javascript">// next.config.js
+module.exports = {
+  images: {
+    domains: ['example.com', 'api.unsplash.com']
+  }
+}</code></pre>
+        </div>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+          <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+            data-copy="import Image from 'next/image'\n\nexport default function Gallery() {\n  return (\n    <div>\n      <Image\n        src=\"https://api.unsplash.com/photos/1600x900\"\n        alt=\"Beautiful landscape\"\n        width={800}\n        height={450}\n        placeholder=\"blur\"\n        blurDataURL=\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQ\"\n      />\n    </div>\n  )\n}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+          </button>
+          <pre><code class="language-javascript">import Image from 'next/image'
+
+export default function Gallery() {
   return (
     <div>
       <Image
-        src="https://example.com/image.jpg"
-        alt="Description"
-        width={500}
-        height={300}
+        src="https://api.unsplash.com/photos/1600x900"
+        alt="Beautiful landscape"
+        width={800}
+        height={450}
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQ"
       />
     </div>
   )
 }</code></pre>
-    </div>
-    
-    <h3>Fill Container</h3>
-    <p>Use the <code>fill</code> prop to make the image fill its parent container:</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="import Image from 'next/image'\n\nexport default function Home() {\n  return (\n    <div style={{ position: 'relative', width: '100%', height: '400px' }}>\n      <Image\n        src=\"/hero-image.jpg\"\n        alt=\"Hero image\"\n        fill\n        style={{ objectFit: 'cover' }}\n      />\n    </div>\n  )\n}">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-        </button>
-        <pre><code class="language-javascript">import Image from 'next/image'
+        </div>
+      </div>
 
-export default function Home() {
+      <!-- Responsive Images -->
+      <div class="mb-8">
+        <div class="flex items-center mb-4">
+          <div class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">
+            3
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Responsive Images</h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Use the <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">fill</code> prop for responsive containers:
+        </p>
+        <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
+          <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+            data-copy="import Image from 'next/image'\n\nexport default function Hero() {\n  return (\n    <div className=\"relative w-full h-64\">\n      <Image\n        src=\"/hero-image.jpg\"\n        alt=\"Hero image\"\n        fill\n        style={{ objectFit: 'cover' }}\n        priority // Load immediately for above-the-fold images\n      />\n    </div>\n  )\n}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+          </button>
+          <pre><code class="language-javascript">import Image from 'next/image'
+
+export default function Hero() {
   return (
-    <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+    <div className="relative w-full h-64">
       <Image
         src="/hero-image.jpg"
         alt="Hero image"
         fill
         style={{ objectFit: 'cover' }}
+        priority // Load immediately for above-the-fold images
       />
     </div>
   )
 }</code></pre>
+        </div>
+      </div>
     </div>
-    
-    <h3>Key Features</h3>
-    <ul>
-        <li><strong>Automatic Format Optimization:</strong> Serves modern formats like WebP and AVIF</li>
-        <li><strong>Responsive Images:</strong> Automatically generates multiple sizes</li>
-        <li><strong>Lazy Loading:</strong> Images load only when they enter the viewport</li>
-        <li><strong>Placeholder Support:</strong> Built-in blur placeholders</li>
-        <li><strong>Priority Loading:</strong> Disable lazy loading for above-the-fold images</li>
-    </ul>
-    
-    <h3>Configuration</h3>
-    <p>Configure image domains in <code>next.config.js</code> for remote images:</p>
-    
-    <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-6 relative">
-        <button class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors" data-copy="/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  images: {\n    domains: ['example.com', 'another-domain.com'],\n  },\n}\n\nmodule.exports = nextConfig">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-        </button>
-        <pre><code class="language-javascript">/** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    domains: ['example.com', 'another-domain.com'],
-  },
-}
+  </div>
 
-module.exports = nextConfig</code></pre>
+  <!-- Best Practices -->
+  <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8">
+    <div class="bg-gradient-to-r from-yellow-500 to-orange-500 px-6 py-4">
+      <div class="flex items-center">
+        <div class="bg-white/20 rounded-lg p-2 mr-3">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-white">Image Optimization Best Practices</h2>
+          <p class="text-yellow-100">Pro tips for amazing performance</p>
+        </div>
+      </div>
     </div>
+    <div class="p-6">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">✅ Do</h3>
+          <div class="space-y-3">
+            <div class="flex items-start">
+              <div class="bg-green-100 dark:bg-green-900 rounded-full p-2 mr-3 mt-1">
+                <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Use priority for above-the-fold images</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Add <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">priority</code> to images users see immediately</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-green-100 dark:bg-green-900 rounded-full p-2 mr-3 mt-1">
+                <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Always include meaningful alt text</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Essential for accessibility and SEO</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-green-100 dark:bg-green-900 rounded-full p-2 mr-3 mt-1">
+                <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Use placeholder for smooth loading</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Blur or solid color placeholders improve UX</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">❌ Avoid</h3>
+          <div class="space-y-3">
+            <div class="flex items-start">
+              <div class="bg-red-100 dark:bg-red-900 rounded-full p-2 mr-3 mt-1">
+                <svg class="w-4 h-4 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Using regular img tags</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Miss out on all the automatic optimizations</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-red-100 dark:bg-red-900 rounded-full p-2 mr-3 mt-1">
+                <svg class="w-4 h-4 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Oversized source images</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Don't upload 4K images for thumbnail use</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-red-100 dark:bg-red-900 rounded-full p-2 mr-3 mt-1">
+                <svg class="w-4 h-4 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Forgetting domain configuration</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">External images need domain allow-listing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Performance Benefits -->
+  <div class="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-6">
+    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+      <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">📊</span>
+      Performance Impact
+    </h3>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-blue-200 dark:border-blue-800 text-center">
+        <div class="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">50-70%</div>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Smaller file sizes with WebP/AVIF formats</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-blue-200 dark:border-blue-800 text-center">
+        <div class="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">3x</div>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Faster initial page loads with lazy loading</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-blue-200 dark:border-blue-800 text-center">
+        <div class="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">90+</div>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Lighthouse performance scores become achievable</p>
+      </div>
+    </div>
+  </div>
 </section>
