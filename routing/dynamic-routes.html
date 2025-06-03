@@ -836,10 +836,10 @@ export default function DocsPage() {
           </p>
 
           <div
-            class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative"
+            class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 sm:p-6 mb-4 relative overflow-hidden"
           >
             <button
-              class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+              class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors z-10"
               data-copy="// URL: /docs/getting-started/installation/npm\n// File: pages/docs/[...slug].js\n\nconst { slug } = router.query\nconsole.log(slug)\n// Output: ['getting-started', 'installation', 'npm']\n\n// You can access individual segments:\nconsole.log(slug[0]) // 'getting-started'\nconsole.log(slug[1]) // 'installation' \nconsole.log(slug[2]) // 'npm'"
             >
               <svg
@@ -856,7 +856,8 @@ export default function DocsPage() {
                 ></path>
               </svg>
             </button>
-            <pre><code class="language-javascript">// URL: /docs/getting-started/installation/npm
+            <div class="overflow-x-auto">
+            <pre class="whitespace-pre-wrap break-words"><code class="language-javascript">// URL: /docs/getting-started/installation/npm
 // File: pages/docs/[...slug].js
 
 const { slug } = router.query
@@ -867,6 +868,7 @@ console.log(slug)
 console.log(slug[0]) // 'getting-started'
 console.log(slug[1]) // 'installation' 
 console.log(slug[2]) // 'npm'</code></pre>
+            </div>
           </div>
         </div>
 
@@ -967,9 +969,69 @@ console.log(slug[2]) // 'npm'</code></pre>
           </h4>
 
           <div
-            class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative"
+            class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 sm:p-6 mb-4 relative overflow-hidden"
           >
-            <pre><code class="language-javascript">// pages/docs/[...slug].js
+            <button
+              class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors z-10"
+              data-copy="// pages/docs/[...slug].js
+import { useRouter } from 'next/router'
+
+export default function DocsPage() {
+  const router = useRouter()
+  const { slug } = router.query
+
+  // Handle different levels of nesting
+  const getContent = () => {
+    if (!slug) return <div>Loading...</div>
+    
+    if (slug.length === 1) {
+      // /docs/getting-started
+      return <CategoryPage category={slug[0]} />
+    }
+    
+    if (slug.length === 2) {
+      // /docs/getting-started/installation
+      return <SubCategoryPage 
+        category={slug[0]} 
+        subcategory={slug[1]} 
+      />
+    }
+    
+    if (slug.length === 3) {
+      // /docs/getting-started/installation/npm
+      return <ArticlePage 
+        category={slug[0]}
+        subcategory={slug[1]}
+        article={slug[2]}
+      />
+    }
+    
+    return <div>Page not found</div>
+  }
+
+  return (
+    <div className='max-w-4xl mx-auto p-8'>
+      {getContent()}
+    </div>
+  )
+}"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </button>
+            <div class="overflow-x-auto">
+            <pre class="whitespace-pre-wrap break-words"><code class="language-javascript">// pages/docs/[...slug].js
 import { useRouter } from 'next/router'
 
 export default function DocsPage() {
@@ -1029,6 +1091,7 @@ export default function DocsPage() {
     </div>
   )
 }</code></pre>
+            </div>
           </div>
         </div>
 
@@ -1228,10 +1291,10 @@ export default function DocsPage() {
           </p>
 
           <div
-            class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 relative"
+            class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 sm:p-6 mb-4 relative overflow-hidden"
           >
             <button
-              class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+              class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors z-10"
               data-copy="// middleware.js (place in root directory)\nimport { NextResponse } from 'next/server'\nimport { jwtVerify } from 'jose'\n\n// Define protected and public routes\nconst protectedRoutes = ['/dashboard', '/profile', '/admin', '/settings']\nconst publicRoutes = ['/login', '/register', '/forgot-password', '/']\nconst authRoutes = ['/login', '/register'] // Redirect if already logged in\n\nexport async function middleware(request) {\n  const { pathname } = request.nextUrl\n  const token = request.cookies.get('auth-token')?.value\n\n  // Check if route is protected\n  const isProtectedRoute = protectedRoutes.some(route => \n    pathname.startsWith(route)\n  )\n  \n  // Check if route is auth-related (login/register)\n  const isAuthRoute = authRoutes.some(route => \n    pathname.startsWith(route)\n  )\n\n  // If no token and trying to access protected route\n  if (isProtectedRoute && !token) {\n    const loginUrl = new URL('/login', request.url)\n    loginUrl.searchParams.set('callbackUrl', pathname)\n    return NextResponse.redirect(loginUrl)\n  }\n\n  // Verify token if present\n  if (token) {\n    try {\n      const secret = new TextEncoder().encode(process.env.JWT_SECRET)\n      await jwtVerify(token, secret)\n      \n      // If valid token and trying to access auth routes, redirect to dashboard\n      if (isAuthRoute) {\n        return NextResponse.redirect(new URL('/dashboard', request.url))\n      }\n    } catch (error) {\n      // Invalid token - clear it and redirect to login if protected route\n      const response = isProtectedRoute \n        ? NextResponse.redirect(new URL('/login', request.url))\n        : NextResponse.next()\n      \n      response.cookies.delete('auth-token')\n      return response\n    }\n  }\n\n  return NextResponse.next()\n}\n\n// Configure which routes middleware should run on\nexport const config = {\n  matcher: [\n    '/((?!api|_next/static|_next/image|favicon.ico).*)',\n  ],\n}"
             >
               <svg
@@ -1248,7 +1311,8 @@ export default function DocsPage() {
                 ></path>
               </svg>
             </button>
-            <pre><code class="language-javascript">// middleware.js (place in root directory)
+            <div class="overflow-x-auto">
+            <pre class="whitespace-pre-wrap break-words"><code class="language-javascript">// middleware.js (place in root directory)
 import { NextResponse } from 'next/server'
 import { jwtVerify } from 'jose'
 
@@ -1308,6 +1372,7 @@ export const config = {
     '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 }</code></pre>
+            </div>
           </div>
         </div>
 
@@ -1332,8 +1397,71 @@ export const config = {
               <h5 class="font-bold text-gray-800 dark:text-gray-200 mb-2">
                 1. Create Auth Guard Component
               </h5>
-              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
-                <pre><code class="language-javascript">// components/AuthGuard.js
+              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 sm:p-6 relative overflow-hidden">
+                <button
+                  class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors z-10"
+                  data-copy="// components/AuthGuard.js
+'use client'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { useAuth } from '@/hooks/useAuth'
+
+export default function AuthGuard({ children, fallback = null }) {
+  const { user, loading } = useAuth()
+  const router = useRouter()
+  const [isReady, setIsReady] = useState(false)
+
+  useEffect(() => {
+    if (!loading) {
+      if (!user) {
+        // Store the current URL to redirect back after login
+        const currentUrl = window.location.pathname
+        localStorage.setItem('callbackUrl', currentUrl)
+        router.push('/login')
+        return
+      }
+      setIsReady(true)
+    }
+  }, [user, loading, router])
+
+  // Show loading state
+  if (loading) {
+    return (
+      <div className='flex items-center justify-center min-h-screen'>
+        <div className='animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600'></div>
+      </div>
+    )
+  }
+
+  // Show fallback if user not authenticated
+  if (!user) {
+    return fallback
+  }
+
+  // Show protected content if user is ready
+  if (isReady) {
+    return children
+  }
+
+  return null
+}"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </button>
+                <div class="overflow-x-auto">
+                <pre class="whitespace-pre-wrap break-words"><code class="language-javascript">// components/AuthGuard.js
 'use client'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
@@ -1374,6 +1502,7 @@ export default function AuthGuard({ children, fallback = null }) {
   // Render children if authenticated
   return children
 }</code></pre>
+                </div>
               </div>
             </div>
 
@@ -1382,8 +1511,43 @@ export default function AuthGuard({ children, fallback = null }) {
               <h5 class="font-bold text-gray-800 dark:text-gray-200 mb-2">
                 2. Use Auth Guard in App Router
               </h5>
-              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
-                <pre><code class="language-javascript">// app/dashboard/layout.js
+              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 sm:p-6 relative overflow-hidden">
+                <button
+                  class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors z-10"
+                  data-copy="// app/dashboard/layout.js
+import AuthGuard from '@/components/AuthGuard'
+
+export default function DashboardLayout({ children }) {
+  return (
+    <AuthGuard>
+      <div className='dashboard-layout'>
+        <nav className='sidebar'>
+          {/* Dashboard navigation */}
+        </nav>
+        <main className='main-content'>
+          {children}
+        </main>
+      </div>
+    </AuthGuard>
+  )
+}"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </button>
+                <div class="overflow-x-auto">
+                <pre class="whitespace-pre-wrap break-words"><code class="language-javascript">// app/dashboard/layout.js
 import AuthGuard from '@/components/AuthGuard'
 
 export default function DashboardLayout({ children }) {
@@ -1410,6 +1574,7 @@ export default function Dashboard() {
     </div>
   )
 }</code></pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1436,8 +1601,67 @@ export default function Dashboard() {
               <h5 class="font-bold text-gray-800 dark:text-gray-200 mb-2">
                 1. Create HOC Auth Guard
               </h5>
-              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
-                <pre><code class="language-javascript">// hoc/withAuth.js
+              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 sm:p-6 relative overflow-hidden">
+                <button
+                  class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors z-10"
+                  data-copy="// hoc/withAuth.js
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import { useAuth } from '@/hooks/useAuth'
+
+const withAuth = (WrappedComponent) => {
+  return function AuthComponent(props) {
+    const { user, loading } = useAuth()
+    const router = useRouter()
+
+    useEffect(() => {
+      if (!loading && !user) {
+        // Store current URL for redirect after login
+        const callbackUrl = router.asPath
+        router.push({
+          pathname: '/login',
+          query: { callbackUrl }
+        })
+      }
+    }, [user, loading, router])
+
+    // Show loading spinner while checking auth
+    if (loading) {
+      return (
+        <div className='flex items-center justify-center min-h-screen'>
+          <div className='animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600'></div>
+        </div>
+      )
+    }
+
+    // Don't render if user is not authenticated
+    if (!user) {
+      return null
+    }
+
+    // Render the protected component
+    return <WrappedComponent {...props} />
+  }
+}
+
+export default withAuth"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </button>
+                <div class="overflow-x-auto">
+                <pre class="whitespace-pre-wrap break-words"><code class="language-javascript">// hoc/withAuth.js
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useAuth } from '@/hooks/useAuth'
@@ -1478,6 +1702,7 @@ const withAuth = (WrappedComponent) => {
 }
 
 export default withAuth</code></pre>
+                </div>
               </div>
             </div>
 
@@ -1486,9 +1711,9 @@ export default withAuth</code></pre>
               <h5 class="font-bold text-gray-800 dark:text-gray-200 mb-2">
                 2. Use HOC in Pages Router
               </h5>
-              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+              <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 sm:p-6 relative overflow-hidden">
                 <button
-                  class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+                  class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors z-10"
                   data-copy="// pages/dashboard.js\nimport withAuth from '@/hoc/withAuth'\n\nfunction Dashboard() {\n  return (\n    <div>\n      <h1>Dashboard</h1>\n      <p>This page is protected!</p>\n    </div>\n  )\n}\n\n// Wrap the component with auth guard\nexport default withAuth(Dashboard)\n\n// pages/profile.js\nimport withAuth from '@/hoc/withAuth'\n\nfunction Profile() {\n  return (\n    <div>\n      <h1>User Profile</h1>\n      <p>Private user information</p>\n    </div>\n  )\n}\n\nexport default withAuth(Profile)"
                 >
                   <svg
@@ -1505,7 +1730,8 @@ export default withAuth</code></pre>
                     ></path>
                   </svg>
                 </button>
-                <pre><code class="language-javascript">// pages/dashboard.js
+                <div class="overflow-x-auto">
+                <pre class="whitespace-pre-wrap break-words"><code class="language-javascript">// pages/dashboard.js
 import withAuth from '@/hoc/withAuth'
 
 function Dashboard() {
@@ -1533,6 +1759,7 @@ function Profile() {
 }
 
 export default withAuth(Profile)</code></pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1553,9 +1780,9 @@ export default withAuth(Profile)</code></pre>
             validation and cookie handling.
           </p>
 
-          <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 relative">
+          <div class="bg-gray-900 dark:bg-gray-800 rounded-lg p-4 sm:p-6 relative overflow-hidden">
             <button
-              class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors"
+              class="copy-btn absolute top-3 right-3 p-2 text-gray-400 hover:text-white transition-colors z-10"
               data-copy="// hooks/useAuth.js\nimport { useState, useEffect, useContext, createContext } from 'react'\nimport { useRouter } from 'next/router'\nimport Cookies from 'js-cookie'\n\nconst AuthContext = createContext()\n\nexport function AuthProvider({ children }) {\n  const [user, setUser] = useState(null)\n  const [loading, setLoading] = useState(true)\n  const router = useRouter()\n\n  // Check token validity\n  const validateToken = async (token) => {\n    try {\n      const response = await fetch('/api/auth/verify', {\n        headers: {\n          'Authorization': `Bearer ${token}`\n        }\n      })\n      \n      if (response.ok) {\n        const userData = await response.json()\n        return userData\n      }\n      return null\n    } catch (error) {\n      console.error('Token validation failed:', error)\n      return null\n    }\n  }\n\n  // Initialize auth state\n  useEffect(() => {\n    const initAuth = async () => {\n      const token = Cookies.get('auth-token')\n      \n      if (token) {\n        const userData = await validateToken(token)\n        if (userData) {\n          setUser(userData)\n        } else {\n          // Invalid token, remove it\n          Cookies.remove('auth-token')\n        }\n      }\n      \n      setLoading(false)\n    }\n\n    initAuth()\n  }, [])\n\n  // Login function\n  const login = async (email, password) => {\n    try {\n      const response = await fetch('/api/auth/login', {\n        method: 'POST',\n        headers: {\n          'Content-Type': 'application/json',\n        },\n        body: JSON.stringify({ email, password }),\n      })\n\n      if (response.ok) {\n        const { token, user: userData } = await response.json()\n        \n        // Set secure cookie\n        Cookies.set('auth-token', token, {\n          expires: 7, // 7 days\n          secure: process.env.NODE_ENV === 'production',\n          sameSite: 'strict'\n        })\n        \n        setUser(userData)\n        \n        // Redirect to callback URL or dashboard\n        const callbackUrl = localStorage.getItem('callbackUrl') || '/dashboard'\n        localStorage.removeItem('callbackUrl')\n        router.push(callbackUrl)\n        \n        return { success: true }\n      } else {\n        const error = await response.json()\n        return { success: false, error: error.message }\n      }\n    } catch (error) {\n      return { success: false, error: 'Login failed' }\n    }\n  }\n\n  // Logout function\n  const logout = () => {\n    Cookies.remove('auth-token')\n    setUser(null)\n    router.push('/login')\n  }\n\n  const value = {\n    user,\n    loading,\n    login,\n    logout\n  }\n\n  return (\n    <AuthContext.Provider value={value}>\n      {children}\n    </AuthContext.Provider>\n  )\n}\n\nexport function useAuth() {\n  const context = useContext(AuthContext)\n  if (!context) {\n    throw new Error('useAuth must be used within an AuthProvider')\n  }\n  return context\n}"
             >
               <svg
@@ -1572,7 +1799,8 @@ export default withAuth(Profile)</code></pre>
                 ></path>
               </svg>
             </button>
-            <pre><code class="language-javascript">// hooks/useAuth.js
+            <div class="overflow-x-auto">
+            <pre class="whitespace-pre-wrap break-words"><code class="language-javascript">// hooks/useAuth.js
 import { useState, useEffect, useContext, createContext } from 'react'
 import { useRouter } from 'next/router'
 import Cookies from 'js-cookie'
@@ -1691,6 +1919,7 @@ export function useAuth() {
   }
   return context
 }</code></pre>
+            </div>
           </div>
         </div>
 

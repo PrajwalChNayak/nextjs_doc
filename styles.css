@@ -497,42 +497,50 @@ footer a[href]:hover {
 }
 
 /* Dynamic Routes Code Block Enhancements */
-.bg-gray-900 pre, .bg-gray-800 pre {
+.bg-gray-900 pre,
+.bg-gray-800 pre {
   overflow-x: auto;
   white-space: pre;
   word-wrap: normal;
 }
 
-.bg-gray-900 code, .bg-gray-800 code {
+.bg-gray-900 code,
+.bg-gray-800 code {
   white-space: pre;
   word-break: normal;
   overflow-wrap: normal;
 }
 
 /* Enhanced responsive code blocks */
-.bg-gray-900, .bg-gray-800 {
+.bg-gray-900,
+.bg-gray-800 {
   position: relative;
 }
 
-.bg-gray-900 .overflow-x-auto, .bg-gray-800 .overflow-x-auto {
+.bg-gray-900 .overflow-x-auto,
+.bg-gray-800 .overflow-x-auto {
   scrollbar-width: thin;
   scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
 }
 
-.bg-gray-900 .overflow-x-auto::-webkit-scrollbar, .bg-gray-800 .overflow-x-auto::-webkit-scrollbar {
+.bg-gray-900 .overflow-x-auto::-webkit-scrollbar,
+.bg-gray-800 .overflow-x-auto::-webkit-scrollbar {
   height: 6px;
 }
 
-.bg-gray-900 .overflow-x-auto::-webkit-scrollbar-track, .bg-gray-800 .overflow-x-auto::-webkit-scrollbar-track {
+.bg-gray-900 .overflow-x-auto::-webkit-scrollbar-track,
+.bg-gray-800 .overflow-x-auto::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.bg-gray-900 .overflow-x-auto::-webkit-scrollbar-thumb, .bg-gray-800 .overflow-x-auto::-webkit-scrollbar-thumb {
+.bg-gray-900 .overflow-x-auto::-webkit-scrollbar-thumb,
+.bg-gray-800 .overflow-x-auto::-webkit-scrollbar-thumb {
   background-color: rgba(156, 163, 175, 0.5);
   border-radius: 3px;
 }
 
-.bg-gray-900 .overflow-x-auto::-webkit-scrollbar-thumb:hover, .bg-gray-800 .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+.bg-gray-900 .overflow-x-auto::-webkit-scrollbar-thumb:hover,
+.bg-gray-800 .overflow-x-auto::-webkit-scrollbar-thumb:hover {
   background-color: rgba(156, 163, 175, 0.7);
 }
 
@@ -542,11 +550,12 @@ footer a[href]:hover {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
-  .bg-gray-900, .bg-gray-800 {
+
+  .bg-gray-900,
+  .bg-gray-800 {
     padding: 1rem;
   }
-  
+
   .copy-btn {
     position: sticky;
     top: 0.75rem;
